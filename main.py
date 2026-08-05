@@ -21,14 +21,14 @@ def download_shapefile(fc, folder_name):
         os.makedirs(folder_name, exist_ok=True)
         with zipfile.ZipFile(io.BytesIO(response.content)) as z:
             z.extractall(folder_name)
-        print(f"Successfully extracted {folder_name} shapefiles to local folder.")
+        print(f"Successfully extracted {folder_name} shapefiles.")
     else:
         print(f"Failed to download {folder_name}.")
 
 def main():
     print("Fetching boundaries for Assam and Kaziranga...")
 
-    # 1. Define the Vector Geometries
+    # 1. Define Vector Geometries
     state = ee.FeatureCollection("FAO/GAUL/2015/level1") \
         .filter(ee.Filter.eq('ADM0_NAME', 'India')) \
         .filter(ee.Filter.eq('ADM1_NAME', 'Assam'))
@@ -39,53 +39,65 @@ def main():
             ee.Filter.stringContains('ORIG_NAME', 'Kaziranga')
         ))
 
-    # 2. Download the .shp files locally
+    # 2. Download Shapefiles Locally
     download_shapefile(state, "Assam_State_Boundary")
     download_shapefile(park, "Kaziranga_National_Park")
 
-    # 3. Generate the Superimposed JPEG with Sentinel-2 Basemap
-    print("Generating the superimposed JPEG with Sentinel-2 basemap...")
+    # 3. Process Sentinel-2 Imagery and Calculate NDVI
+    print("Calculating NDVI for Kaziranga and generating map...")
     
-    # Fetch Sentinel-2 Surface Reflectance imagery
-    # Filtering for the dry season to minimize cloud cover
+    # Fetch base Sentinel-2 median composite for the state
     s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
         .filterBounds(state.geometry()) \
         .filterDate('2025-10-01', '2026-03-31') \
         .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
     
-    # Create a median composite to remove clouds, clip to state bounds, and visualize in True Color
-    s2_basemap = s2_collection.median().clip(state).visualize(bands=['B4', 'B3', 'B2'], min=0, max=3000)
+    s2_median = s2_collection.median()
+    
+    # Create the true-color basemap clipped to the state
+    s2_basemap = s2_median.clip(state).visualize(bands=['B4', 'B3', 'B2'], min=0, max=3000)
 
+    # Calculate NDVI: (B8 - B4) / (B8 + B4)
+    ndvi = s2_median.normalizedDifference(['B8', 'B4']).rename('NDVI')
+
+    # Define a color palette for NDVI (brown/white -> light green -> dark green)
+    ndvi_palette = [
+        'FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901',
+        '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01',
+        '012E01', '011D01', '011301'
+    ]
+
+    # Visualize NDVI and clip it strictly to the park boundary
+    ndvi_viz = ndvi.clip(park).visualize(min=0.0, max=0.8, palette=ndvi_palette)
+
+    # Create an empty byte image for outlines
     empty = ee.Image().byte()
 
     # Paint the state outline
-    state_outline = empty.paint(state, 1, 2) \
-        .selfMask() \
-        .visualize(palette=['0000FF'])
+    state_outline = empty.paint(state, 1, 2).selfMask().visualize(palette=['0000FF'])
+    
+    # Paint the park outline (using red to contrast with the green NDVI)
+    park_outline = empty.paint(park, 1, 2).selfMask().visualize(palette=['FF0000'])
 
-    # Paint the park fill
-    park_fill = empty.paint(park, 1) \
-        .selfMask() \
-        .visualize(palette=['00FF00'])
-
-    # Blend layers: Sentinel-2 Basemap -> State Outline -> Park Fill
-    superimposed_img = s2_basemap.blend(state_outline).blend(park_fill)
+    # 4. Blend all layers together
+    # Basemap -> NDVI overlay -> Park Outline -> State Outline
+    final_img = s2_basemap.blend(ndvi_viz).blend(park_outline).blend(state_outline)
 
     # Generate the image URL
-    url = superimposed_img.getThumbURL({
+    url = final_img.getThumbURL({
         'dimensions': 1000,
         'region': state.geometry().bounds(),
         'format': 'jpg'
     })
     
-    print("Downloading satellite map image from GEE servers...")
+    print("Downloading NDVI map image from GEE servers...")
     response = requests.get(url, stream=True)
     
     if response.status_code == 200:
-        with open('Assam_Kaziranga_Map_Satellite.jpg', 'wb') as f:
+        with open('Assam_Kaziranga_NDVI_Map.jpg', 'wb') as f:
             response.raw.decode_content = True
             shutil.copyfileobj(response.raw, f)
-        print("Download complete! Saved as 'Assam_Kaziranga_Map_Satellite.jpg' in your current directory.")
+        print("Download complete! Saved as 'Assam_Kaziranga_NDVI_Map.jpg'.")
     else:
         print("Failed to download the image.")
 
