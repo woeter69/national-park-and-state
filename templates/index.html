@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Sentinel: India National Parks NDVI Explorer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar containing controls and information -->
+        <aside class="sidebar">
+            <header class="app-header">
+                <div class="logo">
+                    <span class="icon">🌱</span>
+                    <h1>Eco-Sentinel</h1>
+                </div>
+                <p class="subtitle">India National Parks NDVI Explorer</p>
+            </header>
+
+            <section class="control-panel">
+                <div class="form-group">
+                    <label for="state-select">Select Indian State</label>
+                    <div class="select-wrapper">
+                        <select id="state-select">
+                            <option value="" disabled selected>Choose a state...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="park-select">Select Protected Area</label>
+                    <div class="select-wrapper">
+                        <select id="park-select" disabled>
+                            <option value="" disabled selected>Choose a park...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group options-group">
+                    <label>Visibility Options</label>
+                    <div class="checkbox-wrapper">
+                        <label><input type="checkbox" id="basemap-state"> State Landmass (Basemap)</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <label><input type="checkbox" id="basemap-park"> Park Landmass (Basemap)</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <label><input type="checkbox" id="ndvi-state"> State NDVI</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <label><input type="checkbox" id="ndvi-park" checked> Park NDVI</label>
+                    </div>
+                </div>
+
+                <button id="generate-btn" class="btn primary-btn" disabled>
+                    <span>Generate NDVI Map</span>
+                </button>
+            </section>
+
+            <!-- NDVI Explanation -->
+            <section class="info-section explanation-card">
+                <h3>About NDVI</h3>
+                <p>Normalized Difference Vegetation Index (NDVI) measures greenness and health of vegetation. Values range from <strong>-1 to +1</strong>:</p>
+                <div class="ndvi-scale">
+                    <span class="scale-label min">Barren/Water</span>
+                    <span class="scale-label max">Dense Canopy</span>
+                </div>
+                <div class="ndvi-gradient"></div>
+            </section>
+
+            <!-- Metadata Section (Populated dynamically) -->
+            <section id="park-details-card" class="info-section details-card hidden">
+                <h3>Area Metadata</h3>
+                <div class="metadata-grid">
+                    <div class="meta-item">
+                        <span class="meta-label">Designation</span>
+                        <span id="detail-designation" class="meta-value">-</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Reported Area</span>
+                        <span id="detail-area" class="meta-value">-</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Status Year</span>
+                        <span id="detail-year" class="meta-value">-</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">IUCN Category</span>
+                        <span id="detail-iucn" class="meta-value">-</span>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <!-- Main Workspace for Map Visualizer -->
+        <main class="workspace">
+            <div id="map-viewport" class="map-viewport empty-state">
+                <!-- Welcome/Empty State -->
+                <div class="viewport-message" id="welcome-message">
+                    <span class="viewport-icon">🛰️</span>
+                    <h2>Interactive Earth Engine Visualizer</h2>
+                    <p>Select a state and a protected area in the sidebar to process Sentinel-2 imagery and generate a vegetation health map.</p>
+                </div>
+
+                <!-- Spinner / Loading State -->
+                <div class="viewport-loader hidden" id="viewport-loader">
+                    <div class="spinner"></div>
+                    <p>Processing Sentinel-2 imagery on Google Earth Engine servers...</p>
+                </div>
+
+                <!-- Image Display -->
+                <div class="viewport-image-container hidden" id="viewport-image-container">
+                    <img id="generated-map" src="" alt="Generated NDVI Map">
+                    <div class="map-legend">
+                        <div class="legend-title">NDVI Color Index</div>
+                        <div class="legend-scale">
+                            <span style="background-color:#FFFFFF"></span>
+                            <span style="background-color:#CE7E45"></span>
+                            <span style="background-color:#F1B555"></span>
+                            <span style="background-color:#99B718"></span>
+                            <span style="background-color:#529400"></span>
+                            <span style="background-color:#056201"></span>
+                            <span style="background-color:#011301"></span>
+                        </div>
+                        <div class="legend-labels">
+                            <span>0.0</span>
+                            <span>0.4</span>
+                            <span>0.8</span>
+                        </div>
+                    </div>
+                    <div class="outline-legend">
+                        <span class="legend-item"><span class="color-dot red"></span> Park Outline</span>
+                        <span class="legend-item"><span class="color-dot blue"></span> State Outline</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- JavaScript file -->
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
