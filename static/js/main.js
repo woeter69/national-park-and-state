@@ -87,6 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
         generateBtn.disabled = !parkSelect.value;
     });
 
+    let map = null;
+    let eeTileLayer = null;
+
     // 4. Handle generate map action
     generateBtn.addEventListener('click', () => {
         const state = stateSelect.value;
@@ -97,7 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const ndviState = document.getElementById('ndvi-state').checked;
         const ndviPark = document.getElementById('ndvi-park').checked;
 
-        if (!state || !parkId) return;
+        const startDate = document.getElementById('start-date').value;
+        const endDate = document.getElementById('end-date').value;
+
+        if (!state || !parkId || !startDate || !endDate) return;
 
         // UI State: Loading
         welcomeMessage.classList.add('hidden');
@@ -113,6 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({ 
                 state, 
                 park_id: parkId,
+                start_date: startDate,
+                end_date: endDate,
                 basemap_state: basemapState,
                 basemap_park: basemapPark,
                 ndvi_state: ndviState,
@@ -124,14 +132,27 @@ document.addEventListener('DOMContentLoaded', () => {
             return res.json();
         })
         .then(data => {
-            // Update Image
-            generatedMap.src = data.map_url;
+            viewportLoader.classList.add('hidden');
+            viewportImageContainer.classList.remove('hidden');
 
-            // Wait for image to load before showing it to avoid blank flash
-            generatedMap.onload = () => {
-                viewportLoader.classList.add('hidden');
-                viewportImageContainer.classList.remove('hidden');
-            };
+            // Initialize map if it doesn't exist
+            if (!map) {
+                map = L.map('generated-map');
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                    attribution: '&copy; CartoDB'
+                }).addTo(map);
+            }
+
+            // Remove previous EE layer if exists
+            if (eeTileLayer) {
+                map.removeLayer(eeTileLayer);
+            }
+
+            // Add new EE layer
+            eeTileLayer = L.tileLayer(data.tile_url).addTo(map);
+
+            // Center map
+            map.setView([data.center[1], data.center[0]], 10);
 
             // Update Metadata Card
             const details = data.park_details;
@@ -160,5 +181,73 @@ document.addEventListener('DOMContentLoaded', () => {
             parkSelect.disabled = false;
             generateBtn.disabled = false;
         });
+
+        // Also fetch and render the time-series chart
+        const chartViewport = document.getElementById('chart-viewport');
+        chartViewport.classList.add('hidden');
+
+        fetch('/api/timeseries', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ park_id: parkId, start_date: startDate, end_date: endDate })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.error) throw new Error(data.error);
+            if (data.length > 0) {
+                renderChart(data);
+                chartViewport.classList.remove('hidden');
+            }
+        })
+        .catch(err => console.error("Chart error:", err));
     });
+
+    let ndviChart = null;
+    function renderChart(data) {
+        const ctx = document.getElementById('ndvi-chart').getContext('2d');
+        const labels = data.map(d => d.date);
+        const values = data.map(d => d.ndvi);
+
+        if (ndviChart) {
+            ndviChart.destroy();
+        }
+
+        ndviChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Mean NDVI',
+                    data: values,
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    borderWidth: 2,
+                    pointRadius: 3,
+                    pointBackgroundColor: '#10b981',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    x: {
+                        grid: { color: '#374151' },
+                        ticks: { color: '#9ca3af', maxTicksLimit: 10 }
+                    },
+                    y: {
+                        grid: { color: '#374151' },
+                        ticks: { color: '#9ca3af' },
+                        min: Math.min(0, Math.min(...values)) < 0 ? -0.2 : 0,
+                        max: 1
+                    }
+                }
+            }
+        });
+    }
 });

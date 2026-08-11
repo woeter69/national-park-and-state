@@ -75,6 +75,8 @@ def generate_map():
     data = request.json or {}
     state_name = data.get('state')
     park_id = data.get('park_id')
+    start_date = data.get('start_date', '2025-10-01')
+    end_date = data.get('end_date', '2026-03-31')
     basemap_state = data.get('basemap_state', False)
     basemap_park = data.get('basemap_park', False)
     ndvi_state = data.get('ndvi_state', False)
@@ -104,14 +106,14 @@ def generate_map():
 
         s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
             .filterBounds(bounds) \
-            .filterDate('2025-10-01', '2026-03-31') \
+            .filterDate(start_date, end_date) \
             .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
 
         if s2_collection.size().getInfo() == 0:
             # Try a broader date range if no imagery found
             s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
                 .filterBounds(bounds) \
-                .filterDate('2024-01-01', '2026-03-31') \
+                .filterDate('2024-01-01', end_date) \
                 .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 30))
 
         s2_median = s2_collection.median()
@@ -151,17 +153,16 @@ def generate_map():
         # Blend outlines
         final_img = final_img.blend(park_outline).blend(state_outline)
 
-        # Generate GEE Thumbnail URL centered on the state so boundary is visible
-        region = state.geometry().bounds()
-
-        url = final_img.getThumbURL({
-            'dimensions': 1200,
-            'region': region,
-            'format': 'jpg'
-        })
+        # Generate GEE Map Tile URL for interactive Leaflet map
+        map_id_dict = final_img.getMapId()
+        tile_url = map_id_dict['tile_fetcher'].url_format
+        
+        # Get centroid of the park to center the map
+        center = park.geometry().centroid().coordinates().getInfo() # [lon, lat]
 
         return jsonify({
-            "map_url": url,
+            "tile_url": tile_url,
+            "center": center,
             "park_details": {
                 "name": park.first().get('NAME_ENG').getInfo() or park.first().get('NAME').getInfo(),
                 "designation": park.first().get('DESIG_ENG').getInfo(),
@@ -170,6 +171,65 @@ def generate_map():
                 "iucn_cat": park.first().get('IUCN_CAT').getInfo()
             }
         })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/timeseries', methods=['POST'])
+def get_timeseries():
+    data = request.json or {}
+    park_id = data.get('park_id')
+    start_date = data.get('start_date', '2025-10-01')
+    end_date = data.get('end_date', '2026-03-31')
+
+    if not park_id:
+        return jsonify({"error": "Park ID is required"}), 400
+
+    try:
+        park = ee.FeatureCollection("WCMC/WDPA/current/polygons") \
+            .filter(ee.Filter.eq('SITE_ID', int(park_id)))
+
+        s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
+            .filterBounds(park.geometry()) \
+            .filterDate(start_date, end_date) \
+            .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
+
+        def calc_mean_ndvi(image):
+            ndvi = image.normalizedDifference(['B8', 'B4']).rename('NDVI')
+            mean_dict = ndvi.reduceRegion(
+                reducer=ee.Reducer.mean(),
+                geometry=park.geometry(),
+                scale=200,  # 200m scale for speed
+                maxPixels=1e9
+            )
+            return ee.Feature(None, {
+                'date': image.date().format('YYYY-MM-dd'),
+                'ndvi': mean_dict.get('NDVI')
+            })
+
+        time_series_fc = s2_collection.map(calc_mean_ndvi)
+        features = time_series_fc.getInfo().get('features', [])
+        
+        data_points = []
+        for f in features:
+            props = f.get('properties', {})
+            val = props.get('ndvi')
+            if val is not None:
+                data_points.append({
+                    'date': props['date'],
+                    'ndvi': val
+                })
+                
+        # Sort by date
+        data_points = sorted(data_points, key=lambda x: x['date'])
+        
+        # Deduplicate dates (Sentinel-2 can have multiple images same day)
+        unique_points = {}
+        for dp in data_points:
+            unique_points[dp['date']] = dp['ndvi']
+            
+        final_series = [{"date": k, "ndvi": v} for k, v in unique_points.items()]
+        
+        return jsonify(final_series)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

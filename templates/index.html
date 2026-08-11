@@ -10,6 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom Style Sheet -->
     <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="app-container">
@@ -39,6 +44,17 @@
                         <select id="park-select" disabled>
                             <option value="" disabled selected>Choose a park...</option>
                         </select>
+                    </div>
+                </div>
+
+                <div class="form-group date-group" style="display: flex; gap: 1rem;">
+                    <div style="flex: 1;">
+                        <label for="start-date">Start Date</label>
+                        <input type="date" id="start-date" value="2025-10-01" class="date-input" style="width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.75rem; border-radius: 0.5rem; font-family: inherit;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="end-date">End Date</label>
+                        <input type="date" id="end-date" value="2026-03-31" class="date-input" style="width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.75rem; border-radius: 0.5rem; font-family: inherit;">
                     </div>
                 </div>
 
@@ -99,8 +115,8 @@
         </aside>
 
         <!-- Main Workspace for Map Visualizer -->
-        <main class="workspace">
-            <div id="map-viewport" class="map-viewport empty-state">
+        <main class="workspace" style="flex-direction: column; gap: 1rem;">
+            <div id="map-viewport" class="map-viewport empty-state" style="flex: 2;">
                 <!-- Welcome/Empty State -->
                 <div class="viewport-message" id="welcome-message">
                     <span class="viewport-icon">🛰️</span>
@@ -116,8 +132,8 @@
 
                 <!-- Image Display -->
                 <div class="viewport-image-container hidden" id="viewport-image-container">
-                    <img id="generated-map" src="" alt="Generated NDVI Map">
-                    <div class="map-legend">
+                    <div id="generated-map" style="width: 100%; height: 100%; z-index: 1;"></div>
+                    <div class="map-legend" style="z-index: 1000;">
                         <div class="legend-title">NDVI Color Index</div>
                         <div class="legend-scale">
                             <span style="background-color:#FFFFFF"></span>
@@ -134,10 +150,18 @@
                             <span>0.8</span>
                         </div>
                     </div>
-                    <div class="outline-legend">
+                    <div class="outline-legend" style="z-index: 1000;">
                         <span class="legend-item"><span class="color-dot red"></span> Park Outline</span>
                         <span class="legend-item"><span class="color-dot blue"></span> State Outline</span>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Chart Container -->
+            <div id="chart-viewport" class="hidden" style="flex: 1; width: 100%; background-color: var(--bg-sidebar); border: 1px solid var(--border-color); border-radius: 1rem; padding: 1rem; display: flex; flex-direction: column;">
+                <h3 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; text-align: center;">NDVI Time Series</h3>
+                <div style="position: relative; flex: 1; width: 100%;">
+                    <canvas id="ndvi-chart"></canvas>
                 </div>
             </div>
         </main>
