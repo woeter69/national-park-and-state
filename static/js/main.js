@@ -139,9 +139,24 @@ document.addEventListener('DOMContentLoaded', () => {
             // Initialize map if it doesn't exist
             if (!map) {
                 map = L.map('generated-map');
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-                    attribution: '&copy; CartoDB'
-                }).addTo(map);
+
+                const darkBasemap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+                    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+                    maxZoom: 16
+                });
+
+                const satelliteBasemap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, USGS, AeroGRID',
+                    maxZoom: 18
+                });
+
+                darkBasemap.addTo(map);
+
+                const baseLayers = {
+                    "Dark Canvas": darkBasemap,
+                    "Satellite": satelliteBasemap
+                };
+                L.control.layers(baseLayers, null, { position: 'bottomright' }).addTo(map);
             }
 
             // Remove previous EE layer if exists
