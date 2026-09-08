@@ -162,6 +162,12 @@ document.addEventListener('DOMContentLoaded', () => {
             detailIucn.textContent = details.iucn_cat || 'Not Classified';
 
             parkDetailsCard.classList.remove('hidden');
+
+            // Save export info and show export card
+            currentHighResUrl = data.high_res_url;
+            currentParkId = parkId;
+            currentParkName = details.name || 'park';
+            exportCard.classList.remove('hidden');
         })
         .catch(err => {
             console.error(err);
@@ -185,6 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Also fetch and render the time-series chart
         const chartViewport = document.getElementById('chart-viewport');
         chartViewport.classList.add('hidden');
+        downloadCsvBtn.disabled = true;
+        downloadChartBtn.disabled = true;
 
         fetch('/api/timeseries', {
             method: 'POST',
@@ -195,11 +203,98 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             if (data.error) throw new Error(data.error);
             if (data.length > 0) {
+                currentTimeSeriesData = data;
                 renderChart(data);
                 chartViewport.classList.remove('hidden');
+                downloadCsvBtn.disabled = false;
+                downloadChartBtn.disabled = false;
             }
         })
         .catch(err => console.error("Chart error:", err));
+    });
+
+    // Export & Download event listeners
+    const exportCard = document.getElementById('export-card');
+    const downloadMapBtn = document.getElementById('download-map-btn');
+    const downloadCsvBtn = document.getElementById('download-csv-btn');
+    const downloadChartBtn = document.getElementById('download-chart-btn');
+    const downloadShapefileBtn = document.getElementById('download-shapefile-btn');
+    const downloadGeojsonBtn = document.getElementById('download-geojson-btn');
+
+    let currentHighResUrl = null;
+    let currentParkId = null;
+    let currentParkName = '';
+    let currentTimeSeriesData = [];
+
+    downloadMapBtn.addEventListener('click', () => {
+        if (currentHighResUrl) {
+            window.open(currentHighResUrl, '_blank');
+        }
+    });
+
+    downloadCsvBtn.addEventListener('click', () => {
+        if (!currentTimeSeriesData || currentTimeSeriesData.length === 0) return;
+        let csvContent = "data:text/csv;charset=utf-8,Date,Mean_NDVI\n" +
+            currentTimeSeriesData.map(d => `${d.date},${d.ndvi}`).join("\n");
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", `${(currentParkName || 'park').replace(/\s+/g, '_')}_ndvi_timeseries.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+
+    downloadChartBtn.addEventListener('click', () => {
+        if (!ndviChart) return;
+        const link = document.createElement("a");
+        link.href = ndviChart.toBase64Image();
+        link.download = `${(currentParkName || 'park').replace(/\s+/g, '_')}_chart.png`;
+        link.click();
+    });
+
+    downloadShapefileBtn.addEventListener('click', () => {
+        if (!currentParkId) return;
+        const origText = downloadShapefileBtn.querySelector('span').textContent;
+        downloadShapefileBtn.disabled = true;
+        downloadShapefileBtn.querySelector('span').textContent = 'Generating Shapefile...';
+        fetch(`/api/download/shapefile?park_id=${currentParkId}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.download_url) {
+                    window.open(data.download_url, '_blank');
+                } else {
+                    alert('Shapefile generation error: ' + (data.error || 'Unknown'));
+                }
+            })
+            .catch(err => alert('Error: ' + err))
+            .finally(() => {
+                downloadShapefileBtn.disabled = false;
+                downloadShapefileBtn.querySelector('span').textContent = origText;
+            });
+    });
+
+    downloadGeojsonBtn.addEventListener('click', () => {
+        if (!currentParkId) return;
+        const origText = downloadGeojsonBtn.querySelector('span').textContent;
+        downloadGeojsonBtn.disabled = true;
+        downloadGeojsonBtn.querySelector('span').textContent = 'Fetching GeoJSON...';
+        fetch(`/api/download/geojson?park_id=${currentParkId}`)
+            .then(res => res.json())
+            .then(data => {
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${(currentParkName || 'park').replace(/\s+/g, '_')}.geojson`;
+                a.click();
+                URL.revokeObjectURL(url);
+            })
+            .catch(err => alert('Error: ' + err))
+            .finally(() => {
+                downloadGeojsonBtn.disabled = false;
+                downloadGeojsonBtn.querySelector('span').textContent = origText;
+            });
     });
 
     let ndviChart = null;

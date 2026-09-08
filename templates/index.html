@@ -112,6 +112,28 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Export / Download Section -->
+            <section id="export-card" class="info-section export-card hidden">
+                <h3>Export & Download</h3>
+                <div class="export-actions" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button id="download-map-btn" class="btn secondary-btn">
+                        <span>📷 Download Map (PNG)</span>
+                    </button>
+                    <button id="download-csv-btn" class="btn secondary-btn" disabled>
+                        <span>📊 Export Time-Series (CSV)</span>
+                    </button>
+                    <button id="download-chart-btn" class="btn secondary-btn" disabled>
+                        <span>📈 Save Chart (PNG)</span>
+                    </button>
+                    <button id="download-shapefile-btn" class="btn secondary-btn">
+                        <span>🗺️ Download Shapefile (ZIP)</span>
+                    </button>
+                    <button id="download-geojson-btn" class="btn secondary-btn">
+                        <span>🌐 Download GeoJSON</span>
+                    </button>
+                </div>
+            </section>
         </aside>
 
         <!-- Main Workspace for Map Visualizer -->

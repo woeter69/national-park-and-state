@@ -157,11 +157,17 @@ def generate_map():
         map_id_dict = final_img.getMapId()
         tile_url = map_id_dict['tile_fetcher'].url_format
         
-        # Get centroid of the park to center the map
-        center = park.geometry().centroid().coordinates().getInfo() # [lon, lat]
+        # High resolution snapshot URL
+        snapshot_region = state.geometry().bounds() if (basemap_state or ndvi_state) else park.geometry().bounds()
+        high_res_url = final_img.getThumbURL({
+            'dimensions': 2048,
+            'region': snapshot_region,
+            'format': 'png'
+        })
 
         return jsonify({
             "tile_url": tile_url,
+            "high_res_url": high_res_url,
             "center": center,
             "park_details": {
                 "name": park.first().get('NAME_ENG').getInfo() or park.first().get('NAME').getInfo(),
@@ -171,6 +177,31 @@ def generate_map():
                 "iucn_cat": park.first().get('IUCN_CAT').getInfo()
             }
         })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/download/shapefile', methods=['GET'])
+def download_shapefile():
+    park_id = request.args.get('park_id')
+    if not park_id:
+        return jsonify({"error": "Park ID is required"}), 400
+    try:
+        park = ee.FeatureCollection("WCMC/WDPA/current/polygons") \
+            .filter(ee.Filter.eq('SITE_ID', int(park_id)))
+        url = park.getDownloadURL(filetype='shp')
+        return jsonify({"download_url": url})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/download/geojson', methods=['GET'])
+def download_geojson():
+    park_id = request.args.get('park_id')
+    if not park_id:
+        return jsonify({"error": "Park ID is required"}), 400
+    try:
+        park = ee.FeatureCollection("WCMC/WDPA/current/polygons") \
+            .filter(ee.Filter.eq('SITE_ID', int(park_id)))
+        return jsonify(park.getInfo())
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

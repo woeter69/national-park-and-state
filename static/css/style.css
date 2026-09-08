@@ -197,6 +197,24 @@ select:disabled {
     border: 1px solid var(--border-color);
 }
 
+.secondary-btn {
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.65rem 0.75rem;
+    font-size: 0.85rem;
+}
+
+.secondary-btn:hover:not(:disabled) {
+    background-color: #374151;
+    border-color: var(--primary);
+}
+
+.secondary-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
 /* Info Cards */
 .info-section {
     background-color: var(--bg-card);
