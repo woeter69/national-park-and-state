@@ -127,9 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 ndvi_park: ndviPark
             })
         })
-        .then(res => {
-            if (!res.ok) throw new Error('Failed to generate map');
-            return res.json();
+        .then(async res => {
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || 'Failed to generate map');
+            return data;
         })
         .then(data => {
             viewportLoader.classList.add('hidden');
@@ -178,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = welcomeMessage.querySelector('h2');
             const desc = welcomeMessage.querySelector('p');
             title.textContent = "Processing Failed";
-            desc.textContent = "Could not generate NDVI map. This could be due to missing Sentinel-2 imagery coverage or GEE server limits. Please try another area.";
+            desc.textContent = err.message || "Could not generate NDVI map. Please check selection or try another area.";
             title.style.color = "#ef4444";
         })
         .finally(() => {

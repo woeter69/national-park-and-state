@@ -165,6 +165,9 @@ def generate_map():
             'format': 'png'
         })
 
+        # Centroid of park for map view centering
+        center = park.geometry().centroid().coordinates().getInfo() # [lon, lat]
+
         return jsonify({
             "tile_url": tile_url,
             "high_res_url": high_res_url,
