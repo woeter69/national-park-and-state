@@ -13,6 +13,8 @@
     <!-- Leaflet CSS and JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Leaflet Side-by-Side Split Plugin -->
+    <script src="https://unpkg.com/leaflet-side-by-side@2.2.0/index.js"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -47,14 +49,41 @@
                     </div>
                 </div>
 
-                <div class="form-group date-group" style="display: flex; gap: 1rem;">
-                    <div style="flex: 1;">
-                        <label for="start-date">Start Date</label>
-                        <input type="date" id="start-date" value="2025-10-01" class="date-input" style="width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.75rem; border-radius: 0.5rem; font-family: inherit;">
+                <div class="form-group">
+                    <label>Period A (Primary)</label>
+                    <div class="date-group" style="display: flex; gap: 0.5rem;">
+                        <div style="flex: 1;">
+                            <label for="start-date" style="font-size: 0.75rem;">From</label>
+                            <input type="date" id="start-date" value="2025-10-01" class="date-input" style="width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.6rem; border-radius: 0.5rem; font-family: inherit; font-size: 0.85rem;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="end-date" style="font-size: 0.75rem;">To</label>
+                            <input type="date" id="end-date" value="2026-03-31" class="date-input" style="width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.6rem; border-radius: 0.5rem; font-family: inherit; font-size: 0.85rem;">
+                        </div>
                     </div>
-                    <div style="flex: 1;">
-                        <label for="end-date">End Date</label>
-                        <input type="date" id="end-date" value="2026-03-31" class="date-input" style="width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.75rem; border-radius: 0.5rem; font-family: inherit;">
+                </div>
+
+                <!-- Compare Mode Switch -->
+                <div class="form-group options-group" style="padding: 0.75rem 1rem;">
+                    <div class="checkbox-wrapper" style="margin-bottom: 0;">
+                        <label style="font-weight: 600; color: #10b981;">
+                            <input type="checkbox" id="compare-mode-toggle"> Enable Dual Period Comparison
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Period B Section (Hidden by default) -->
+                <div id="period-b-section" class="form-group hidden" style="border: 1px dashed var(--border-color); border-radius: 0.5rem; padding: 0.75rem;">
+                    <label style="color: #60a5fa;">Period B (Compare / Split Right)</label>
+                    <div class="date-group" style="display: flex; gap: 0.5rem; margin-top: 0.25rem;">
+                        <div style="flex: 1;">
+                            <label for="start-date-b" style="font-size: 0.75rem;">From</label>
+                            <input type="date" id="start-date-b" value="2023-10-01" class="date-input" style="width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.6rem; border-radius: 0.5rem; font-family: inherit; font-size: 0.85rem;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="end-date-b" style="font-size: 0.75rem;">To</label>
+                            <input type="date" id="end-date-b" value="2024-03-31" class="date-input" style="width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.6rem; border-radius: 0.5rem; font-family: inherit; font-size: 0.85rem;">
+                        </div>
                     </div>
                 </div>
 
@@ -175,6 +204,10 @@
                     <div class="outline-legend" style="z-index: 1000;">
                         <span class="legend-item"><span class="color-dot red"></span> Park Outline</span>
                         <span class="legend-item"><span class="color-dot blue"></span> State Outline</span>
+                    </div>
+                    <div id="compare-labels" class="hidden" style="position: absolute; top: 1.5rem; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem; z-index: 1000; pointer-events: none;">
+                        <span style="background: rgba(16, 185, 129, 0.85); color: white; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; backdrop-filter: blur(4px);">◀ Period A</span>
+                        <span style="background: rgba(59, 130, 246, 0.85); color: white; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; backdrop-filter: blur(4px);">Period B ▶</span>
                     </div>
                 </div>
             </div>

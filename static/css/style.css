@@ -445,3 +445,25 @@ select:disabled {
 
 .color-dot.red { background-color: #FF0000; }
 .color-dot.blue { background-color: #0000FF; }
+
+/* Leaflet Side-by-Side Split Slider Styling */
+.leaflet-sbs-range {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 999;
+    margin: 0;
+    height: 0;
+}
+
+.leaflet-sbs-divider {
+    background-color: #10b981;
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
+}

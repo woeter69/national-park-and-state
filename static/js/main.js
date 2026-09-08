@@ -89,6 +89,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let map = null;
     let eeTileLayer = null;
+    let eeTileLayerB = null;
+    let sideBySideControl = null;
+
+    // Toggle Period B visibility
+    const compareModeToggle = document.getElementById('compare-mode-toggle');
+    const periodBSection = document.getElementById('period-b-section');
+    const compareLabels = document.getElementById('compare-labels');
+
+    compareModeToggle.addEventListener('change', () => {
+        if (compareModeToggle.checked) {
+            periodBSection.classList.remove('hidden');
+        } else {
+            periodBSection.classList.add('hidden');
+        }
+    });
 
     // 4. Handle generate map action
     generateBtn.addEventListener('click', () => {
@@ -103,7 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const startDate = document.getElementById('start-date').value;
         const endDate = document.getElementById('end-date').value;
 
+        const isCompare = compareModeToggle.checked;
+        const startDateB = document.getElementById('start-date-b').value;
+        const endDateB = document.getElementById('end-date-b').value;
+
         if (!state || !parkId || !startDate || !endDate) return;
+        if (isCompare && (!startDateB || !endDateB)) return;
 
         // UI State: Loading
         welcomeMessage.classList.add('hidden');
@@ -121,6 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 park_id: parkId,
                 start_date: startDate,
                 end_date: endDate,
+                compare_mode: isCompare,
+                start_date_b: startDateB,
+                end_date_b: endDateB,
                 basemap_state: basemapState,
                 basemap_park: basemapPark,
                 ndvi_state: ndviState,
@@ -159,13 +182,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 L.control.layers(baseLayers, null, { position: 'bottomright' }).addTo(map);
             }
 
-            // Remove previous EE layer if exists
-            if (eeTileLayer) {
-                map.removeLayer(eeTileLayer);
+            // Remove existing split control
+            if (sideBySideControl) {
+                map.removeControl(sideBySideControl);
+                sideBySideControl = null;
             }
 
-            // Add new EE layer
-            eeTileLayer = L.tileLayer(data.tile_url).addTo(map);
+            // Remove previous EE layers
+            if (eeTileLayer) {
+                map.removeLayer(eeTileLayer);
+                eeTileLayer = null;
+            }
+            if (eeTileLayerB) {
+                map.removeLayer(eeTileLayerB);
+                eeTileLayerB = null;
+            }
+
+            if (data.compare_mode && data.tile_url_b && L.control.sideBySide) {
+                // Dual layer split comparison
+                eeTileLayer = L.tileLayer(data.tile_url).addTo(map);
+                eeTileLayerB = L.tileLayer(data.tile_url_b).addTo(map);
+                sideBySideControl = L.control.sideBySide(eeTileLayer, eeTileLayerB).addTo(map);
+                compareLabels.classList.remove('hidden');
+            } else {
+                // Single period mode
+                eeTileLayer = L.tileLayer(data.tile_url).addTo(map);
+                compareLabels.classList.add('hidden');
+            }
 
             // Center map
             map.setView([data.center[1], data.center[0]], 10);
@@ -210,17 +253,29 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadCsvBtn.disabled = true;
         downloadChartBtn.disabled = true;
 
-        fetch('/api/timeseries', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ park_id: parkId, start_date: startDate, end_date: endDate })
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.error) throw new Error(data.error);
-            if (data.length > 0) {
-                currentTimeSeriesData = data;
-                renderChart(data);
+        const tsRequests = [
+            fetch('/api/timeseries', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ park_id: parkId, start_date: startDate, end_date: endDate })
+            }).then(res => res.json())
+        ];
+
+        if (isCompare) {
+            tsRequests.push(
+                fetch('/api/timeseries', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ park_id: parkId, start_date: startDateB, end_date: endDateB })
+                }).then(res => res.json())
+            );
+        }
+
+        Promise.all(tsRequests)
+        .then(([dataA, dataB]) => {
+            if (dataA && dataA.length > 0) {
+                currentTimeSeriesData = dataA;
+                renderChart(dataA, dataB);
                 chartViewport.classList.remove('hidden');
                 downloadCsvBtn.disabled = false;
                 downloadChartBtn.disabled = false;
@@ -314,10 +369,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let ndviChart = null;
-    function renderChart(data) {
+    function renderChart(dataA, dataB) {
         const ctx = document.getElementById('ndvi-chart').getContext('2d');
-        const labels = data.map(d => d.date);
-        const values = data.map(d => d.ndvi);
+
+        const datasets = [{
+            label: dataB && dataB.length > 0 ? 'Period A' : 'Mean NDVI',
+            data: dataA.map(d => ({ x: d.date, y: d.ndvi })),
+            borderColor: '#10b981',
+            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+            borderWidth: 2,
+            pointRadius: 3,
+            pointBackgroundColor: '#10b981',
+            fill: !dataB || dataB.length === 0,
+            tension: 0.3
+        }];
+
+        if (dataB && dataB.length > 0) {
+            datasets.push({
+                label: 'Period B',
+                data: dataB.map(d => ({ x: d.date, y: d.ndvi })),
+                borderColor: '#3b82f6',
+                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                borderWidth: 2,
+                pointRadius: 3,
+                pointBackgroundColor: '#3b82f6',
+                fill: false,
+                tension: 0.3
+            });
+        }
+
+        // Collect all distinct dates sorted
+        const allDates = Array.from(new Set([
+            ...dataA.map(d => d.date),
+            ...(dataB ? dataB.map(d => d.date) : [])
+        ])).sort();
 
         if (ndviChart) {
             ndviChart.destroy();
@@ -326,35 +411,28 @@ document.addEventListener('DOMContentLoaded', () => {
         ndviChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Mean NDVI',
-                    data: values,
-                    borderColor: '#10b981',
-                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                    borderWidth: 2,
-                    pointRadius: 3,
-                    pointBackgroundColor: '#10b981',
-                    fill: true,
-                    tension: 0.3
-                }]
+                labels: allDates,
+                datasets: datasets
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: false },
+                    legend: {
+                        display: Boolean(dataB && dataB.length > 0),
+                        labels: { color: '#f3f4f6' }
+                    },
                     tooltip: { mode: 'index', intersect: false }
                 },
                 scales: {
                     x: {
                         grid: { color: '#374151' },
-                        ticks: { color: '#9ca3af', maxTicksLimit: 10 }
+                        ticks: { color: '#9ca3af', maxTicksLimit: 12 }
                     },
                     y: {
                         grid: { color: '#374151' },
                         ticks: { color: '#9ca3af' },
-                        min: Math.min(0, Math.min(...values)) < 0 ? -0.2 : 0,
+                        min: 0,
                         max: 1
                     }
                 }

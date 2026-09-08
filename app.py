@@ -77,6 +77,9 @@ def generate_map():
     park_id = data.get('park_id')
     start_date = data.get('start_date', '2025-10-01')
     end_date = data.get('end_date', '2026-03-31')
+    compare_mode = data.get('compare_mode', False)
+    start_date_b = data.get('start_date_b', '2023-10-01')
+    end_date_b = data.get('end_date_b', '2024-03-31')
     basemap_state = data.get('basemap_state', False)
     basemap_park = data.get('basemap_park', False)
     ndvi_state = data.get('ndvi_state', False)
@@ -97,67 +100,65 @@ def generate_map():
         if park.size().getInfo() == 0:
             return jsonify({"error": "Selected park boundary not found"}), 404
 
-        # 2. Process Sentinel-2 Imagery
         # Determine filter bounds based on what needs to be rendered
         if basemap_state or ndvi_state:
             bounds = state.geometry()
         else:
             bounds = park.geometry()
 
-        s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
-            .filterBounds(bounds) \
-            .filterDate(start_date, end_date) \
-            .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
-
-        if s2_collection.size().getInfo() == 0:
-            # Try a broader date range if no imagery found
-            s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
-                .filterBounds(bounds) \
-                .filterDate('2024-01-01', end_date) \
-                .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 30))
-
-        s2_median = s2_collection.median()
-        ndvi = s2_median.normalizedDifference(['B8', 'B4']).rename('NDVI')
-        
-        # NDVI Color Palette
         ndvi_palette = [
             'FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901',
             '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01',
             '012E01', '011D01', '011301'
         ]
 
-        # Build final image progressively
-        final_img = ee.Image().byte().selfMask()
+        def build_rendered_image(s_date, e_date):
+            s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
+                .filterBounds(bounds) \
+                .filterDate(s_date, e_date) \
+                .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
 
-        if basemap_state:
-            s2_basemap_state = s2_median.clip(state).visualize(bands=['B4', 'B3', 'B2'], min=0, max=3000)
-            final_img = final_img.blend(s2_basemap_state)
+            if s2_collection.size().getInfo() == 0:
+                s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
+                    .filterBounds(bounds) \
+                    .filterDate('2017-01-01', e_date) \
+                    .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 30))
 
-        if basemap_park:
-            s2_basemap_park = s2_median.clip(park).visualize(bands=['B4', 'B3', 'B2'], min=0, max=3000)
-            final_img = final_img.blend(s2_basemap_park)
+            s2_median = s2_collection.median()
+            ndvi = s2_median.normalizedDifference(['B8', 'B4']).rename('NDVI')
 
-        if ndvi_state:
-            ndvi_viz_state = ndvi.clip(state).visualize(min=0.0, max=0.8, palette=ndvi_palette)
-            final_img = final_img.blend(ndvi_viz_state)
+            img = ee.Image().byte().selfMask()
 
-        if ndvi_park:
-            ndvi_viz_park = ndvi.clip(park).visualize(min=0.0, max=0.8, palette=ndvi_palette)
-            final_img = final_img.blend(ndvi_viz_park)
+            if basemap_state:
+                s2_basemap_state = s2_median.clip(state).visualize(bands=['B4', 'B3', 'B2'], min=0, max=3000)
+                img = img.blend(s2_basemap_state)
 
-        # Outlines
-        empty = ee.Image().byte()
-        state_outline = empty.paint(state, 1, 2).selfMask().visualize(palette=['0000FF'])
-        park_outline = empty.paint(park, 1, 3).selfMask().visualize(palette=['FF0000'])
+            if basemap_park:
+                s2_basemap_park = s2_median.clip(park).visualize(bands=['B4', 'B3', 'B2'], min=0, max=3000)
+                img = img.blend(s2_basemap_park)
 
-        # Blend outlines
-        final_img = final_img.blend(park_outline).blend(state_outline)
+            if ndvi_state:
+                ndvi_viz_state = ndvi.clip(state).visualize(min=0.0, max=0.8, palette=ndvi_palette)
+                img = img.blend(ndvi_viz_state)
 
-        # Generate GEE Map Tile URL for interactive Leaflet map
-        map_id_dict = final_img.getMapId()
-        tile_url = map_id_dict['tile_fetcher'].url_format
-        
-        # High resolution snapshot URL
+            if ndvi_park:
+                ndvi_viz_park = ndvi.clip(park).visualize(min=0.0, max=0.8, palette=ndvi_palette)
+                img = img.blend(ndvi_viz_park)
+
+            # Outlines
+            empty = ee.Image().byte()
+            state_outline = empty.paint(state, 1, 2).selfMask().visualize(palette=['0000FF'])
+            park_outline = empty.paint(park, 1, 3).selfMask().visualize(palette=['FF0000'])
+            return img.blend(park_outline).blend(state_outline)
+
+        final_img = build_rendered_image(start_date, end_date)
+        tile_url = final_img.getMapId()['tile_fetcher'].url_format
+
+        tile_url_b = None
+        if compare_mode:
+            final_img_b = build_rendered_image(start_date_b, end_date_b)
+            tile_url_b = final_img_b.getMapId()['tile_fetcher'].url_format
+
         snapshot_region = state.geometry().bounds() if (basemap_state or ndvi_state) else park.geometry().bounds()
         high_res_url = final_img.getThumbURL({
             'dimensions': 2048,
@@ -165,11 +166,12 @@ def generate_map():
             'format': 'png'
         })
 
-        # Centroid of park for map view centering
         center = park.geometry().centroid().coordinates().getInfo() # [lon, lat]
 
         return jsonify({
             "tile_url": tile_url,
+            "tile_url_b": tile_url_b,
+            "compare_mode": compare_mode,
             "high_res_url": high_res_url,
             "center": center,
             "park_details": {
