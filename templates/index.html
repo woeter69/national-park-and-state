@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco-Sentinel: India National Parks NDVI Explorer</title>
+    <title>NDVI Analyzer: Protected Area Vegetation Explorer</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +24,9 @@
         <aside class="sidebar">
             <header class="app-header">
                 <div class="logo">
-                    <span class="icon">🌱</span>
-                    <h1>Eco-Sentinel</h1>
+                    <h1>NDVI Analyzer</h1>
                 </div>
-                <p class="subtitle">India National Parks NDVI Explorer</p>
+                <p class="subtitle">Protected Area Vegetation Intelligence</p>
             </header>
 
             <section class="control-panel">
@@ -147,19 +146,19 @@
                 <h3>Export & Download</h3>
                 <div class="export-actions" style="display: flex; flex-direction: column; gap: 0.5rem;">
                     <button id="download-map-btn" class="btn secondary-btn">
-                        <span>📷 Download Map (PNG)</span>
+                        <span>Download Map (PNG)</span>
                     </button>
                     <button id="download-csv-btn" class="btn secondary-btn" disabled>
-                        <span>📊 Export Time-Series (CSV)</span>
+                        <span>Export Time-Series (CSV)</span>
                     </button>
                     <button id="download-chart-btn" class="btn secondary-btn" disabled>
-                        <span>📈 Save Chart (PNG)</span>
+                        <span>Save Chart (PNG)</span>
                     </button>
                     <button id="download-shapefile-btn" class="btn secondary-btn">
-                        <span>🗺️ Download Shapefile (ZIP)</span>
+                        <span>Download Shapefile (ZIP)</span>
                     </button>
                     <button id="download-geojson-btn" class="btn secondary-btn">
-                        <span>🌐 Download GeoJSON</span>
+                        <span>Download GeoJSON</span>
                     </button>
                 </div>
             </section>
@@ -170,8 +169,7 @@
             <div id="map-viewport" class="map-viewport empty-state" style="flex: 2;">
                 <!-- Welcome/Empty State -->
                 <div class="viewport-message" id="welcome-message">
-                    <span class="viewport-icon">🛰️</span>
-                    <h2>Interactive Earth Engine Visualizer</h2>
+                    <h2>Earth Engine Visualizer</h2>
                     <p>Select a state and a protected area in the sidebar to process Sentinel-2 imagery and generate a vegetation health map.</p>
                 </div>
 
@@ -206,8 +204,8 @@
                         <span class="legend-item"><span class="color-dot blue"></span> State Outline</span>
                     </div>
                     <div id="compare-labels" class="hidden" style="position: absolute; top: 1.5rem; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem; z-index: 1000; pointer-events: none;">
-                        <span style="background: rgba(16, 185, 129, 0.85); color: white; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; backdrop-filter: blur(4px);">◀ Period A</span>
-                        <span style="background: rgba(59, 130, 246, 0.85); color: white; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; backdrop-filter: blur(4px);">Period B ▶</span>
+                        <span style="background: rgba(16, 185, 129, 0.85); color: white; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; backdrop-filter: blur(4px);">Period A (Left)</span>
+                        <span style="background: rgba(59, 130, 246, 0.85); color: white; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; backdrop-filter: blur(4px);">(Right) Period B</span>
                     </div>
                 </div>
             </div>
