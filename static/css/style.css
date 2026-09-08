@@ -447,13 +447,14 @@ select:disabled {
 .color-dot.blue { background-color: #0000FF; }
 
 /* Leaflet Side-by-Side Split Slider Styling */
-.leaflet-sbs-range {
+.leaflet-sbs {
     position: absolute;
-    top: 50%;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    pointer-events: none;
     z-index: 999;
-    margin: 0;
-    height: 0;
 }
 
 .leaflet-sbs-divider {
@@ -463,7 +464,71 @@ select:disabled {
     position: absolute;
     top: 0;
     bottom: 0;
+    left: 50%;
+    margin-left: -2px;
     z-index: 999;
     pointer-events: none;
-    box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.9);
+}
+
+.leaflet-sbs-range {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    cursor: ew-resize;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.leaflet-sbs-range:focus {
+    outline: none;
+}
+
+.leaflet-sbs-range::-webkit-slider-runnable-track {
+    background: transparent;
+    height: 40px;
+}
+
+.leaflet-sbs-range::-moz-range-track {
+    background: transparent;
+    height: 40px;
+}
+
+.leaflet-sbs-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #10b981;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    cursor: ew-resize;
+    pointer-events: auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8.5 12l4.5-4.5v9L8.5 12zm7 0l-4.5 4.5v-9l4.5 4.5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+}
+
+.leaflet-sbs-range::-moz-range-thumb {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #10b981;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    cursor: ew-resize;
+    pointer-events: auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8.5 12l4.5-4.5v9L8.5 12zm7 0l-4.5 4.5v-9l4.5 4.5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
 }
