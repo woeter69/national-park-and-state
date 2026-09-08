@@ -1,11 +1,5 @@
 (function (L) {
-    if (typeof L === 'undefined') return;
-
-    function on(el, types, fn, ctx) {
-        types.split(' ').forEach(function (t) {
-            L.DomEvent.on(el, t, fn, ctx);
-        });
-    }
+    if (!L) return;
 
     L.Control.SideBySide = L.Control.extend({
         options: {
@@ -20,9 +14,8 @@
         },
 
         getPosition: function () {
-            var rangeValue = this._range.value;
-            var offset = (0.5 - rangeValue) * (2 * this.options.padding + this.options.thumbSize);
-            return this._map.getSize().x * rangeValue + offset;
+            var rangeValue = parseFloat(this._range.value);
+            return this._map.getSize().x * rangeValue;
         },
 
         setPosition: function (pos) {
@@ -33,13 +26,13 @@
         },
 
         setLeftLayers: function (leftLayers) {
-            this._leftLayers = Array.isArray(leftLayers) ? leftLayers : [leftLayers];
+            this._leftLayers = Array.isArray(leftLayers) ? leftLayers : (leftLayers ? [leftLayers] : []);
             this._updateLayers();
             return this;
         },
 
         setRightLayers: function (rightLayers) {
-            this._rightLayers = Array.isArray(rightLayers) ? rightLayers : [rightLayers];
+            this._rightLayers = Array.isArray(rightLayers) ? rightLayers : (rightLayers ? [rightLayers] : []);
             this._updateLayers();
             return this;
         },
@@ -52,40 +45,52 @@
             this._range.type = 'range';
             this._range.min = 0;
             this._range.max = 1;
-            this._range.step = 'any';
+            this._range.step = 0.001;
             this._range.value = 0.5;
-            this._range.style.paddingLeft = this._range.style.paddingRight = this.options.padding + 'px';
 
-            this._addEvents();
+            var self = this;
+            this._onUpdate = function () {
+                self._updateLayers();
+            };
+
+            map.on('move', this._onUpdate);
+            map.on('zoom', this._onUpdate);
+            map.on('layeradd', this._onUpdate);
+            map.on('layerremove', this._onUpdate);
+
+            L.DomEvent.on(this._range, 'input', this._onUpdate);
+            L.DomEvent.on(this._range, 'change', this._onUpdate);
+
+            L.DomEvent.on(this._range, 'mousedown', function () {
+                map.dragging.disable();
+            });
+            L.DomEvent.on(this._range, 'touchstart', function () {
+                map.dragging.disable();
+            });
+            L.DomEvent.on(document, 'mouseup', function () {
+                map.dragging.enable();
+            });
+            L.DomEvent.on(document, 'touchend', function () {
+                map.dragging.enable();
+            });
+
+            // Prevent map clicks when sliding
+            L.DomEvent.disableClickPropagation(this._range);
+
             this._updateLayers();
             return container;
         },
 
-        onRemove: function () {
-            this._removeEvents();
+        onRemove: function (map) {
+            if (this._onUpdate) {
+                map.off('move', this._onUpdate);
+                map.off('zoom', this._onUpdate);
+                map.off('layeradd', this._onUpdate);
+                map.off('layerremove', this._onUpdate);
+            }
             if (this._container && this._container.parentNode) {
                 this._container.parentNode.removeChild(this._container);
             }
-        },
-
-        _addEvents: function () {
-            var self = this;
-            this._map.on('move', this._updateLayers, this);
-            this._map.on('layeradd layerremove', this._updateLayers, this);
-
-            on(this._range, 'input change', this._updateLayers, this);
-
-            on(this._range, 'mousedown touchstart', function () {
-                self._map.dragging.disable();
-            });
-            on(this._range, 'mouseup touchend', function () {
-                self._map.dragging.enable();
-            });
-        },
-
-        _removeEvents: function () {
-            this._map.off('move', this._updateLayers, this);
-            this._map.off('layeradd layerremove', this._updateLayers, this);
         },
 
         _updateLayers: function () {
@@ -104,15 +109,15 @@
 
             this._leftLayers.forEach(function (layer) {
                 if (layer && layer.getContainer) {
-                    var container = layer.getContainer();
-                    if (container) container.style.clip = leftClip;
+                    var c = layer.getContainer();
+                    if (c) c.style.clip = leftClip;
                 }
             });
 
             this._rightLayers.forEach(function (layer) {
                 if (layer && layer.getContainer) {
-                    var container = layer.getContainer();
-                    if (container) container.style.clip = rightClip;
+                    var c = layer.getContainer();
+                    if (c) c.style.clip = rightClip;
                 }
             });
         }
