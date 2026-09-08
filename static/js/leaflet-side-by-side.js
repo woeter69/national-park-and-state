@@ -3,6 +3,7 @@
 
     L.Control.SideBySide = L.Control.extend({
         options: {
+            position: 'topright',
             thumbSize: 42,
             padding: 0
         },
@@ -14,12 +15,13 @@
         },
 
         getPosition: function () {
+            if (!this._range || !this._map) return 0;
             var rangeValue = parseFloat(this._range.value);
             return this._map.getSize().x * rangeValue;
         },
 
         setPosition: function (pos) {
-            if (!this._map) return this;
+            if (!this._map || !this._range) return this;
             this._range.value = pos;
             this._updateLayers();
             return this;
@@ -38,7 +40,8 @@
         },
 
         onAdd: function (map) {
-            var container = L.DomUtil.create('div', 'leaflet-sbs', map._container);
+            this._map = map;
+            var container = L.DomUtil.create('div', 'leaflet-sbs');
 
             this._divider = L.DomUtil.create('div', 'leaflet-sbs-divider', container);
             this._range = L.DomUtil.create('input', 'leaflet-sbs-range', container);
@@ -74,10 +77,13 @@
                 map.dragging.enable();
             });
 
-            // Prevent map clicks when sliding
+            L.DomEvent.disableClickPropagation(container);
             L.DomEvent.disableClickPropagation(this._range);
 
-            this._updateLayers();
+            setTimeout(function () {
+                self._updateLayers();
+            }, 50);
+
             return container;
         },
 
@@ -88,13 +94,24 @@
                 map.off('layeradd', this._onUpdate);
                 map.off('layerremove', this._onUpdate);
             }
-            if (this._container && this._container.parentNode) {
-                this._container.parentNode.removeChild(this._container);
+            if (this._leftLayers) {
+                this._leftLayers.forEach(function (l) {
+                    if (l && l.getContainer && l.getContainer()) {
+                        l.getContainer().style.clip = '';
+                    }
+                });
+            }
+            if (this._rightLayers) {
+                this._rightLayers.forEach(function (l) {
+                    if (l && l.getContainer && l.getContainer()) {
+                        l.getContainer().style.clip = '';
+                    }
+                });
             }
         },
 
         _updateLayers: function () {
-            if (!this._map) return;
+            if (!this._map || !this._range) return;
             var pos = this.getPosition();
             var size = this._map.getSize();
 

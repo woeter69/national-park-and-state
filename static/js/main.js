@@ -198,12 +198,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 eeTileLayerB = null;
             }
 
-            if (data.compare_mode && data.tile_url_b && L.control.sideBySide) {
-                // Dual layer split comparison
-                eeTileLayer = L.tileLayer(data.tile_url).addTo(map);
-                eeTileLayerB = L.tileLayer(data.tile_url_b).addTo(map);
-                sideBySideControl = L.control.sideBySide(eeTileLayer, eeTileLayerB).addTo(map);
-                compareLabels.classList.remove('hidden');
+            if (data.compare_mode && data.tile_url_b && typeof L.control.sideBySide === 'function') {
+                try {
+                    eeTileLayer = L.tileLayer(data.tile_url).addTo(map);
+                    eeTileLayerB = L.tileLayer(data.tile_url_b).addTo(map);
+                    sideBySideControl = L.control.sideBySide(eeTileLayer, eeTileLayerB).addTo(map);
+                    compareLabels.classList.remove('hidden');
+                } catch (ctrlErr) {
+                    console.error("SideBySide control initialization error:", ctrlErr);
+                    // Fallback to primary layer if split control fails
+                    if (!eeTileLayer) eeTileLayer = L.tileLayer(data.tile_url).addTo(map);
+                    compareLabels.classList.add('hidden');
+                }
             } else {
                 // Single period mode
                 eeTileLayer = L.tileLayer(data.tile_url).addTo(map);
