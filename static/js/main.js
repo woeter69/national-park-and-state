@@ -445,4 +445,148 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==========================================
+    // Species Distribution Modeling (SDM) Module
+    // ==========================================
+    const speciesSelect = document.getElementById('species-select');
+    const runSdmBtn = document.getElementById('run-sdm-btn');
+    const sdmResults = document.getElementById('sdm-results');
+    const sdmSuitabilityVal = document.getElementById('sdm-suitability-val');
+    const sdmIucnVal = document.getElementById('sdm-iucn-val');
+    const sdmLegend = document.getElementById('sdm-legend');
+    const sdmLegendTitle = document.getElementById('sdm-legend-title');
+
+    let sdmLayer = null;
+    let presenceMarkersLayer = null;
+
+    // Load available species catalog
+    fetch('/api/species')
+        .then(res => res.json())
+        .then(speciesList => {
+            speciesSelect.innerHTML = '<option value="" disabled selected>Choose a species...</option>';
+            speciesList.forEach(sp => {
+                const opt = document.createElement('option');
+                opt.value = sp.id;
+                opt.textContent = `${sp.name} (${sp.scientific_name})`;
+                opt.dataset.name = sp.name;
+                opt.dataset.iucn = sp.iucn;
+                speciesSelect.appendChild(opt);
+            });
+        })
+        .catch(err => console.error("Error loading species:", err));
+
+    // Enable SDM button when park and species are selected
+    function updateSdmBtnState() {
+        runSdmBtn.disabled = !(parkSelect.value && speciesSelect.value);
+    }
+
+    parkSelect.addEventListener('change', updateSdmBtnState);
+    speciesSelect.addEventListener('change', updateSdmBtnState);
+
+    runSdmBtn.addEventListener('click', () => {
+        const parkId = parkSelect.value;
+        const speciesId = speciesSelect.value;
+        const startDate = document.getElementById('start-date').value;
+        const endDate = document.getElementById('end-date').value;
+
+        if (!parkId || !speciesId) return;
+
+        const origText = runSdmBtn.querySelector('span').textContent;
+        runSdmBtn.disabled = true;
+        runSdmBtn.querySelector('span').textContent = 'Training GEE Random Forest...';
+
+        welcomeMessage.classList.add('hidden');
+        viewportImageContainer.classList.remove('hidden');
+
+        fetch('/api/sdm', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                park_id: parkId,
+                species_id: speciesId,
+                start_date: startDate,
+                end_date: endDate
+            })
+        })
+        .then(async res => {
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || 'SDM execution failed');
+            return data;
+        })
+        .then(data => {
+            if (!map) {
+                map = L.map('generated-map');
+                const darkBasemap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+                    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+                    maxZoom: 16
+                }).addTo(map);
+            }
+
+            // Remove previous SDM layers
+            if (sdmLayer) {
+                map.removeLayer(sdmLayer);
+                sdmLayer = null;
+            }
+            if (presenceMarkersLayer) {
+                map.removeLayer(presenceMarkersLayer);
+                presenceMarkersLayer = null;
+            }
+
+            // Remove existing split control or baseline EE layers to avoid visual clutter
+            if (sideBySideControl) {
+                map.removeControl(sideBySideControl);
+                sideBySideControl = null;
+            }
+            if (eeTileLayer) {
+                map.removeLayer(eeTileLayer);
+                eeTileLayer = null;
+            }
+            if (eeTileLayerB) {
+                map.removeLayer(eeTileLayerB);
+                eeTileLayerB = null;
+            }
+            compareLabels.classList.add('hidden');
+
+            // Add SDM Probability tile layer
+            sdmLayer = L.tileLayer(data.tile_url).addTo(map);
+
+            // Add sample presence markers
+            if (data.presence_points && data.presence_points.length > 0) {
+                presenceMarkersLayer = L.layerGroup();
+                data.presence_points.forEach(coord => {
+                    const marker = L.circleMarker([coord[1], coord[0]], {
+                        radius: 5,
+                        fillColor: '#ffffff',
+                        color: '#000000',
+                        weight: 1.5,
+                        opacity: 1,
+                        fillOpacity: 0.9
+                    }).bindPopup(`<strong>${data.species.name}</strong><br>Optimal Habitat Coordinate`);
+                    presenceMarkersLayer.addLayer(marker);
+                });
+                presenceMarkersLayer.addTo(map);
+            }
+
+            // Pan and zoom to centroid
+            map.setView([data.center[1], data.center[0]], 11);
+
+            // Display SDM metrics
+            sdmSuitabilityVal.textContent = `${data.mean_suitability}%`;
+            sdmIucnVal.textContent = data.species.iucn;
+            sdmResults.classList.remove('hidden');
+
+            // Show SDM legend
+            sdmLegendTitle.textContent = `${data.species.name} Habitat Suitability`;
+            sdmLegend.classList.remove('hidden');
+        })
+        .catch(err => {
+            console.error("SDM Error:", err);
+            alert("Habitat Modeling Failed: " + err.message);
+        })
+        .finally(() => {
+            runSdmBtn.disabled = false;
+            runSdmBtn.querySelector('span').textContent = origText;
+        });
+    });
 });

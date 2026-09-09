@@ -269,5 +269,199 @@ def get_timeseries():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+# Flagship species profiles for Species Distribution Modeling
+SPECIES_CATALOG = [
+    {
+        "id": "panthera_tigris",
+        "name": "Bengal Tiger",
+        "scientific_name": "Panthera tigris",
+        "iucn": "Endangered",
+        "preferences": {"min_ndvi": 0.45, "max_ndvi": 0.85, "max_slope": 25, "min_water_prob": 5}
+    },
+    {
+        "id": "rhinoceros_unicornis",
+        "name": "Indian Rhinoceros",
+        "scientific_name": "Rhinoceros unicornis",
+        "iucn": "Vulnerable",
+        "preferences": {"min_ndvi": 0.35, "max_ndvi": 0.75, "max_slope": 10, "min_water_prob": 20}
+    },
+    {
+        "id": "elephas_maximus",
+        "name": "Asian Elephant",
+        "scientific_name": "Elephas maximus",
+        "iucn": "Endangered",
+        "preferences": {"min_ndvi": 0.40, "max_ndvi": 0.80, "max_slope": 20, "min_water_prob": 10}
+    },
+    {
+        "id": "panthera_leo_persica",
+        "name": "Asiatic Lion",
+        "scientific_name": "Panthera leo persica",
+        "iucn": "Endangered",
+        "preferences": {"min_ndvi": 0.20, "max_ndvi": 0.55, "max_slope": 15, "min_water_prob": 0}
+    },
+    {
+        "id": "panthera_uncia",
+        "name": "Snow Leopard",
+        "scientific_name": "Panthera uncia",
+        "iucn": "Vulnerable",
+        "preferences": {"min_ndvi": 0.05, "max_ndvi": 0.35, "max_slope": 45, "min_water_prob": 0}
+    }
+]
+
+@app.route('/api/species', methods=['GET'])
+def get_species():
+    return jsonify(SPECIES_CATALOG)
+
+@app.route('/api/sdm', methods=['POST'])
+def run_sdm():
+    data = request.json or {}
+    park_id = data.get('park_id')
+    species_id = data.get('species_id')
+    start_date = data.get('start_date', '2025-10-01')
+    end_date = data.get('end_date', '2026-03-31')
+
+    if not park_id or not species_id:
+        return jsonify({"error": "Park ID and Species ID are required"}), 400
+
+    species = next((s for s in SPECIES_CATALOG if s['id'] == species_id), None)
+    if not species:
+        return jsonify({"error": f"Species {species_id} not found"}), 404
+
+    try:
+        park = ee.FeatureCollection("WCMC/WDPA/current/polygons") \
+            .filter(ee.Filter.eq('SITE_ID', int(park_id)))
+
+        if park.size().getInfo() == 0:
+            return jsonify({"error": "Selected park boundary not found"}), 404
+
+        geom = park.geometry()
+
+        # 1. Environmental Covariates Stack
+        # A. Vegetation Index (Sentinel-2)
+        s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
+            .filterBounds(geom) \
+            .filterDate(start_date, end_date) \
+            .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
+
+        if s2_collection.size().getInfo() == 0:
+            s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
+                .filterBounds(geom) \
+                .filterDate('2020-01-01', end_date) \
+                .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 30))
+
+        s2_median = s2_collection.median()
+        ndvi = s2_median.normalizedDifference(['B8', 'B4']).rename('ndvi')
+
+        # B. Topography (SRTM 30m Elevation & Slope)
+        elevation = ee.Image('USGS/SRTMGL1_003').rename('elevation')
+        slope = ee.Terrain.slope(elevation).rename('slope')
+
+        # C. Surface Water Proximity / Frequency
+        water = ee.Image('JRC/GSW1_4/GlobalSurfaceWater').select('occurrence').unmask(0).rename('water')
+
+        # Multi-band predictor stack clipped to park
+        predictors = ndvi.addBands(elevation).addBands(slope).addBands(water).clip(park)
+
+        # 2. Species-Specific Habitats: Presence vs Absence Sampling
+        prefs = species['preferences']
+        min_ndvi = prefs.get('min_ndvi', 0.3)
+        max_ndvi = prefs.get('max_ndvi', 0.8)
+        max_slope = prefs.get('max_slope', 30)
+        min_water = prefs.get('min_water_prob', 0)
+
+        # Build habitat affinity mask based on ecological preferences
+        favorable_zone = ndvi.gte(min_ndvi).And(ndvi.lte(max_ndvi)) \
+            .And(slope.lte(max_slope))
+
+        if min_water > 0:
+            favorable_zone = favorable_zone.Or(water.gte(min_water).And(slope.lte(max_slope)))
+
+        unfavorable_zone = favorable_zone.Not()
+
+        # Sample presence and pseudo-absence points across the ecological zones
+        presence_points = favorable_zone.selfMask().stratifiedSample(
+            numPoints=35,
+            region=geom,
+            scale=100,
+            seed=42,
+            geometries=True
+        ).map(lambda f: f.set('presence', 1))
+
+        absence_points = unfavorable_zone.selfMask().stratifiedSample(
+            numPoints=35,
+            region=geom,
+            scale=100,
+            seed=84,
+            geometries=True
+        ).map(lambda f: f.set('presence', 0))
+
+        training_fc = presence_points.merge(absence_points)
+
+        # 3. Train GEE Cloud Random Forest Model
+        training_data = predictors.sampleRegions(
+            collection=training_fc,
+            properties=['presence'],
+            scale=100,
+            geometries=False
+        )
+
+        classifier = ee.Classifier.smileRandomForest(numberOfTrees=35) \
+            .setOutputMode('PROBABILITY') \
+            .train(
+                features=training_data,
+                classProperty='presence',
+                inputProperties=['ndvi', 'elevation', 'slope', 'water']
+            )
+
+        # 4. Classify continuous suitability probability (0.0 to 1.0)
+        suitability = predictors.select(['ndvi', 'elevation', 'slope', 'water']).classify(classifier)
+
+        # Color palette: Navy Blue (0.0 Unsuitable) -> Cyan -> Yellow -> Deep Red (1.0 Prime Habitat)
+        sdm_palette = ['000080', '0000FF', '00FFFF', 'FFFF00', 'FF7F00', 'FF0000']
+        suitability_viz = suitability.visualize(min=0.0, max=1.0, palette=sdm_palette)
+
+        # Blend park outline on top
+        empty = ee.Image().byte()
+        park_outline = empty.paint(park, 1, 3).selfMask().visualize(palette=['FFFFFF'])
+        final_sdm_img = suitability_viz.blend(park_outline)
+
+        map_id = final_sdm_img.getMapId()
+        tile_url = map_id['tile_fetcher'].url_format
+
+        # 5. Calculate park habitat suitability metrics
+        stats = suitability.reduceRegion(
+            reducer=ee.Reducer.mean().combine(ee.Reducer.minMax(), sharedInputs=True),
+            geometry=geom,
+            scale=200,
+            maxPixels=1e9
+        ).getInfo()
+
+        mean_suitability = stats.get('classification_mean', 0.5)
+
+        # Get presence point coordinates for visualization
+        presence_coords = []
+        try:
+            feat_info = presence_points.limit(20).getInfo().get('features', [])
+            for ft in feat_info:
+                coords = ft.get('geometry', {}).get('coordinates', [])
+                if coords:
+                    presence_coords.append(coords)
+        except Exception:
+            presence_coords = []
+
+        center = geom.centroid().coordinates().getInfo()
+
+        return jsonify({
+            "tile_url": tile_url,
+            "center": center,
+            "species": species,
+            "mean_suitability": round(mean_suitability * 100, 1),
+            "presence_points": presence_coords,
+            "predictors": ["Sentinel-2 NDVI", "SRTM Elevation", "Terrain Slope", "JRC Surface Water"]
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
