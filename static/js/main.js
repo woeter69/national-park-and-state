@@ -462,24 +462,64 @@ document.addEventListener('DOMContentLoaded', () => {
     let sdmLayer = null;
     let presenceMarkersLayer = null;
 
-    // Load species catalog filtered by state with flagship flag
+    // Load species catalog filtered by state with visual highlighting
     function loadSpeciesForState(stateName) {
         const url = stateName ? `/api/species?state=${encodeURIComponent(stateName)}` : '/api/species';
         fetch(url)
             .then(res => res.json())
             .then(speciesList => {
                 speciesSelect.innerHTML = '<option value="" disabled selected>Choose a species...</option>';
-                speciesList.forEach(sp => {
-                    const opt = document.createElement('option');
-                    opt.value = sp.id;
-                    const badgeText = sp.is_flagship ? ' [Flagship]' : '';
-                    opt.textContent = `${sp.name} (${sp.scientific_name})${badgeText}`;
-                    opt.dataset.name = sp.name;
-                    opt.dataset.iucn = sp.iucn;
-                    opt.dataset.flagship = sp.is_flagship ? 'true' : 'false';
-                    speciesSelect.appendChild(opt);
-                });
+
+                const flagships = speciesList.filter(s => s.is_flagship);
+                const others = speciesList.filter(s => !s.is_flagship);
+
+                if (flagships.length > 0 && stateName) {
+                    const groupFlagship = document.createElement('optgroup');
+                    groupFlagship.label = 'Native Flagship Species';
+                    flagships.forEach(sp => {
+                        const opt = document.createElement('option');
+                        opt.value = sp.id;
+                        opt.textContent = `${sp.name} (${sp.scientific_name})`;
+                        opt.dataset.name = sp.name;
+                        opt.dataset.iucn = sp.iucn;
+                        opt.dataset.flagship = 'true';
+                        opt.style.color = '#34d399';
+                        opt.style.fontWeight = '600';
+                        opt.style.backgroundColor = '#13241c';
+                        groupFlagship.appendChild(opt);
+                    });
+                    speciesSelect.appendChild(groupFlagship);
+
+                    if (others.length > 0) {
+                        const groupOthers = document.createElement('optgroup');
+                        groupOthers.label = 'Other Regional Species';
+                        others.forEach(sp => {
+                            const opt = document.createElement('option');
+                            opt.value = sp.id;
+                            opt.textContent = `${sp.name} (${sp.scientific_name})`;
+                            opt.dataset.name = sp.name;
+                            opt.dataset.iucn = sp.iucn;
+                            opt.dataset.flagship = 'false';
+                            opt.style.color = '#9ca3af';
+                            groupOthers.appendChild(opt);
+                        });
+                        speciesSelect.appendChild(groupOthers);
+                    }
+                } else {
+                    speciesList.forEach(sp => {
+                        const opt = document.createElement('option');
+                        opt.value = sp.id;
+                        opt.textContent = `${sp.name} (${sp.scientific_name})`;
+                        opt.dataset.name = sp.name;
+                        opt.dataset.iucn = sp.iucn;
+                        opt.dataset.flagship = 'false';
+                        speciesSelect.appendChild(opt);
+                    });
+                }
+
                 flagshipBadge.classList.add('hidden');
+                speciesSelect.style.borderColor = 'var(--border-color)';
+                speciesSelect.style.boxShadow = 'none';
                 updateSdmBtnState();
             })
             .catch(err => console.error("Error loading species:", err));
@@ -498,8 +538,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedOpt = speciesSelect.options[speciesSelect.selectedIndex];
         if (selectedOpt && selectedOpt.dataset.flagship === 'true') {
             flagshipBadge.classList.remove('hidden');
+            speciesSelect.style.borderColor = '#10b981';
+            speciesSelect.style.boxShadow = '0 0 0 1px rgba(16, 185, 129, 0.4)';
         } else {
             flagshipBadge.classList.add('hidden');
+            speciesSelect.style.borderColor = 'var(--border-color)';
+            speciesSelect.style.boxShadow = 'none';
         }
         updateSdmBtnState();
     });
