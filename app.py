@@ -1,4 +1,5 @@
 import os
+from concurrent.futures import ThreadPoolExecutor
 import ee
 from flask import Flask, jsonify, render_template, request
 
@@ -112,55 +113,55 @@ def generate_map():
             '012E01', '011D01', '011301'
         ]
 
-        def build_rendered_image(s_date, e_date):
+        def build_layers(s_date, e_date):
             s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
-                .filterBounds(bounds) \
+                .filterBounds(state.geometry()) \
                 .filterDate(s_date, e_date) \
                 .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
 
             if s2_collection.size().getInfo() == 0:
                 s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
-                    .filterBounds(bounds) \
+                    .filterBounds(state.geometry()) \
                     .filterDate('2017-01-01', e_date) \
                     .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 30))
 
             s2_median = s2_collection.median()
             ndvi = s2_median.normalizedDifference(['B8', 'B4']).rename('NDVI')
 
-            img = ee.Image().byte().selfMask()
-
-            if basemap_state:
-                s2_basemap_state = s2_median.clip(state).visualize(bands=['B4', 'B3', 'B2'], min=0, max=3000)
-                img = img.blend(s2_basemap_state)
-
-            if basemap_park:
-                s2_basemap_park = s2_median.clip(park).visualize(bands=['B4', 'B3', 'B2'], min=0, max=3000)
-                img = img.blend(s2_basemap_park)
-
-            if ndvi_state:
-                ndvi_viz_state = ndvi.clip(state).visualize(min=0.0, max=0.8, palette=ndvi_palette)
-                img = img.blend(ndvi_viz_state)
-
-            if ndvi_park:
-                ndvi_viz_park = ndvi.clip(park).visualize(min=0.0, max=0.8, palette=ndvi_palette)
-                img = img.blend(ndvi_viz_park)
-
-            # Outlines
             empty = ee.Image().byte()
             state_outline = empty.paint(state, 1, 2).selfMask().visualize(palette=['0000FF'])
             park_outline = empty.paint(park, 1, 3).selfMask().visualize(palette=['FF0000'])
-            return img.blend(park_outline).blend(state_outline)
+            outlines = park_outline.blend(state_outline)
 
-        final_img = build_rendered_image(start_date, end_date)
-        tile_url = final_img.getMapId()['tile_fetcher'].url_format
+            images = {
+                'ndvi_park': ndvi.clip(park).visualize(min=0.0, max=0.8, palette=ndvi_palette),
+                'ndvi_state': ndvi.clip(state).visualize(min=0.0, max=0.8, palette=ndvi_palette),
+                'basemap_park': s2_median.clip(park).visualize(bands=['B4', 'B3', 'B2'], min=0, max=3000),
+                'basemap_state': s2_median.clip(state).visualize(bands=['B4', 'B3', 'B2'], min=0, max=3000),
+                'boundaries': outlines
+            }
 
+            def _fetch_map(item):
+                k, img = item
+                return k, img.getMapId()['tile_fetcher'].url_format
+
+            with ThreadPoolExecutor(max_workers=5) as executor:
+                url_dict = dict(executor.map(_fetch_map, images.items()))
+
+            composite_img = images['ndvi_park'].blend(outlines)
+            return url_dict, composite_img
+
+        layers_a, composite_img_a = build_layers(start_date, end_date)
+        tile_url = layers_a['ndvi_park']
+
+        layers_b = None
         tile_url_b = None
         if compare_mode:
-            final_img_b = build_rendered_image(start_date_b, end_date_b)
-            tile_url_b = final_img_b.getMapId()['tile_fetcher'].url_format
+            layers_b, composite_img_b = build_layers(start_date_b, end_date_b)
+            tile_url_b = layers_b['ndvi_park']
 
-        snapshot_region = state.geometry().bounds() if (basemap_state or ndvi_state) else park.geometry().bounds()
-        high_res_url = final_img.getThumbURL({
+        snapshot_region = park.geometry().bounds()
+        high_res_url = composite_img_a.getThumbURL({
             'dimensions': 2048,
             'region': snapshot_region,
             'format': 'png'
@@ -170,7 +171,9 @@ def generate_map():
 
         return jsonify({
             "tile_url": tile_url,
+            "layers": layers_a,
             "tile_url_b": tile_url_b,
+            "layers_b": layers_b,
             "compare_mode": compare_mode,
             "high_res_url": high_res_url,
             "center": center,

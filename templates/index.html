@@ -100,6 +100,9 @@
                     <div class="checkbox-wrapper">
                         <label><input type="checkbox" id="ndvi-park" checked> Park NDVI</label>
                     </div>
+                    <div class="checkbox-wrapper">
+                        <label><input type="checkbox" id="boundary-outlines" checked> Boundary Outlines</label>
+                    </div>
                 </div>
 
                 <button id="generate-btn" class="btn primary-btn" disabled>
@@ -207,7 +210,12 @@
                 <!-- Image Display -->
                 <div class="viewport-image-container hidden" id="viewport-image-container">
                     <div id="generated-map" style="width: 100%; height: 100%; z-index: 1;"></div>
-                    <div class="map-legend" style="z-index: 1000;">
+                    <!-- Mode Switcher: NDVI vs SDM -->
+                    <div id="map-mode-switcher" class="hidden" style="position: absolute; top: 1rem; right: 1rem; z-index: 1000; display: flex; background: rgba(17, 24, 39, 0.9); backdrop-filter: blur(8px); border: 1px solid var(--border-color); border-radius: 9999px; padding: 3px; gap: 4px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);">
+                        <button id="mode-ndvi-btn" class="mode-tab-btn active-ndvi" type="button" style="padding: 0.4rem 0.9rem; font-size: 0.75rem; font-weight: 600; border-radius: 9999px; border: none; cursor: pointer; transition: all 0.2s ease; background: #10b981; color: white;">NDVI Vegetation</button>
+                        <button id="mode-sdm-btn" class="mode-tab-btn" type="button" disabled title="Generate Habitat Model in sidebar first" style="padding: 0.4rem 0.9rem; font-size: 0.75rem; font-weight: 600; border-radius: 9999px; border: none; cursor: not-allowed; transition: all 0.2s ease; background: transparent; color: var(--text-secondary); opacity: 0.5;">Species Habitat (SDM)</button>
+                    </div>
+                    <div class="map-legend" id="ndvi-legend" style="z-index: 1000;">
                         <div class="legend-title">NDVI Color Index</div>
                         <div class="legend-scale">
                             <span style="background-color:#FFFFFF"></span>

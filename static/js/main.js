@@ -91,6 +91,155 @@ document.addEventListener('DOMContentLoaded', () => {
     let eeTileLayer = null;
     let eeTileLayerB = null;
     let sideBySideControl = null;
+    let sdmLayer = null;
+    let presenceMarkersLayer = null;
+
+    let currentMode = 'ndvi'; // 'ndvi' | 'sdm'
+    let currentLayersData = null;
+    let currentLayersDataB = null;
+    let isCompareActive = false;
+
+    const activeLayers = {
+        basemap_state: null,
+        basemap_park: null,
+        ndvi_state: null,
+        ndvi_park: null,
+        boundaries: null
+    };
+
+    const mapModeSwitcher = document.getElementById('map-mode-switcher');
+    const modeNdviBtn = document.getElementById('mode-ndvi-btn');
+    const modeSdmBtn = document.getElementById('mode-sdm-btn');
+    const ndviLegend = document.getElementById('ndvi-legend');
+
+    function syncNdviLayersVisibility() {
+        if (!map || !currentLayersData || currentMode !== 'ndvi') return;
+
+        if (isCompareActive) {
+            if (eeTileLayer && !map.hasLayer(eeTileLayer)) eeTileLayer.addTo(map);
+            if (eeTileLayerB && !map.hasLayer(eeTileLayerB)) eeTileLayerB.addTo(map);
+            if (sideBySideControl) sideBySideControl.addTo(map);
+            compareLabels.classList.remove('hidden');
+            return;
+        }
+
+        const layerMapping = [
+            { id: 'basemap-state', key: 'basemap_state', zIndex: 10 },
+            { id: 'basemap-park', key: 'basemap_park', zIndex: 20 },
+            { id: 'ndvi-state', key: 'ndvi_state', zIndex: 30 },
+            { id: 'ndvi-park', key: 'ndvi_park', zIndex: 40 },
+            { id: 'boundary-outlines', key: 'boundaries', zIndex: 50 }
+        ];
+
+        layerMapping.forEach(item => {
+            const cb = document.getElementById(item.id);
+            const shouldShow = cb ? cb.checked : false;
+            const url = currentLayersData[item.key];
+
+            if (shouldShow && url) {
+                if (!activeLayers[item.key]) {
+                    activeLayers[item.key] = L.tileLayer(url, { zIndex: item.zIndex });
+                }
+                if (!map.hasLayer(activeLayers[item.key])) {
+                    activeLayers[item.key].addTo(map);
+                }
+            } else {
+                if (activeLayers[item.key] && map.hasLayer(activeLayers[item.key])) {
+                    map.removeLayer(activeLayers[item.key]);
+                }
+            }
+        });
+    }
+
+    function setMapMode(mode) {
+        currentMode = mode;
+
+        if (mode === 'ndvi') {
+            if (modeNdviBtn) {
+                modeNdviBtn.style.background = '#10b981';
+                modeNdviBtn.style.color = '#ffffff';
+            }
+            if (modeSdmBtn && !modeSdmBtn.disabled) {
+                modeSdmBtn.style.background = 'transparent';
+                modeSdmBtn.style.color = 'var(--text-secondary)';
+            }
+
+            // Hide SDM layers and legend
+            if (sdmLayer && map && map.hasLayer(sdmLayer)) {
+                map.removeLayer(sdmLayer);
+            }
+            if (presenceMarkersLayer && map && map.hasLayer(presenceMarkersLayer)) {
+                map.removeLayer(presenceMarkersLayer);
+            }
+            const sdmLegendEl = document.getElementById('sdm-legend');
+            if (sdmLegendEl) sdmLegendEl.classList.add('hidden');
+
+            // Show NDVI legend
+            if (ndviLegend) ndviLegend.classList.remove('hidden');
+
+            // Restore NDVI layers
+            syncNdviLayersVisibility();
+        } else if (mode === 'sdm') {
+            if (modeSdmBtn) {
+                modeSdmBtn.style.background = '#ef4444';
+                modeSdmBtn.style.color = '#ffffff';
+            }
+            if (modeNdviBtn) {
+                modeNdviBtn.style.background = 'transparent';
+                modeNdviBtn.style.color = 'var(--text-secondary)';
+            }
+
+            // Hide NDVI layers and compare controls
+            Object.keys(activeLayers).forEach(k => {
+                if (activeLayers[k] && map && map.hasLayer(activeLayers[k])) {
+                    map.removeLayer(activeLayers[k]);
+                }
+            });
+            if (eeTileLayer && map && map.hasLayer(eeTileLayer)) {
+                map.removeLayer(eeTileLayer);
+            }
+            if (eeTileLayerB && map && map.hasLayer(eeTileLayerB)) {
+                map.removeLayer(eeTileLayerB);
+            }
+            if (sideBySideControl) {
+                map.removeControl(sideBySideControl);
+            }
+            if (compareLabels) compareLabels.classList.add('hidden');
+
+            // Hide NDVI legend
+            if (ndviLegend) ndviLegend.classList.add('hidden');
+
+            // Show SDM layers and legend
+            if (sdmLayer && map && !map.hasLayer(sdmLayer)) {
+                sdmLayer.addTo(map);
+            }
+            if (presenceMarkersLayer && map && !map.hasLayer(presenceMarkersLayer)) {
+                presenceMarkersLayer.addTo(map);
+            }
+            const sdmLegendEl = document.getElementById('sdm-legend');
+            if (sdmLegendEl) sdmLegendEl.classList.remove('hidden');
+        }
+    }
+
+    if (modeNdviBtn) {
+        modeNdviBtn.addEventListener('click', () => setMapMode('ndvi'));
+    }
+    if (modeSdmBtn) {
+        modeSdmBtn.addEventListener('click', () => {
+            if (!modeSdmBtn.disabled) setMapMode('sdm');
+        });
+    }
+
+    ['basemap-state', 'basemap-park', 'ndvi-state', 'ndvi-park', 'boundary-outlines'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('change', () => {
+                if (currentLayersData && currentMode === 'ndvi') {
+                    syncNdviLayersVisibility();
+                }
+            });
+        }
+    });
 
     // Toggle Period B visibility
     const compareModeToggle = document.getElementById('compare-mode-toggle');
@@ -109,11 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
     generateBtn.addEventListener('click', () => {
         const state = stateSelect.value;
         const parkId = parkSelect.value;
-
-        const basemapState = document.getElementById('basemap-state').checked;
-        const basemapPark = document.getElementById('basemap-park').checked;
-        const ndviState = document.getElementById('ndvi-state').checked;
-        const ndviPark = document.getElementById('ndvi-park').checked;
 
         const startDate = document.getElementById('start-date').value;
         const endDate = document.getElementById('end-date').value;
@@ -143,11 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 end_date: endDate,
                 compare_mode: isCompare,
                 start_date_b: startDateB,
-                end_date_b: endDateB,
-                basemap_state: basemapState,
-                basemap_park: basemapPark,
-                ndvi_state: ndviState,
-                ndvi_park: ndviPark
+                end_date_b: endDateB
             })
         })
         .then(async res => {
@@ -182,13 +322,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 L.control.layers(baseLayers, null, { position: 'bottomright' }).addTo(map);
             }
 
-            // Remove existing split control
+            // Show map mode switcher
+            if (mapModeSwitcher) mapModeSwitcher.classList.remove('hidden');
+
+            // Remove existing split control and previous layers
             if (sideBySideControl) {
                 map.removeControl(sideBySideControl);
                 sideBySideControl = null;
             }
-
-            // Remove previous EE layers
             if (eeTileLayer) {
                 map.removeLayer(eeTileLayer);
                 eeTileLayer = null;
@@ -197,24 +338,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 map.removeLayer(eeTileLayerB);
                 eeTileLayerB = null;
             }
+            Object.keys(activeLayers).forEach(k => {
+                if (activeLayers[k] && map.hasLayer(activeLayers[k])) {
+                    map.removeLayer(activeLayers[k]);
+                }
+                activeLayers[k] = null;
+            });
 
-            if (data.compare_mode && data.tile_url_b && typeof L.control.sideBySide === 'function') {
+            currentLayersData = data.layers || {
+                ndvi_park: data.tile_url,
+                boundaries: null
+            };
+            currentLayersDataB = data.layers_b || null;
+            isCompareActive = Boolean(data.compare_mode && data.tile_url_b && typeof L.control.sideBySide === 'function');
+
+            if (isCompareActive) {
                 try {
-                    eeTileLayer = L.tileLayer(data.tile_url).addTo(map);
-                    eeTileLayerB = L.tileLayer(data.tile_url_b).addTo(map);
+                    eeTileLayer = L.tileLayer(data.tile_url);
+                    eeTileLayerB = L.tileLayer(data.tile_url_b);
                     sideBySideControl = L.control.sideBySide(eeTileLayer, eeTileLayerB).addTo(map);
                     compareLabels.classList.remove('hidden');
                 } catch (ctrlErr) {
                     console.error("SideBySide control initialization error:", ctrlErr);
-                    // Fallback to primary layer if split control fails
-                    if (!eeTileLayer) eeTileLayer = L.tileLayer(data.tile_url).addTo(map);
+                    isCompareActive = false;
                     compareLabels.classList.add('hidden');
                 }
             } else {
-                // Single period mode
-                eeTileLayer = L.tileLayer(data.tile_url).addTo(map);
                 compareLabels.classList.add('hidden');
             }
+
+            // Set mode to NDVI and display layers
+            setMapMode('ndvi');
 
             // Center map
             map.setView([data.center[1], data.center[0]], 10);
@@ -459,9 +613,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const flagshipBadge = document.getElementById('flagship-badge');
 
-    let sdmLayer = null;
-    let presenceMarkersLayer = null;
-
     // Load species catalog filtered by state with visual highlighting
     function loadSpeciesForState(stateName) {
         const url = stateName ? `/api/species?state=${encodeURIComponent(stateName)}` : '/api/species';
@@ -594,35 +745,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 }).addTo(map);
             }
 
-            // Remove previous SDM layers
-            if (sdmLayer) {
+            // Enable modeSdmBtn on map
+            if (modeSdmBtn) {
+                modeSdmBtn.disabled = false;
+                modeSdmBtn.title = "Switch to Species Habitat Model";
+                modeSdmBtn.style.cursor = "pointer";
+                modeSdmBtn.style.opacity = "1";
+            }
+            if (mapModeSwitcher) mapModeSwitcher.classList.remove('hidden');
+
+            // Remove previous SDM layers if any
+            if (sdmLayer && map.hasLayer(sdmLayer)) {
                 map.removeLayer(sdmLayer);
                 sdmLayer = null;
             }
-            if (presenceMarkersLayer) {
+            if (presenceMarkersLayer && map.hasLayer(presenceMarkersLayer)) {
                 map.removeLayer(presenceMarkersLayer);
                 presenceMarkersLayer = null;
             }
 
-            // Remove existing split control or baseline EE layers to avoid visual clutter
-            if (sideBySideControl) {
-                map.removeControl(sideBySideControl);
-                sideBySideControl = null;
-            }
-            if (eeTileLayer) {
-                map.removeLayer(eeTileLayer);
-                eeTileLayer = null;
-            }
-            if (eeTileLayerB) {
-                map.removeLayer(eeTileLayerB);
-                eeTileLayerB = null;
-            }
-            compareLabels.classList.add('hidden');
+            // Create new SDM Probability tile layer
+            sdmLayer = L.tileLayer(data.tile_url, { zIndex: 100 });
 
-            // Add SDM Probability tile layer
-            sdmLayer = L.tileLayer(data.tile_url).addTo(map);
-
-            // Add sample presence markers
+            // Create sample presence markers
             if (data.presence_points && data.presence_points.length > 0) {
                 presenceMarkersLayer = L.layerGroup();
                 data.presence_points.forEach(coord => {
@@ -636,7 +781,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }).bindPopup(`<strong>${data.species.name}</strong><br>Optimal Habitat Coordinate`);
                     presenceMarkersLayer.addLayer(marker);
                 });
-                presenceMarkersLayer.addTo(map);
             }
 
             // Pan and zoom to centroid
@@ -649,7 +793,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Show SDM legend
             sdmLegendTitle.textContent = `${data.species.name} Habitat Suitability`;
-            sdmLegend.classList.remove('hidden');
+
+            // Switch map view to SDM mode (NDVI layers stay preserved in memory)
+            setMapMode('sdm');
         })
         .catch(err => {
             console.error("SDM Error:", err);
