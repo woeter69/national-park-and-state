@@ -457,24 +457,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const sdmLegend = document.getElementById('sdm-legend');
     const sdmLegendTitle = document.getElementById('sdm-legend-title');
 
+    const flagshipBadge = document.getElementById('flagship-badge');
+
     let sdmLayer = null;
     let presenceMarkersLayer = null;
 
-    // Load available species catalog
-    fetch('/api/species')
-        .then(res => res.json())
-        .then(speciesList => {
-            speciesSelect.innerHTML = '<option value="" disabled selected>Choose a species...</option>';
-            speciesList.forEach(sp => {
-                const opt = document.createElement('option');
-                opt.value = sp.id;
-                opt.textContent = `${sp.name} (${sp.scientific_name})`;
-                opt.dataset.name = sp.name;
-                opt.dataset.iucn = sp.iucn;
-                speciesSelect.appendChild(opt);
-            });
-        })
-        .catch(err => console.error("Error loading species:", err));
+    // Load species catalog filtered by state with flagship flag
+    function loadSpeciesForState(stateName) {
+        const url = stateName ? `/api/species?state=${encodeURIComponent(stateName)}` : '/api/species';
+        fetch(url)
+            .then(res => res.json())
+            .then(speciesList => {
+                speciesSelect.innerHTML = '<option value="" disabled selected>Choose a species...</option>';
+                speciesList.forEach(sp => {
+                    const opt = document.createElement('option');
+                    opt.value = sp.id;
+                    const badgeText = sp.is_flagship ? ' [Flagship]' : '';
+                    opt.textContent = `${sp.name} (${sp.scientific_name})${badgeText}`;
+                    opt.dataset.name = sp.name;
+                    opt.dataset.iucn = sp.iucn;
+                    opt.dataset.flagship = sp.is_flagship ? 'true' : 'false';
+                    speciesSelect.appendChild(opt);
+                });
+                flagshipBadge.classList.add('hidden');
+                updateSdmBtnState();
+            })
+            .catch(err => console.error("Error loading species:", err));
+    }
+
+    // Initial load
+    loadSpeciesForState('');
+
+    // Reload species when state changes
+    stateSelect.addEventListener('change', () => {
+        loadSpeciesForState(stateSelect.value);
+    });
+
+    // Toggle Flagship badge on species selection
+    speciesSelect.addEventListener('change', () => {
+        const selectedOpt = speciesSelect.options[speciesSelect.selectedIndex];
+        if (selectedOpt && selectedOpt.dataset.flagship === 'true') {
+            flagshipBadge.classList.remove('hidden');
+        } else {
+            flagshipBadge.classList.add('hidden');
+        }
+        updateSdmBtnState();
+    });
 
     // Enable SDM button when park and species are selected
     function updateSdmBtnState() {
@@ -482,7 +510,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     parkSelect.addEventListener('change', updateSdmBtnState);
-    speciesSelect.addEventListener('change', updateSdmBtnState);
 
     runSdmBtn.addEventListener('click', () => {
         const parkId = parkSelect.value;

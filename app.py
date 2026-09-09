@@ -276,6 +276,7 @@ SPECIES_CATALOG = [
         "name": "Bengal Tiger",
         "scientific_name": "Panthera tigris",
         "iucn": "Endangered",
+        "native_states": ["Assam", "Uttarakhand", "Madhya Pradesh", "Rajasthan", "West Bengal", "Karnataka", "Maharashtra", "Odisha", "Kerala", "Tamil Nadu"],
         "preferences": {"min_ndvi": 0.45, "max_ndvi": 0.85, "max_slope": 25, "min_water_prob": 5}
     },
     {
@@ -283,6 +284,7 @@ SPECIES_CATALOG = [
         "name": "Indian Rhinoceros",
         "scientific_name": "Rhinoceros unicornis",
         "iucn": "Vulnerable",
+        "native_states": ["Assam", "West Bengal", "Uttar Pradesh", "Bihar"],
         "preferences": {"min_ndvi": 0.35, "max_ndvi": 0.75, "max_slope": 10, "min_water_prob": 20}
     },
     {
@@ -290,6 +292,7 @@ SPECIES_CATALOG = [
         "name": "Asian Elephant",
         "scientific_name": "Elephas maximus",
         "iucn": "Endangered",
+        "native_states": ["Assam", "Karnataka", "Kerala", "Tamil Nadu", "Uttarakhand", "Odisha", "West Bengal"],
         "preferences": {"min_ndvi": 0.40, "max_ndvi": 0.80, "max_slope": 20, "min_water_prob": 10}
     },
     {
@@ -297,6 +300,7 @@ SPECIES_CATALOG = [
         "name": "Asiatic Lion",
         "scientific_name": "Panthera leo persica",
         "iucn": "Endangered",
+        "native_states": ["Gujarat"],
         "preferences": {"min_ndvi": 0.20, "max_ndvi": 0.55, "max_slope": 15, "min_water_prob": 0}
     },
     {
@@ -304,12 +308,24 @@ SPECIES_CATALOG = [
         "name": "Snow Leopard",
         "scientific_name": "Panthera uncia",
         "iucn": "Vulnerable",
+        "native_states": ["Jammu and Kashmir", "Himachal Pradesh", "Uttarakhand", "Sikkim", "Arunachal Pradesh"],
         "preferences": {"min_ndvi": 0.05, "max_ndvi": 0.35, "max_slope": 45, "min_water_prob": 0}
     }
 ]
 
 @app.route('/api/species', methods=['GET'])
 def get_species():
+    state_name = request.args.get('state')
+    if state_name:
+        # Return species with native flag for the selected state
+        results = []
+        for s in SPECIES_CATALOG:
+            item = dict(s)
+            item['is_flagship'] = state_name in s.get('native_states', [])
+            results.append(item)
+        # Sort so native flagship species appear first
+        results = sorted(results, key=lambda x: (not x['is_flagship'], x['name']))
+        return jsonify(results)
     return jsonify(SPECIES_CATALOG)
 
 @app.route('/api/sdm', methods=['POST'])
