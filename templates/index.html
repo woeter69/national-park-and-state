@@ -210,10 +210,18 @@
                 <!-- Image Display -->
                 <div class="viewport-image-container hidden" id="viewport-image-container">
                     <div id="generated-map" style="width: 100%; height: 100%; z-index: 1;"></div>
-                    <!-- Mode Switcher: NDVI vs SDM -->
-                    <div id="map-mode-switcher" class="hidden" style="position: absolute; top: 1rem; right: 1rem; z-index: 1000; display: flex; background: rgba(17, 24, 39, 0.9); backdrop-filter: blur(8px); border: 1px solid var(--border-color); border-radius: 9999px; padding: 3px; gap: 4px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);">
-                        <button id="mode-ndvi-btn" class="mode-tab-btn active-ndvi" type="button" style="padding: 0.4rem 0.9rem; font-size: 0.75rem; font-weight: 600; border-radius: 9999px; border: none; cursor: pointer; transition: all 0.2s ease; background: #10b981; color: white;">NDVI Vegetation</button>
-                        <button id="mode-sdm-btn" class="mode-tab-btn" type="button" disabled title="Generate Habitat Model in sidebar first" style="padding: 0.4rem 0.9rem; font-size: 0.75rem; font-weight: 600; border-radius: 9999px; border: none; cursor: not-allowed; transition: all 0.2s ease; background: transparent; color: var(--text-secondary); opacity: 0.5;">Species Habitat (SDM)</button>
+                    <!-- Top-Right Controls Container (Mode Switcher + Outline Legend) -->
+                    <div class="map-top-right-controls">
+                        <!-- Mode Switcher: NDVI vs SDM -->
+                        <div id="map-mode-switcher" class="hidden" style="display: flex; background: rgba(17, 24, 39, 0.9); backdrop-filter: blur(8px); border: 1px solid var(--border-color); border-radius: 9999px; padding: 3px; gap: 4px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);">
+                            <button id="mode-ndvi-btn" class="mode-tab-btn active-ndvi" type="button" style="padding: 0.4rem 0.9rem; font-size: 0.75rem; font-weight: 600; border-radius: 9999px; border: none; cursor: pointer; transition: all 0.2s ease; background: #10b981; color: white;">NDVI Vegetation</button>
+                            <button id="mode-sdm-btn" class="mode-tab-btn" type="button" disabled title="Generate Habitat Model in sidebar first" style="padding: 0.4rem 0.9rem; font-size: 0.75rem; font-weight: 600; border-radius: 9999px; border: none; cursor: not-allowed; transition: all 0.2s ease; background: transparent; color: var(--text-secondary); opacity: 0.5;">Species Habitat (SDM)</button>
+                        </div>
+                        <!-- Boundary Outline Legend -->
+                        <div class="outline-legend">
+                            <span class="legend-item"><span class="color-dot red"></span> Park Outline</span>
+                            <span class="legend-item"><span class="color-dot blue"></span> State Outline</span>
+                        </div>
                     </div>
                     <div class="map-legend" id="ndvi-legend" style="z-index: 1000;">
                         <div class="legend-title">NDVI Color Index</div>
@@ -231,10 +239,6 @@
                             <span>0.4</span>
                             <span>0.8</span>
                         </div>
-                    </div>
-                    <div class="outline-legend" style="z-index: 1000;">
-                        <span class="legend-item"><span class="color-dot red"></span> Park Outline</span>
-                        <span class="legend-item"><span class="color-dot blue"></span> State Outline</span>
                     </div>
                     <!-- SDM Suitability Legend -->
                     <div id="sdm-legend" class="map-legend hidden" style="z-index: 1000; bottom: 5rem;">
