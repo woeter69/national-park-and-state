@@ -4,6 +4,16 @@ All notable changes to the Protected Area & Species Distribution Modeling projec
 
 ## [Unreleased] - 2026-10-28
 
+### Added
+- **All-India Indian Elephant Habitat SDM** (replaces park-scoped model):
+  - `app.py` `/api/sdm`: No longer requires `park_id`. Uses `FAO/GAUL/2015/level0` India boundary from GEE.
+  - Environmental stack switched to **MODIS MOD13A1 NDVI** (500m) — Sentinel-2 has too many granules for continental India. Combined with SRTM Elevation + Slope, JRC Surface Water, WorldClim BIO1 & BIO12.
+  - Stratified sampling at **5km scale** (100 presence + 100 absence points) — fast and stable at India extent.
+  - Random Forest with 50 trees. Stats reduced at 10km with `bestEffort=True`.
+  - Returns `scope: 'india'`, `zoom: 5`, `center: [78.96, 20.59]`, and all **200 GBIF occurrence markers** (up from 45).
+  - `templates/index.html`: SDM button now always enabled (no park selection required). Added "All of India" scope badge. Button label updated to "Predict Elephant Habitat — All India".
+  - `static/js/main.js`: Removed `parkSelect` guard from SDM button. Map auto-zooms to India at zoom level 5.
+
 ### Fixed
 - **Indian Elephant SDM — Live GEE Tile Layer (Final Integration)**:
   - `app.py`: Removed Bengal Tiger, Indian Rhinoceros, Asiatic Lion, and Snow Leopard from `SPECIES_CATALOG`. Only *Elephas maximus indicus* remains. Added `is_flagship: True` flag directly on the elephant entry.
