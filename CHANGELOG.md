@@ -4,6 +4,17 @@ All notable changes to the Protected Area & Species Distribution Modeling projec
 
 ## [Unreleased] - 2026-10-28
 
+### Fixed
+- **Indian Elephant SDM — Live GEE Tile Layer (Final Integration)**:
+  - `app.py`: Removed Bengal Tiger, Indian Rhinoceros, Asiatic Lion, and Snow Leopard from `SPECIES_CATALOG`. Only *Elephas maximus indicus* remains. Added `is_flagship: True` flag directly on the elephant entry.
+  - `app.py` `/api/sdm`: Replaced static PNG fallback response with a proper HTTP 503 error message when GEE is unavailable. GEE is confirmed working via project `gen-lang-client-0070085043`, so this path should never be hit in production.
+  - `static/js/main.js`: Completely replaced the old multi-species SDM module (dropdown, `loadSpeciesForState()`, `speciesSelect`, `flagshipBadge` references) with a clean, hardcoded **Indian Elephant SDM Module**. `speciesId` is now constant `'elephas_maximus'` — no dropdown needed.
+  - `static/js/main.js`: SDM button is now enabled as soon as any park is selected (previously required both park AND species dropdown selection).
+  - `static/js/main.js`: Removed `imageOverlay` fallback branch entirely. SDM layer is **always** a live `L.tileLayer(data.tile_url)` streamed from GEE XYZ tile servers.
+  - `static/js/main.js`: GBIF occurrence popups updated with 🐘 emoji for visual clarity.
+  - All JS references to non-existent DOM elements (`species-select`, `flagship-badge`) removed — eliminates silent JS crash on page load.
+
+
 ### Added
 - **Web UI & Interactive Map Integration**:
   - `app.py`: Integrated Indian Elephant SDM directly into the live web app backend with real GBIF/iNaturalist occurrences, WorldClim BioClim layers, resilient Earth Engine initialization, and static layer serving.
