@@ -404,114 +404,124 @@ def get_species():
 @app.route('/api/sdm', methods=['POST'])
 def run_sdm():
     data = request.json or {}
-    park_id = data.get('park_id')
-    species_id = data.get('species_id')
-    start_date = data.get('start_date', '2025-10-01')
-    end_date = data.get('end_date', '2026-03-31')
-
-    if not park_id or not species_id:
-        return jsonify({"error": "Park ID and Species ID are required"}), 400
+    species_id = data.get('species_id', 'elephas_maximus')
+    start_date = data.get('start_date', '2025-01-01')
+    end_date = data.get('end_date', '2025-12-31')
 
     species = next((s for s in SPECIES_CATALOG if s['id'] == species_id), None)
     if not species:
         return jsonify({"error": f"Species {species_id} not found"}), 404
 
-    # Filter empirical GBIF / iNaturalist points for Indian Elephant
+    # Show up to 200 GBIF occurrence points across India for the map markers
     presence_coords = []
     if species_id == 'elephas_maximus' and ELEPHANT_OCCURRENCES:
-        presence_coords = [[p['longitude'], p['latitude']] for p in ELEPHANT_OCCURRENCES[:45]]
+        presence_coords = [[p['longitude'], p['latitude']] for p in ELEPHANT_OCCURRENCES[:200]]
 
     if EE_INITIALIZED:
         try:
-            park = ee.FeatureCollection("WCMC/WDPA/current/polygons") \
-                .filter(ee.Filter.eq('SITE_ID', int(park_id)))
+            # --- All-India boundary from FAO GAUL Level 0 ---
+            india = ee.FeatureCollection('FAO/GAUL/2015/level0') \
+                .filter(ee.Filter.eq('ADM0_NAME', 'India'))
+            geom = india.geometry()
 
-            if park.size().getInfo() > 0:
-                geom = park.geometry()
+            # 1. Environmental Covariates — MODIS NDVI (500m, all-India scale)
+            #    Sentinel-2 has too many granules for continental coverage.
+            modis_ndvi = ee.ImageCollection('MODIS/061/MOD13A1') \
+                .filterBounds(geom) \
+                .filterDate(start_date, end_date) \
+                .select('NDVI') \
+                .mean() \
+                .multiply(0.0001) \
+                .rename('ndvi')
 
-                # 1. Environmental Covariates Stack
-                s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
-                    .filterBounds(geom) \
-                    .filterDate(start_date, end_date) \
-                    .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
+            elevation = ee.Image('USGS/SRTMGL1_003').rename('elevation')
+            slope = ee.Terrain.slope(elevation).rename('slope')
+            water = ee.Image('JRC/GSW1_4/GlobalSurfaceWater') \
+                .select('occurrence').unmask(0).rename('water')
+            worldclim = ee.Image('WORLDCLIM/V1/BIO') \
+                .select(['bio01', 'bio12']).rename(['bio01', 'bio12'])
 
-                if s2_collection.size().getInfo() == 0:
-                    s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
-                        .filterBounds(geom) \
-                        .filterDate('2020-01-01', end_date) \
-                        .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 30))
+            predictors = modis_ndvi.addBands(elevation).addBands(slope) \
+                .addBands(water).addBands(worldclim).clip(india)
 
-                s2_median = s2_collection.median()
-                ndvi = s2_median.normalizedDifference(['B8', 'B4']).rename('ndvi')
-                elevation = ee.Image('USGS/SRTMGL1_003').rename('elevation')
-                slope = ee.Terrain.slope(elevation).rename('slope')
-                water = ee.Image('JRC/GSW1_4/GlobalSurfaceWater').select('occurrence').unmask(0).rename('water')
+            input_props = ['ndvi', 'elevation', 'slope', 'water', 'bio01', 'bio12']
+            pred_labels = [
+                "MODIS NDVI (500m, 2025)",
+                "SRTM Elevation",
+                "Terrain Slope",
+                "JRC Surface Water",
+                "WorldClim BIO1 (Ann. Mean Temp)",
+                "WorldClim BIO12 (Ann. Precipitation)"
+            ]
 
-                input_props = ['ndvi', 'elevation', 'slope', 'water']
-                pred_labels = ["Sentinel-2 NDVI", "SRTM Elevation", "Terrain Slope", "JRC Surface Water"]
-                try:
-                    worldclim = ee.Image('WORLDCLIM/V1/BIO').select(['bio01', 'bio12']).rename(['bio01', 'bio12'])
-                    predictors = ndvi.addBands(elevation).addBands(slope).addBands(water).addBands(worldclim).clip(park)
-                    input_props.extend(['bio01', 'bio12'])
-                    pred_labels.append("WorldClim BioClim (BIO1 & BIO12)")
-                except Exception:
-                    predictors = ndvi.addBands(elevation).addBands(slope).addBands(water).clip(park)
-
-                prefs = species['preferences']
-                favorable_zone = ndvi.gte(prefs.get('min_ndvi', 0.3)).And(ndvi.lte(prefs.get('max_ndvi', 0.8))) \
+            # 2. Ecological habitat zones (India-wide)
+            prefs = species['preferences']
+            favorable_zone = modis_ndvi.gte(prefs.get('min_ndvi', 0.3)) \
+                .And(modis_ndvi.lte(prefs.get('max_ndvi', 0.8))) \
+                .And(slope.lte(prefs.get('max_slope', 30)))
+            if prefs.get('min_water_prob', 0) > 0:
+                favorable_zone = favorable_zone.Or(
+                    water.gte(prefs['min_water_prob'])
                     .And(slope.lte(prefs.get('max_slope', 30)))
-                if prefs.get('min_water_prob', 0) > 0:
-                    favorable_zone = favorable_zone.Or(water.gte(prefs['min_water_prob']).And(slope.lte(prefs.get('max_slope', 30))))
-                unfavorable_zone = favorable_zone.Not()
-
-                # Stratified sample presence (1) and pseudo-absence (0) ensuring both classes exist
-                presence_points = favorable_zone.selfMask().stratifiedSample(
-                    numPoints=40, region=geom, scale=100, seed=42, geometries=True
-                ).map(lambda f: f.set('presence', 1))
-
-                absence_points = unfavorable_zone.selfMask().stratifiedSample(
-                    numPoints=40, region=geom, scale=100, seed=84, geometries=True
-                ).map(lambda f: f.set('presence', 0))
-
-                training_fc = presence_points.merge(absence_points)
-
-                training_data = predictors.sampleRegions(
-                    collection=training_fc, properties=['presence'], scale=100, geometries=False
                 )
+            unfavorable_zone = favorable_zone.Not()
 
-                classifier = ee.Classifier.smileRandomForest(numberOfTrees=35) \
-                    .setOutputMode('PROBABILITY') \
-                    .train(features=training_data, classProperty='presence', inputProperties=input_props)
+            # 3. Stratified sampling at 5km scale — sufficient for all-India RF
+            SAMPLE_SCALE = 5000  # metres — fast & stable for continental extent
+            presence_pts = favorable_zone.selfMask().stratifiedSample(
+                numPoints=100, region=geom, scale=SAMPLE_SCALE, seed=42, geometries=True
+            ).map(lambda f: f.set('presence', 1))
 
-                suitability = predictors.select(input_props).classify(classifier)
-                sdm_palette = ['000080', '0000FF', '00FFFF', 'FFFF00', 'FF7F00', 'FF0000']
-                suitability_viz = suitability.visualize(min=0.0, max=1.0, palette=sdm_palette)
+            absence_pts = unfavorable_zone.selfMask().stratifiedSample(
+                numPoints=100, region=geom, scale=SAMPLE_SCALE, seed=84, geometries=True
+            ).map(lambda f: f.set('presence', 0))
 
-                empty = ee.Image().byte()
-                park_outline = empty.paint(park, 1, 3).selfMask().visualize(palette=['FFFFFF'])
-                final_sdm_img = suitability_viz.blend(park_outline)
+            training_fc = presence_pts.merge(absence_pts)
+            training_data = predictors.sampleRegions(
+                collection=training_fc, properties=['presence'],
+                scale=SAMPLE_SCALE, geometries=False
+            )
 
-                map_id = final_sdm_img.getMapId()
-                tile_url = map_id['tile_fetcher'].url_format
+            # 4. Random Forest classifier
+            classifier = ee.Classifier.smileRandomForest(numberOfTrees=50) \
+                .setOutputMode('PROBABILITY') \
+                .train(features=training_data, classProperty='presence',
+                       inputProperties=input_props)
 
-                stats = suitability.reduceRegion(
-                    reducer=ee.Reducer.mean(), geometry=geom, scale=200, maxPixels=1e9
-                ).getInfo()
-                mean_suitability = stats.get('classification_mean', 0.74)
-                center = geom.centroid().coordinates().getInfo()
+            suitability = predictors.select(input_props).classify(classifier)
 
-                return jsonify({
-                    "tile_url": tile_url,
-                    "center": center,
-                    "species": species,
-                    "mean_suitability": round(mean_suitability * 100, 1),
-                    "presence_points": presence_coords,
-                    "predictors": pred_labels
-                })
+            # 5. Visualise — Navy Blue (unsuitable) → Deep Red (highly suitable)
+            sdm_palette = ['000080', '0000FF', '00FFFF', 'FFFF00', 'FF7F00', 'FF0000']
+            final_sdm_img = suitability.visualize(min=0.0, max=1.0, palette=sdm_palette)
+
+            map_id = final_sdm_img.getMapId()
+            tile_url = map_id['tile_fetcher'].url_format
+
+            # 6. Mean suitability across India (coarse, fast)
+            stats = suitability.reduceRegion(
+                reducer=ee.Reducer.mean(), geometry=geom,
+                scale=10000, maxPixels=1e10, bestEffort=True
+            ).getInfo()
+            mean_suitability = stats.get('classification', stats.get('classification_mean', 0.58))
+
+            # India centre (geographic centroid)
+            center = [78.9629, 20.5937]
+
+            return jsonify({
+                "tile_url": tile_url,
+                "center": center,
+                "zoom": 5,
+                "species": species,
+                "mean_suitability": round(float(mean_suitability) * 100, 1),
+                "presence_points": presence_coords,
+                "predictors": pred_labels,
+                "scope": "india"
+            })
         except Exception as e:
             print(f"GEE SDM Exception: {e}")
+            import traceback; traceback.print_exc()
 
-    # GEE is unavailable or the park geometry wasn't found — surface the error clearly
+    # GEE is unavailable — surface the error clearly
     return jsonify({
         "error": "Google Earth Engine is unavailable. Please verify GEE credentials and try again.",
         "gee_initialized": EE_INITIALIZED

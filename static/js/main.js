@@ -602,6 +602,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================
     // Indian Elephant SDM Module (Elephas maximus indicus)
+    // All-India continental habitat suitability via GEE
     // ==========================================
     const runSdmBtn = document.getElementById('run-sdm-btn');
     const sdmResults = document.getElementById('sdm-results');
@@ -610,24 +611,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const sdmLegend = document.getElementById('sdm-legend');
     const sdmLegendTitle = document.getElementById('sdm-legend-title');
 
-    // Enable SDM button as soon as a park is selected (species is always Indian Elephant)
-    function updateSdmBtnState() {
-        runSdmBtn.disabled = !parkSelect.value;
-    }
-
-    parkSelect.addEventListener('change', updateSdmBtnState);
+    // Button is always enabled — no park selection required for all-India SDM
+    runSdmBtn.disabled = false;
 
     runSdmBtn.addEventListener('click', () => {
-        const parkId = parkSelect.value;
         const speciesId = 'elephas_maximus';  // Hardcoded: Indian Elephant only
         const startDate = document.getElementById('start-date').value;
         const endDate = document.getElementById('end-date').value;
 
-        if (!parkId) return;
-
         const origText = runSdmBtn.querySelector('span').textContent;
         runSdmBtn.disabled = true;
-        runSdmBtn.querySelector('span').textContent = 'Training GEE Random Forest...';
+        runSdmBtn.querySelector('span').textContent = '🔄 Training All-India GEE Model...';
 
         welcomeMessage.classList.add('hidden');
         viewportImageContainer.classList.remove('hidden');
@@ -636,7 +630,6 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                park_id: parkId,
                 species_id: speciesId,
                 start_date: startDate,
                 end_date: endDate
@@ -696,9 +689,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // Always pan and zoom to the park centroid
+            // Pan to India centroid at country-level zoom
             if (data.center) {
-                map.setView([data.center[1], data.center[0]], 11);
+                const zoom = data.zoom || (data.scope === 'india' ? 5 : 11);
+                map.setView([data.center[1], data.center[0]], zoom);
             }
 
             // Display SDM metrics
