@@ -5,6 +5,22 @@ All notable changes to the Protected Area & Species Distribution Modeling projec
 ## [Unreleased] - 2026-10-28
 
 ### Added
+- **3-Source Indian Elephant SDM Selector** — user can switch between 4 modes before running:
+
+| Button | Source | GEE Datasets | Scale |
+|---|---|---|---|
+| 🔀 Ensemble (default) | All 3 combined | MODIS NDVI + WorldClim BIO1/12 + ESA WorldCover + Hansen Forest + SRTM | 5 km |
+| 🌡️ BioClim | Climate envelope | WorldClim V1 BIO1,4,7,12,13,15 + SRTM | 10 km |
+| 🛰️ Remote Sensing | RS stack | MODIS MOD13A1 NDVI (500m) + JRC Water + SRTM | 5 km |
+| 🌿 Land Cover | Structural habitat | ESA WorldCover 2021 (10m) + Hansen Forest 2023 + SRTM + JRC | 1 km |
+
+- Elephant climate envelope for BioClim: temp 18–35°C (BIO1), precip > 800mm/yr (BIO12), slope ≤ 25°.
+- Land Cover favorable classes: Trees (10), Shrubland (20), Grassland (30), Cropland (40) + slope ≤ 20°.
+- API response now includes `data_source` and `data_source_label` fields.
+- Scope badge in sidebar updates dynamically after each run to show the active source.
+- Covariates list uses dot-separator (·) for readability.
+
+### Added
 - **All-India Indian Elephant Habitat SDM** (replaces park-scoped model):
   - `app.py` `/api/sdm`: No longer requires `park_id`. Uses `FAO/GAUL/2015/level0` India boundary from GEE.
   - Environmental stack switched to **MODIS MOD13A1 NDVI** (500m) — Sentinel-2 has too many granules for continental India. Combined with SRTM Elevation + Slope, JRC Surface Water, WorldClim BIO1 & BIO12.
