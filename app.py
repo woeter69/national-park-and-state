@@ -403,125 +403,207 @@ def get_species():
 
 @app.route('/api/sdm', methods=['POST'])
 def run_sdm():
-    data = request.json or {}
-    species_id = data.get('species_id', 'elephas_maximus')
-    start_date = data.get('start_date', '2025-01-01')
-    end_date = data.get('end_date', '2025-12-31')
+    req = request.json or {}
+    species_id   = req.get('species_id', 'elephas_maximus')
+    data_source  = req.get('data_source', 'ensemble')   # bioclim | remote_sensing | land_cover | ensemble
+    start_date   = req.get('start_date', '2024-01-01')
+    end_date     = req.get('end_date',   '2024-12-31')
 
     species = next((s for s in SPECIES_CATALOG if s['id'] == species_id), None)
     if not species:
         return jsonify({"error": f"Species {species_id} not found"}), 404
 
-    # Show up to 200 GBIF occurrence points across India for the map markers
+    VALID_SOURCES = {'bioclim', 'remote_sensing', 'land_cover', 'ensemble'}
+    if data_source not in VALID_SOURCES:
+        data_source = 'ensemble'
+
+    SOURCE_LABELS = {
+        'bioclim':        'WorldClim BioClim (19 Bio-Variables)',
+        'remote_sensing': 'MODIS Remote Sensing Stack',
+        'land_cover':     'ESA WorldCover + Hansen Forest',
+        'ensemble':       'Multi-Source Ensemble (All 3 Combined)',
+    }
+
+    # All 200 GBIF occurrence markers (display only — not used for GEE training)
     presence_coords = []
     if species_id == 'elephas_maximus' and ELEPHANT_OCCURRENCES:
         presence_coords = [[p['longitude'], p['latitude']] for p in ELEPHANT_OCCURRENCES[:200]]
 
     if EE_INITIALIZED:
         try:
-            # --- All-India boundary from FAO GAUL Level 0 ---
+            # ── India boundary ────────────────────────────────────────────────
             india = ee.FeatureCollection('FAO/GAUL/2015/level0') \
-                .filter(ee.Filter.eq('ADM0_NAME', 'India'))
-            geom = india.geometry()
+                        .filter(ee.Filter.eq('ADM0_NAME', 'India'))
+            geom  = india.geometry()
 
-            # 1. Environmental Covariates — MODIS NDVI (500m, all-India scale)
-            #    Sentinel-2 has too many granules for continental coverage.
-            modis_ndvi = ee.ImageCollection('MODIS/061/MOD13A1') \
-                .filterBounds(geom) \
-                .filterDate(start_date, end_date) \
-                .select('NDVI') \
-                .mean() \
-                .multiply(0.0001) \
-                .rename('ndvi')
-
+            # ── Shared base layers ────────────────────────────────────────────
             elevation = ee.Image('USGS/SRTMGL1_003').rename('elevation')
-            slope = ee.Terrain.slope(elevation).rename('slope')
-            water = ee.Image('JRC/GSW1_4/GlobalSurfaceWater') \
-                .select('occurrence').unmask(0).rename('water')
-            worldclim = ee.Image('WORLDCLIM/V1/BIO') \
-                .select(['bio01', 'bio12']).rename(['bio01', 'bio12'])
+            slope     = ee.Terrain.slope(elevation).rename('slope')
+            water     = ee.Image('JRC/GSW1_4/GlobalSurfaceWater') \
+                            .select('occurrence').unmask(0).rename('water')
 
-            predictors = modis_ndvi.addBands(elevation).addBands(slope) \
-                .addBands(water).addBands(worldclim).clip(india)
+            # ── Source-specific predictor stacks ──────────────────────────────
 
-            input_props = ['ndvi', 'elevation', 'slope', 'water', 'bio01', 'bio12']
-            pred_labels = [
-                "MODIS NDVI (500m, 2025)",
-                "SRTM Elevation",
-                "Terrain Slope",
-                "JRC Surface Water",
-                "WorldClim BIO1 (Ann. Mean Temp)",
-                "WorldClim BIO12 (Ann. Precipitation)"
-            ]
+            if data_source == 'bioclim':
+                # Source 1 — WorldClim V1 BioClim: 6 bio-climatic variables
+                # Classic climate-envelope / Hutchinsonian niche model
+                wc = ee.Image('WORLDCLIM/V1/BIO') \
+                         .select(['bio01','bio04','bio07','bio12','bio13','bio15']) \
+                         .rename(['bio01','bio04','bio07','bio12','bio13','bio15'])
+                predictors  = wc.addBands(elevation).addBands(slope).clip(india)
+                input_props = ['bio01','bio04','bio07','bio12','bio13','bio15','elevation','slope']
+                pred_labels = [
+                    'WorldClim BIO1  — Annual Mean Temperature (°C×10)',
+                    'WorldClim BIO4  — Temperature Seasonality (SD×100)',
+                    'WorldClim BIO7  — Temperature Annual Range',
+                    'WorldClim BIO12 — Annual Precipitation (mm)',
+                    'WorldClim BIO13 — Precipitation of Wettest Month',
+                    'WorldClim BIO15 — Precipitation Seasonality (CV)',
+                    'SRTM Elevation (30m)',
+                    'Terrain Slope',
+                ]
+                # Elephant climate envelope: warm (18–35°C stored ×10),
+                # well-watered (>800 mm/yr), gentle terrain
+                bio_temp   = wc.select('bio01')
+                bio_precip = wc.select('bio12')
+                favorable_zone = (bio_temp.gte(1800).And(bio_temp.lte(3500))
+                                  .And(bio_precip.gte(800))
+                                  .And(slope.lte(25)))
+                SAMPLE_SCALE = 10000  # WorldClim native res ~18 km
 
-            # 2. Ecological habitat zones (India-wide)
-            prefs = species['preferences']
-            favorable_zone = modis_ndvi.gte(prefs.get('min_ndvi', 0.3)) \
-                .And(modis_ndvi.lte(prefs.get('max_ndvi', 0.8))) \
-                .And(slope.lte(prefs.get('max_slope', 30)))
-            if prefs.get('min_water_prob', 0) > 0:
-                favorable_zone = favorable_zone.Or(
-                    water.gte(prefs['min_water_prob'])
-                    .And(slope.lte(prefs.get('max_slope', 30)))
-                )
+            elif data_source == 'remote_sensing':
+                # Source 2 — MODIS NDVI + JRC Water + SRTM terrain
+                # Pure remote-sensing habitat stack (no climate variables)
+                modis = (ee.ImageCollection('MODIS/061/MOD13A1')
+                           .filterBounds(geom)
+                           .filterDate(start_date, end_date)
+                           .select('NDVI').mean()
+                           .multiply(0.0001).rename('ndvi'))
+                predictors  = modis.addBands(elevation).addBands(slope).addBands(water).clip(india)
+                input_props = ['ndvi','elevation','slope','water']
+                pred_labels = [
+                    'MODIS MOD13A1 NDVI (500m, 16-day composite, 2024)',
+                    'SRTM Elevation (30m)',
+                    'Terrain Slope',
+                    'JRC Global Surface Water Occurrence',
+                ]
+                favorable_zone = (modis.gte(0.40).And(modis.lte(0.85)).And(slope.lte(20))
+                                  .Or(water.gte(10).And(slope.lte(20))))
+                SAMPLE_SCALE = 5000
+
+            elif data_source == 'land_cover':
+                # Source 3 — ESA WorldCover 2021 + Hansen Forest Cover 2023 + SRTM
+                # Land-cover / structural habitat classification
+                worldcover = (ee.Image('ESA/WorldCover/v200')
+                                .select('Map').rename('landcover'))
+                hansen     = (ee.Image('UMD/hansen/global_forest_change_2023_v1_11')
+                                .select('treecover2000').unmask(0).rename('forest_cover'))
+                predictors  = (worldcover.addBands(hansen)
+                                .addBands(elevation).addBands(slope).addBands(water)
+                                .clip(india))
+                input_props = ['landcover','forest_cover','elevation','slope','water']
+                pred_labels = [
+                    'ESA WorldCover v200 2021 (10m — Land Cover Classes)',
+                    'Hansen Global Forest Cover 2023 (30m — % canopy)',
+                    'SRTM Elevation (30m)',
+                    'Terrain Slope',
+                    'JRC Global Surface Water Occurrence',
+                ]
+                # Elephant-friendly classes: Trees(10), Shrubland(20),
+                # Grassland(30), Cropland(40) — gentle terrain
+                favorable_zone = (worldcover.eq(10).Or(worldcover.eq(20))
+                                  .Or(worldcover.eq(30)).Or(worldcover.eq(40))
+                                  .And(slope.lte(20)))
+                SAMPLE_SCALE = 1000
+
+            else:  # ensemble — all 3 sources combined into one RF
+                modis = (ee.ImageCollection('MODIS/061/MOD13A1')
+                           .filterBounds(geom)
+                           .filterDate(start_date, end_date)
+                           .select('NDVI').mean()
+                           .multiply(0.0001).rename('ndvi'))
+                wc = (ee.Image('WORLDCLIM/V1/BIO')
+                        .select(['bio01','bio12']).rename(['bio01','bio12']))
+                worldcover = (ee.Image('ESA/WorldCover/v200')
+                                .select('Map').rename('landcover'))
+                hansen     = (ee.Image('UMD/hansen/global_forest_change_2023_v1_11')
+                                .select('treecover2000').unmask(0).rename('forest_cover'))
+                predictors  = (modis.addBands(wc).addBands(worldcover).addBands(hansen)
+                                .addBands(elevation).addBands(slope).addBands(water)
+                                .clip(india))
+                input_props = ['ndvi','bio01','bio12','landcover','forest_cover',
+                               'elevation','slope','water']
+                pred_labels = [
+                    'MODIS NDVI (Remote Sensing, 500m)',
+                    'WorldClim BIO1 — Annual Mean Temp',
+                    'WorldClim BIO12 — Annual Precipitation',
+                    'ESA WorldCover Land Cover Class',
+                    'Hansen Forest Cover (% canopy)',
+                    'SRTM Elevation',
+                    'Terrain Slope',
+                    'JRC Surface Water Occurrence',
+                ]
+                # Multi-criteria envelope: vegetated + wet-enough + gentle
+                favorable_zone = (modis.gte(0.35)
+                                  .And(wc.select('bio12').gte(700))
+                                  .And(slope.lte(25)))
+                SAMPLE_SCALE = 5000
+
+            # ── Stratified RF training ────────────────────────────────────────
             unfavorable_zone = favorable_zone.Not()
 
-            # 3. Stratified sampling at 5km scale — sufficient for all-India RF
-            SAMPLE_SCALE = 5000  # metres — fast & stable for continental extent
-            presence_pts = favorable_zone.selfMask().stratifiedSample(
-                numPoints=100, region=geom, scale=SAMPLE_SCALE, seed=42, geometries=True
-            ).map(lambda f: f.set('presence', 1))
+            presence_pts = (favorable_zone.selfMask()
+                            .stratifiedSample(numPoints=100, region=geom,
+                                             scale=SAMPLE_SCALE, seed=42, geometries=True)
+                            .map(lambda f: f.set('presence', 1)))
+            absence_pts  = (unfavorable_zone.selfMask()
+                            .stratifiedSample(numPoints=100, region=geom,
+                                             scale=SAMPLE_SCALE, seed=84, geometries=True)
+                            .map(lambda f: f.set('presence', 0)))
 
-            absence_pts = unfavorable_zone.selfMask().stratifiedSample(
-                numPoints=100, region=geom, scale=SAMPLE_SCALE, seed=84, geometries=True
-            ).map(lambda f: f.set('presence', 0))
-
-            training_fc = presence_pts.merge(absence_pts)
+            training_fc   = presence_pts.merge(absence_pts)
             training_data = predictors.sampleRegions(
                 collection=training_fc, properties=['presence'],
                 scale=SAMPLE_SCALE, geometries=False
             )
 
-            # 4. Random Forest classifier
-            classifier = ee.Classifier.smileRandomForest(numberOfTrees=50) \
-                .setOutputMode('PROBABILITY') \
-                .train(features=training_data, classProperty='presence',
-                       inputProperties=input_props)
+            classifier = (ee.Classifier.smileRandomForest(numberOfTrees=50)
+                          .setOutputMode('PROBABILITY')
+                          .train(features=training_data,
+                                 classProperty='presence',
+                                 inputProperties=input_props))
 
-            suitability = predictors.select(input_props).classify(classifier)
+            suitability   = predictors.select(input_props).classify(classifier)
 
-            # 5. Visualise — Navy Blue (unsuitable) → Deep Red (highly suitable)
-            sdm_palette = ['000080', '0000FF', '00FFFF', 'FFFF00', 'FF7F00', 'FF0000']
+            # ── Visualise: Navy Blue → Deep Red ──────────────────────────────
+            sdm_palette = ['000080','0000FF','00FFFF','FFFF00','FF7F00','FF0000']
             final_sdm_img = suitability.visualize(min=0.0, max=1.0, palette=sdm_palette)
 
-            map_id = final_sdm_img.getMapId()
-            tile_url = map_id['tile_fetcher'].url_format
+            tile_url = final_sdm_img.getMapId()['tile_fetcher'].url_format
 
-            # 6. Mean suitability across India (coarse, fast)
+            # ── Mean suitability (coarse reduction, fast) ─────────────────────
             stats = suitability.reduceRegion(
                 reducer=ee.Reducer.mean(), geometry=geom,
                 scale=10000, maxPixels=1e10, bestEffort=True
             ).getInfo()
-            mean_suitability = stats.get('classification', stats.get('classification_mean', 0.58))
-
-            # India centre (geographic centroid)
-            center = [78.9629, 20.5937]
+            mean_val = stats.get('classification', stats.get('classification_mean', 0.58))
 
             return jsonify({
-                "tile_url": tile_url,
-                "center": center,
-                "zoom": 5,
-                "species": species,
-                "mean_suitability": round(float(mean_suitability) * 100, 1),
-                "presence_points": presence_coords,
-                "predictors": pred_labels,
-                "scope": "india"
+                "tile_url":          tile_url,
+                "center":            [78.9629, 20.5937],
+                "zoom":              5,
+                "species":           species,
+                "mean_suitability":  round(float(mean_val) * 100, 1),
+                "presence_points":   presence_coords,
+                "predictors":        pred_labels,
+                "scope":             "india",
+                "data_source":       data_source,
+                "data_source_label": SOURCE_LABELS[data_source],
             })
         except Exception as e:
-            print(f"GEE SDM Exception: {e}")
+            print(f"GEE SDM Exception [{data_source}]: {e}")
             import traceback; traceback.print_exc()
 
-    # GEE is unavailable — surface the error clearly
     return jsonify({
         "error": "Google Earth Engine is unavailable. Please verify GEE credentials and try again.",
         "gee_initialized": EE_INITIALIZED

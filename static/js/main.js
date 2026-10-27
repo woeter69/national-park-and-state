@@ -603,25 +603,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // Indian Elephant SDM Module (Elephas maximus indicus)
     // All-India continental habitat suitability via GEE
+    // 3 interchangeable data sources + ensemble default
     // ==========================================
-    const runSdmBtn = document.getElementById('run-sdm-btn');
-    const sdmResults = document.getElementById('sdm-results');
+    const runSdmBtn    = document.getElementById('run-sdm-btn');
+    const sdmResults   = document.getElementById('sdm-results');
     const sdmSuitabilityVal = document.getElementById('sdm-suitability-val');
-    const sdmIucnVal = document.getElementById('sdm-iucn-val');
-    const sdmLegend = document.getElementById('sdm-legend');
+    const sdmIucnVal   = document.getElementById('sdm-iucn-val');
+    const sdmLegend    = document.getElementById('sdm-legend');
     const sdmLegendTitle = document.getElementById('sdm-legend-title');
+    const sdmScopeBadge  = document.getElementById('sdm-scope-badge');
 
-    // Button is always enabled — no park selection required for all-India SDM
+    // Active data source (default: ensemble)
+    let activeDataSource = 'ensemble';
+    const SOURCE_EMOJI = {
+        ensemble:       '🔀',
+        bioclim:        '🌡️',
+        remote_sensing: '🛰️',
+        land_cover:     '🌿',
+    };
+
+    // Wire up the 4 source toggle buttons
+    document.querySelectorAll('.sdm-src-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.sdm-src-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeDataSource = btn.dataset.source;
+        });
+    });
+
+    // Button is always enabled — all-India SDM needs no park selection
     runSdmBtn.disabled = false;
 
     runSdmBtn.addEventListener('click', () => {
-        const speciesId = 'elephas_maximus';  // Hardcoded: Indian Elephant only
-        const startDate = document.getElementById('start-date').value;
-        const endDate = document.getElementById('end-date').value;
+        const speciesId  = 'elephas_maximus';
+        const startDate  = document.getElementById('start-date').value;
+        const endDate    = document.getElementById('end-date').value;
 
         const origText = runSdmBtn.querySelector('span').textContent;
         runSdmBtn.disabled = true;
-        runSdmBtn.querySelector('span').textContent = '🔄 Training All-India GEE Model...';
+        const srcEmoji = SOURCE_EMOJI[activeDataSource] || '🔄';
+        runSdmBtn.querySelector('span').textContent = `${srcEmoji} Training All-India GEE Model...`;
 
         welcomeMessage.classList.add('hidden');
         viewportImageContainer.classList.remove('hidden');
@@ -630,9 +651,10 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                species_id: speciesId,
-                start_date: startDate,
-                end_date: endDate
+                species_id:  speciesId,
+                data_source: activeDataSource,
+                start_date:  startDate,
+                end_date:    endDate
             })
         })
         .then(async res => {
@@ -695,6 +717,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 map.setView([data.center[1], data.center[0]], zoom);
             }
 
+            // Update scope badge with actual source used
+            if (sdmScopeBadge) {
+                const srcLabel = data.data_source_label || 'Multi-Source Ensemble';
+                const srcEmoji = SOURCE_EMOJI[data.data_source] || '🔀';
+                sdmScopeBadge.innerHTML = `🗺️ <strong style="color:#fca5a5;">All India</strong> · ${srcEmoji} ${srcLabel}`;
+            }
+
             // Display SDM metrics
             sdmSuitabilityVal.textContent = `${data.mean_suitability}%`;
             sdmIucnVal.textContent = data.species.iucn;
@@ -703,7 +732,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update dynamic covariates list
             const covListEl = document.getElementById('sdm-covariates-list');
             if (covListEl && data.predictors) {
-                covListEl.textContent = `Covariates: ${data.predictors.join(', ')}`;
+                covListEl.innerHTML = `<strong>Covariates:</strong> ${data.predictors.join(' · ')}`;
             }
 
             // Show SDM legend
