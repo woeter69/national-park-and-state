@@ -601,9 +601,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // Species Distribution Modeling (SDM) Module
+    // Indian Elephant SDM Module (Elephas maximus indicus)
     // ==========================================
-    const speciesSelect = document.getElementById('species-select');
     const runSdmBtn = document.getElementById('run-sdm-btn');
     const sdmResults = document.getElementById('sdm-results');
     const sdmSuitabilityVal = document.getElementById('sdm-suitability-val');
@@ -611,108 +610,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const sdmLegend = document.getElementById('sdm-legend');
     const sdmLegendTitle = document.getElementById('sdm-legend-title');
 
-    const flagshipBadge = document.getElementById('flagship-badge');
-
-    // Load species catalog filtered by state with visual highlighting
-    function loadSpeciesForState(stateName) {
-        const url = stateName ? `/api/species?state=${encodeURIComponent(stateName)}` : '/api/species';
-        fetch(url)
-            .then(res => res.json())
-            .then(speciesList => {
-                speciesSelect.innerHTML = '<option value="" disabled selected>Choose a species...</option>';
-
-                const flagships = speciesList.filter(s => s.is_flagship);
-                const others = speciesList.filter(s => !s.is_flagship);
-
-                if (flagships.length > 0 && stateName) {
-                    const groupFlagship = document.createElement('optgroup');
-                    groupFlagship.label = 'Native Flagship Species';
-                    flagships.forEach(sp => {
-                        const opt = document.createElement('option');
-                        opt.value = sp.id;
-                        opt.textContent = `${sp.name} (${sp.scientific_name})`;
-                        opt.dataset.name = sp.name;
-                        opt.dataset.iucn = sp.iucn;
-                        opt.dataset.flagship = 'true';
-                        opt.style.color = '#34d399';
-                        opt.style.fontWeight = '600';
-                        opt.style.backgroundColor = '#13241c';
-                        groupFlagship.appendChild(opt);
-                    });
-                    speciesSelect.appendChild(groupFlagship);
-
-                    if (others.length > 0) {
-                        const groupOthers = document.createElement('optgroup');
-                        groupOthers.label = 'Other Regional Species';
-                        others.forEach(sp => {
-                            const opt = document.createElement('option');
-                            opt.value = sp.id;
-                            opt.textContent = `${sp.name} (${sp.scientific_name})`;
-                            opt.dataset.name = sp.name;
-                            opt.dataset.iucn = sp.iucn;
-                            opt.dataset.flagship = 'false';
-                            opt.style.color = '#9ca3af';
-                            groupOthers.appendChild(opt);
-                        });
-                        speciesSelect.appendChild(groupOthers);
-                    }
-                } else {
-                    speciesList.forEach(sp => {
-                        const opt = document.createElement('option');
-                        opt.value = sp.id;
-                        opt.textContent = `${sp.name} (${sp.scientific_name})`;
-                        opt.dataset.name = sp.name;
-                        opt.dataset.iucn = sp.iucn;
-                        opt.dataset.flagship = 'false';
-                        speciesSelect.appendChild(opt);
-                    });
-                }
-
-                flagshipBadge.classList.add('hidden');
-                speciesSelect.style.borderColor = 'var(--border-color)';
-                speciesSelect.style.boxShadow = 'none';
-                updateSdmBtnState();
-            })
-            .catch(err => console.error("Error loading species:", err));
-    }
-
-    // Initial load
-    loadSpeciesForState('');
-
-    // Reload species when state changes
-    stateSelect.addEventListener('change', () => {
-        loadSpeciesForState(stateSelect.value);
-    });
-
-    // Toggle Flagship badge on species selection
-    speciesSelect.addEventListener('change', () => {
-        const selectedOpt = speciesSelect.options[speciesSelect.selectedIndex];
-        if (selectedOpt && selectedOpt.dataset.flagship === 'true') {
-            flagshipBadge.classList.remove('hidden');
-            speciesSelect.style.borderColor = '#10b981';
-            speciesSelect.style.boxShadow = '0 0 0 1px rgba(16, 185, 129, 0.4)';
-        } else {
-            flagshipBadge.classList.add('hidden');
-            speciesSelect.style.borderColor = 'var(--border-color)';
-            speciesSelect.style.boxShadow = 'none';
-        }
-        updateSdmBtnState();
-    });
-
-    // Enable SDM button when park and species are selected
+    // Enable SDM button as soon as a park is selected (species is always Indian Elephant)
     function updateSdmBtnState() {
-        runSdmBtn.disabled = !(parkSelect.value && speciesSelect.value);
+        runSdmBtn.disabled = !parkSelect.value;
     }
 
     parkSelect.addEventListener('change', updateSdmBtnState);
 
     runSdmBtn.addEventListener('click', () => {
         const parkId = parkSelect.value;
-        const speciesId = speciesSelect.value;
+        const speciesId = 'elephas_maximus';  // Hardcoded: Indian Elephant only
         const startDate = document.getElementById('start-date').value;
         const endDate = document.getElementById('end-date').value;
 
-        if (!parkId || !speciesId) return;
+        if (!parkId) return;
 
         const origText = runSdmBtn.querySelector('span').textContent;
         runSdmBtn.disabled = true;
@@ -764,11 +675,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 presenceMarkersLayer = null;
             }
 
-            // Create new SDM Probability layer (supports both live GEE tile layer and image overlay)
-            if (data.image_overlay_url && data.bounds) {
-                sdmLayer = L.imageOverlay(data.image_overlay_url, data.bounds, { opacity: 0.85, zIndex: 100 });
-            } else if (data.tile_url) {
-                sdmLayer = L.tileLayer(data.tile_url, { zIndex: 100 });
+            // Create new SDM Probability layer — always a live GEE XYZ tile layer
+            if (data.tile_url) {
+                sdmLayer = L.tileLayer(data.tile_url, { zIndex: 100, maxZoom: 18, opacity: 0.85 });
             }
 
             // Create empirical occurrence markers (GBIF / iNaturalist)
@@ -782,15 +691,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         weight: 1.5,
                         opacity: 1,
                         fillOpacity: 0.95
-                    }).bindPopup(`<strong>${data.species.name}</strong><br>Empirical Field Observation (GBIF / iNaturalist)<br>Lat: ${coord[1].toFixed(4)}, Lon: ${coord[0].toFixed(4)}`);
+                    }).bindPopup(`<strong>${data.species.name}</strong><br>🐘 Field Observation (GBIF / iNaturalist)<br>Lat: ${coord[1].toFixed(4)}, Lon: ${coord[0].toFixed(4)}`);
                     presenceMarkersLayer.addLayer(marker);
                 });
             }
 
-            // Pan and zoom to centroid or landscape bounds
-            if (data.bounds && data.image_overlay_url && !data.tile_url.startsWith('https://earthengine')) {
-                map.fitBounds(data.bounds);
-            } else if (data.center) {
+            // Always pan and zoom to the park centroid
+            if (data.center) {
                 map.setView([data.center[1], data.center[0]], 11);
             }
 

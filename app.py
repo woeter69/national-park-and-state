@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Initialize Earth Engine safely with project options and graceful error handling
 EE_INITIALIZED = False
-EE_PROJECT = os.environ.get('EE_PROJECT', 'meet-attendance-500308')
+EE_PROJECT = os.environ.get('EE_PROJECT', 'gen-lang-client-0070085043')
 
 for proj in [EE_PROJECT, None]:
     try:
@@ -383,39 +383,8 @@ SPECIES_CATALOG = [
             "Odisha", "West Bengal", "Uttar Pradesh", "Jharkhand",
             "Chhattisgarh", "Meghalaya", "Arunachal Pradesh"
         ],
+        "is_flagship": True,
         "preferences": {"min_ndvi": 0.40, "max_ndvi": 0.85, "max_slope": 20, "min_water_prob": 10}
-    },
-    {
-        "id": "panthera_tigris",
-        "name": "Bengal Tiger",
-        "scientific_name": "Panthera tigris",
-        "iucn": "Endangered",
-        "native_states": ["Assam", "Uttarakhand", "Madhya Pradesh", "Rajasthan", "West Bengal", "Karnataka", "Maharashtra", "Odisha", "Kerala", "Tamil Nadu"],
-        "preferences": {"min_ndvi": 0.45, "max_ndvi": 0.85, "max_slope": 25, "min_water_prob": 5}
-    },
-    {
-        "id": "rhinoceros_unicornis",
-        "name": "Indian Rhinoceros",
-        "scientific_name": "Rhinoceros unicornis",
-        "iucn": "Vulnerable",
-        "native_states": ["Assam", "West Bengal", "Uttar Pradesh", "Bihar"],
-        "preferences": {"min_ndvi": 0.35, "max_ndvi": 0.75, "max_slope": 10, "min_water_prob": 20}
-    },
-    {
-        "id": "panthera_leo_persica",
-        "name": "Asiatic Lion",
-        "scientific_name": "Panthera leo persica",
-        "iucn": "Endangered",
-        "native_states": ["Gujarat"],
-        "preferences": {"min_ndvi": 0.20, "max_ndvi": 0.55, "max_slope": 15, "min_water_prob": 0}
-    },
-    {
-        "id": "panthera_uncia",
-        "name": "Snow Leopard",
-        "scientific_name": "Panthera uncia",
-        "iucn": "Vulnerable",
-        "native_states": ["Jammu and Kashmir", "Himachal Pradesh", "Uttarakhand", "Sikkim", "Arunachal Pradesh"],
-        "preferences": {"min_ndvi": 0.05, "max_ndvi": 0.35, "max_slope": 45, "min_water_prob": 0}
     }
 ]
 
@@ -495,23 +464,16 @@ def run_sdm():
                     favorable_zone = favorable_zone.Or(water.gte(prefs['min_water_prob']).And(slope.lte(prefs.get('max_slope', 30))))
                 unfavorable_zone = favorable_zone.Not()
 
-                presence_features = []
-                if species_id == 'elephas_maximus' and presence_coords:
-                    for pt in presence_coords[:25]:
-                        presence_features.append(ee.Feature(ee.Geometry.Point(pt), {'presence': 1}))
-
-                if presence_features:
-                    presence_fc = ee.FeatureCollection(presence_features)
-                else:
-                    presence_fc = favorable_zone.selfMask().stratifiedSample(
-                        numPoints=35, region=geom, scale=100, seed=42, geometries=True
-                    ).map(lambda f: f.set('presence', 1))
+                # Stratified sample presence (1) and pseudo-absence (0) ensuring both classes exist
+                presence_points = favorable_zone.selfMask().stratifiedSample(
+                    numPoints=40, region=geom, scale=100, seed=42, geometries=True
+                ).map(lambda f: f.set('presence', 1))
 
                 absence_points = unfavorable_zone.selfMask().stratifiedSample(
-                    numPoints=35, region=geom, scale=100, seed=84, geometries=True
+                    numPoints=40, region=geom, scale=100, seed=84, geometries=True
                 ).map(lambda f: f.set('presence', 0))
 
-                training_fc = presence_fc.merge(absence_points)
+                training_fc = presence_points.merge(absence_points)
 
                 training_data = predictors.sampleRegions(
                     collection=training_fc, properties=['presence'], scale=100, geometries=False
@@ -549,20 +511,11 @@ def run_sdm():
         except Exception as e:
             print(f"GEE SDM Exception: {e}")
 
-    # Integrated Fallback: Serve the Correlative Landscape Suitability Grid
+    # GEE is unavailable or the park geometry wasn't found — surface the error clearly
     return jsonify({
-        "tile_url": "/sdm_output/Indian_Elephant_Habitat_Suitability_Map.png",
-        "image_overlay_url": "/sdm_output/Indian_Elephant_Habitat_Suitability_Map.png",
-        "bounds": [[8.0, 72.0], [32.0, 96.0]],
-        "center": [93.17, 26.65],
-        "species": species,
-        "mean_suitability": 78.4,
-        "presence_points": presence_coords,
-        "predictors": [
-            "Sentinel-2 NDVI", "SRTM Elevation", "Terrain Slope",
-            "JRC Surface Water", "WorldClim BioClim (BIO1 Temp & BIO12 Rain)"
-        ]
-    })
+        "error": "Google Earth Engine is unavailable. Please verify GEE credentials and try again.",
+        "gee_initialized": EE_INITIALIZED
+    }), 503
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
