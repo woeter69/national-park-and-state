@@ -61,3 +61,11 @@ All notable changes to the Protected Area & Species Distribution Modeling projec
   - `sdm_output/Gridded_Environmental_Surfaces.png`: Comprehensive 6-panel raster surface visualization depicting Climate (BioClim), Topography (Elevation & Slope), Vegetation (Canopy NDVI), and Hydrology (Surface Water).
   - `sdm_output/Variable_Importance_Analysis.png`: Quantitative ranking of ecological limiting factors indicating that surface water and canopy productivity drive ~49% of elephant landscape selection.
   - `sdm_output/SDM_Model_Metrics_Report.json`: Model performance metrics, including Test AUC and relative variable contributions.
+
+### Changed
+- **Documentation reorganised into `docs/` folder** (Commit 5 of session):
+  - `docs/Indian_Elephant_SDM_Explainer.md` — moved from project root. Plain-language guide for teachers: all 3 data sources, GBIF records, ASC files, step-by-step model, colour key, accuracy table.
+  - `docs/Indian_Elephant_SDM_Documentation.md` — moved from project root. Full technical EVS documentation.
+  - `docs/README.md` — new index file listing both documents and quick-reference links to all 8 external data sources.
+  - `README.md` — documentation banner added at top linking to docs/ folder.
+  - `main.py` — GEE project corrected from `meet-attendance-500308` to `gen-lang-client-0070085043`.
