@@ -764,32 +764,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 presenceMarkersLayer = null;
             }
 
-            // Create new SDM Probability tile layer
-            sdmLayer = L.tileLayer(data.tile_url, { zIndex: 100 });
+            // Create new SDM Probability layer (supports both live GEE tile layer and image overlay)
+            if (data.image_overlay_url && data.bounds) {
+                sdmLayer = L.imageOverlay(data.image_overlay_url, data.bounds, { opacity: 0.85, zIndex: 100 });
+            } else if (data.tile_url) {
+                sdmLayer = L.tileLayer(data.tile_url, { zIndex: 100 });
+            }
 
-            // Create sample presence markers
+            // Create empirical occurrence markers (GBIF / iNaturalist)
             if (data.presence_points && data.presence_points.length > 0) {
                 presenceMarkersLayer = L.layerGroup();
                 data.presence_points.forEach(coord => {
                     const marker = L.circleMarker([coord[1], coord[0]], {
                         radius: 5,
-                        fillColor: '#ffffff',
-                        color: '#000000',
+                        fillColor: '#10b981',
+                        color: '#ffffff',
                         weight: 1.5,
                         opacity: 1,
-                        fillOpacity: 0.9
-                    }).bindPopup(`<strong>${data.species.name}</strong><br>Optimal Habitat Coordinate`);
+                        fillOpacity: 0.95
+                    }).bindPopup(`<strong>${data.species.name}</strong><br>Empirical Field Observation (GBIF / iNaturalist)<br>Lat: ${coord[1].toFixed(4)}, Lon: ${coord[0].toFixed(4)}`);
                     presenceMarkersLayer.addLayer(marker);
                 });
             }
 
-            // Pan and zoom to centroid
-            map.setView([data.center[1], data.center[0]], 11);
+            // Pan and zoom to centroid or landscape bounds
+            if (data.bounds && data.image_overlay_url && !data.tile_url.startsWith('https://earthengine')) {
+                map.fitBounds(data.bounds);
+            } else if (data.center) {
+                map.setView([data.center[1], data.center[0]], 11);
+            }
 
             // Display SDM metrics
             sdmSuitabilityVal.textContent = `${data.mean_suitability}%`;
             sdmIucnVal.textContent = data.species.iucn;
             sdmResults.classList.remove('hidden');
+
+            // Update dynamic covariates list
+            const covListEl = document.getElementById('sdm-covariates-list');
+            if (covListEl && data.predictors) {
+                covListEl.textContent = `Covariates: ${data.predictors.join(', ')}`;
+            }
 
             // Show SDM legend
             sdmLegendTitle.textContent = `${data.species.name} Habitat Suitability`;

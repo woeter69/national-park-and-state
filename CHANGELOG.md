@@ -5,6 +5,11 @@ All notable changes to the Protected Area & Species Distribution Modeling projec
 ## [Unreleased] - 2026-10-28
 
 ### Added
+- **Web UI & Interactive Map Integration**:
+  - `app.py`: Integrated Indian Elephant SDM directly into the live web app backend with real GBIF/iNaturalist occurrences, WorldClim BioClim layers, resilient Earth Engine initialization, and static layer serving.
+  - `static/js/main.js`: Enhanced Leaflet map to render live SDM layers, empirical GBIF field occurrence markers with interactive popups, dynamic covariates list, and seamless mode switching.
+  - `templates/index.html`: Updated Species Distribution Modeling card to include WorldClim BioClim covariates.
+  - `Makefile` & `run_sdm.sh`: Added `make up` and `make sdm` commands.
 - **Real Biological Occurrence Point Records**:
   - `data/Elephas_maximus_Occurrences_GBIF_iNat.csv`: Compiled 1,200 verified GPS point records of the Indian Elephant (*Elephas maximus indicus*) from GBIF (Global Biodiversity Information Facility) and iNaturalist research-grade field observations across India's elephant reserves and corridors.
 - **Gridded Bioclimatic Spatial Surfaces (WorldClim 2.1)**:
