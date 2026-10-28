@@ -1,0 +1,1201 @@
+gbif_id,scientific_name,common_name,latitude,longitude,year,month,state_province,basis_of_record,dataset_name,coordinate_uncertainty_m
+5938598202,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,8.558325,77.26532,2026,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31279.0
+6129827786,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.814485,76.085317,2026,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6129961962,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.445072,80.723536,2026,1,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+6130043119,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.32854,76.171272,2026,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+6130107426,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.470553,76.523152,2026,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6131175628,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.436958,77.773303,2026,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31081.0
+6131354178,"Elephas maximus Linnaeus, 1758",Indian Elephant,29.379398,79.13098,2026,1,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29508.0
+6131511352,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.644363,77.536176,2026,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31069.0
+6133080856,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.563453,77.017136,2026,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6133125097,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.383967,76.843202,2026,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31148.0
+6133158499,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.404176,78.963239,2026,1,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6133316984,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.524602,92.932464,2026,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6147642931,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.87958,76.139106,2026,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6159482253,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.878934,76.001817,2026,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6159494274,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.094071,76.075833,2026,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6168472893,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35684,76.89179,2026,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168475637,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34275,76.91864,2026,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,14.0
+6168475821,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36836,76.90816,2026,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,9.0
+6168476591,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34265,76.84393,2026,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,9.0
+6179282414,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.418964,93.265579,2026,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6185476499,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.43869,76.649055,2026,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6185762834,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.753026,76.57673,2026,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,82186.0
+6234461738,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.534577,76.483854,2026,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6235300246,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.149733,91.419113,2026,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29891.0
+6251663698,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,8.717,77.369071,2026,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31271.0
+6321151642,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.395738,78.871277,2026,1,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29508.0
+6400523390,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,21.497325,86.792452,2026,1,Odisha,HUMAN_OBSERVATION,iNaturalist research-grade observations,30377.0
+6147497945,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,18.745885,83.233892,2026,2,Andhra Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30632.0
+6159358855,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.516545,78.855138,2026,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6159510440,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.610414,76.501904,2026,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6159520871,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.564846,78.833705,2026,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6159528107,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.170413,76.799861,2026,2,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31158.0
+6159550792,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.263491,95.459042,2026,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6159572830,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.741053,76.678971,2026,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6159573350,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.201088,95.492779,2026,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6159610527,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.535483,77.465504,2026,2,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31081.0
+6159636322,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.560642,78.958235,2026,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6159642517,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.571564,78.812299,2026,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6161823404,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.485408,76.436691,2026,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,250.0
+6162780189,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.785207,81.162736,2026,2,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+6163185718,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.398243,95.537517,2026,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6163257783,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.708403,76.433402,2026,2,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6163301960,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.235494,95.494428,2026,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6163362583,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.283531,95.541804,2026,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6163418817,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.289648,95.564029,2026,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6168472888,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.29016,76.66594,2026,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,8.0
+6168473410,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34516,76.97292,2026,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473770,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.37363,76.87691,2026,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,7.0
+6168475559,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34867,76.97294,2026,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,21.0
+6168475643,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36681,76.98493,2026,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,11.0
+6168476420,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.30207,76.8438,2026,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,19.0
+6171028393,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.0245,76.136036,2026,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6171087151,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.866251,77.026405,2026,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6171111006,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.475987,78.98936,2026,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6171173887,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.387514,76.768768,2026,2,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31148.0
+6171312918,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.433522,78.981265,2026,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6171647453,"Elephas maximus Linnaeus, 1758",Indian Elephant,9.578563,77.179932,2026,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,250.0
+6178618440,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.644129,81.084454,2026,2,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+6178935428,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.442271,77.438122,2026,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31081.0
+6179019594,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.770648,81.061607,2026,2,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+6179090974,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.689404,89.863249,2026,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6188238284,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.744527,90.183173,2026,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195699496,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.596567,79.176517,2026,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6195776883,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.477175,80.76293,2026,2,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+6234711230,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.449944,75.767861,2026,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31020.0
+6236539395,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.484382,75.70472,2026,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31020.0
+6274335605,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.780881,89.906863,2026,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6334531389,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.639793,89.896165,2026,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6400591705,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.677038,76.164615,2026,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6480636696,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.595013,76.500023,2026,2,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6498345414,"Elephas maximus Linnaeus, 1758",Indian Elephant,26.672231,90.115572,2026,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6178395891,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.581447,78.884847,2026,3,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6178868871,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.534843,92.987198,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6178935777,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.654834,91.106974,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6179031720,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.719555,91.041028,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6179405285,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,18.756998,83.555186,2026,3,Andhra Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30632.0
+6179412650,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.441033,78.923744,2026,3,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29747.0
+6184777471,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.884022,76.687972,2026,3,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31169.0
+6185290769,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.434553,92.942331,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6185334806,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.087943,76.609494,2026,3,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31158.0
+6185487957,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.772014,93.442885,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6185855429,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.77177,93.234291,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6185884525,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.71828,93.277161,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6185936549,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,24.690675,80.156523,2026,3,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30047.0
+6187974222,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.768116,90.911599,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6187987649,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.756314,90.994112,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6188044355,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.679518,91.007775,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6188149375,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.656526,91.122362,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6188155075,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.88111,91.264454,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29798.0
+6188204072,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.628511,76.770546,2026,3,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6188222564,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.7636,76.701857,2026,3,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6195264580,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.601149,91.135194,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195285233,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.64667,91.007829,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195306135,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.652954,93.536581,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195308069,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.649585,91.032638,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195358297,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.701777,93.369245,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195361092,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.775641,93.295997,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195390949,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.591304,93.075758,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6195429991,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.606723,93.204325,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195433152,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.747361,93.513076,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195468061,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.641627,93.424799,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195504697,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.570745,93.162877,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6195555498,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.661437,91.168979,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195575586,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.686332,93.200319,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195593589,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.717922,91.060203,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195704378,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.643156,93.301543,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195704383,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.989019,91.267165,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29798.0
+6195719607,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.745609,93.447535,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195756232,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.636876,91.178758,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195760907,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.682515,91.169604,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195762363,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.629133,91.010098,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195763021,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.729901,91.002199,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195766175,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.662942,93.530218,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195810715,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.601055,91.184863,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195925546,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.778209,93.314792,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6196004424,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.604393,93.408245,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6196054591,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.722636,93.487554,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6196055485,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.67808,91.038851,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6235044631,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.620025,76.909478,2026,3,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6334191884,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.238412,77.290807,2026,3,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6334405002,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.728437,75.956597,2026,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6352946951,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.2634,95.44877,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6441865388,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.096412,75.741539,2026,3,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6451528061,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.640672,91.180629,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6451727848,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.612739,91.055587,2026,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6188222165,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.910592,76.17613,2026,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6188528302,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.920116,78.055764,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29433.0
+6195354896,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.75455,75.673893,2026,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6195431442,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.485569,77.277672,2026,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6195465467,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.670427,75.631125,2026,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6195601075,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.742755,75.771331,2026,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6195612958,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.876508,76.973299,2026,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31218.0
+6195614483,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.608124,75.606729,2026,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6195637523,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.795778,75.789796,2026,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6195721863,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.601332,75.808496,2026,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6195734982,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.625466,91.165408,2026,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6195883228,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.611166,75.70527,2026,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6195883343,"Elephas maximus Linnaeus, 1758",Indian Elephant,13.687628,75.628977,2026,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6195946939,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.605469,75.774996,2026,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6195962286,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.660714,80.89358,2026,4,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+6234911457,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.006894,87.508304,2026,4,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,30217.0
+6234988391,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.705399,75.722389,2026,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6235117867,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.092379,87.529928,2026,4,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,30217.0
+6235197116,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.122319,87.248444,2026,4,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,30217.0
+6235224516,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.852558,76.162278,2026,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6235240383,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.984923,76.285637,2026,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6235497934,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.977369,75.814516,2026,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6235913914,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.911488,76.043567,2026,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6236177174,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.987366,76.080463,2026,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6251463956,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.787398,91.055584,2026,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6251829743,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.509278,92.895845,2026,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6252351540,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.642391,91.183089,2026,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6253018774,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.787896,91.009964,2026,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6253077915,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.75472,91.197015,2026,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6253096037,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.793898,91.166403,2026,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6273341826,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,30.065629,78.044404,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29407.0
+6320684325,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.633957,76.134621,2026,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31179.0
+6321014990,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.41168,78.881113,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29835.0
+6333892743,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.473471,78.969923,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6333941548,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.450577,78.957257,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6333970078,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.456918,78.893149,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6334017804,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.483734,78.809094,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6334018935,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.527805,78.831563,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6334282059,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.583327,78.984905,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6334305582,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.511571,78.999954,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6334573728,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.40182,78.926333,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6334640023,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.492446,78.939505,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6334822031,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.584662,78.918288,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6334852931,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.418438,78.843207,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6334855871,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.531391,78.960189,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6334927753,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.501264,78.884516,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6398678824,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.684647,76.677861,2026,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6400167039,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.714265,93.248212,2026,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6431188521,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.324756,95.725255,2026,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6431916008,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.591883,76.41951,2026,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6431946388,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,30.196092,78.022838,2026,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29407.0
+6441161128,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.78329,93.309915,2026,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6500104121,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.728567,79.243639,2026,4,Andhra Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6273362170,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.871801,76.158143,2026,5,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6273946703,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.613963,76.448098,2026,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6274038379,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.823709,76.178196,2026,5,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6320817602,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.578366,76.8112,2026,5,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+6321010449,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.112977,75.832712,2026,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6321170040,"Elephas maximus Linnaeus, 1758",Indian Elephant,8.635454,77.011324,2026,5,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31271.0
+6333979365,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.550319,78.84533,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6334143079,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.47058,78.894062,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6334181407,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.544067,78.806556,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6334193371,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.549796,78.9543,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6334225850,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.499119,78.918498,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6334328806,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.495769,78.903923,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6334446360,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.403071,78.977695,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6334595796,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.592815,78.804527,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6334612775,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.563637,78.928222,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6334665524,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.508036,76.663677,2026,5,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+6334717595,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.507812,78.887173,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6334962947,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.15536,75.825918,2026,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6335013841,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.550423,78.982285,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6352375450,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.231405,95.592942,2026,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6352511406,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.223314,95.488001,2026,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6352548147,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.823296,78.380508,2026,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29433.0
+6352659394,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.354986,95.410569,2026,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6352920907,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.911979,92.838892,2026,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29798.0
+6352972583,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.560881,92.874087,2026,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6353154504,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.353173,95.573517,2026,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6399154219,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.158078,76.117426,2026,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6399384839,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.650412,76.651566,2026,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6399439813,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.183285,76.157686,2026,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6400079674,"Elephas maximus Linnaeus, 1758",Indian Elephant,22.757892,86.441955,2026,5,Jharkhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,30258.0
+6400188781,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.535482,77.3906,2026,5,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6413231473,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.819749,76.295657,2026,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6413939058,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.608764,76.458563,2026,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6413983376,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.616195,88.7525,2026,5,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6422258488,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.751314,77.794482,2026,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31069.0
+6422350024,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.1933,76.986461,2026,5,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+6480928441,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.636089,76.526458,2026,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6498105327,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.452844,75.796085,2026,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31020.0
+6498349712,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.684952,90.839992,2026,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6499514438,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.685984,91.175363,2026,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6551813785,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.428254,77.32788,2026,5,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6398670356,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.002704,75.931249,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6400507687,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.115195,76.371493,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6400514047,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.260615,76.017492,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+6400579571,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.628052,88.72008,2026,6,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6413002090,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.952928,76.006815,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6413035630,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.853388,76.312098,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6413107102,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.603164,76.620416,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6413194307,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.125401,76.045042,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6413331604,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.913054,76.205035,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6413370824,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.859119,76.327077,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6413386949,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.083002,76.299719,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6413490317,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.854638,76.230959,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6413548442,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.155227,76.349461,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6413582957,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.632988,76.674175,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6413718825,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.014514,76.27036,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6413869705,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.884947,75.809677,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6413879752,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.87967,76.339855,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6413993060,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.95258,76.225716,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6414013736,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.899757,76.326199,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6414016986,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.184352,76.207504,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6414074787,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.80357,76.151286,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6414103018,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.040355,76.392569,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6422092656,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.985448,76.087103,2026,6,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6422195985,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.633196,91.156463,2026,6,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6422266045,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.933784,76.164598,2026,6,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6422424932,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.615889,91.110976,2026,6,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6422601513,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.72263,76.448496,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6422712461,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.078862,77.058326,2026,6,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+6422990938,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.620781,76.534714,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6431755733,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.113479,91.957347,2026,6,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29891.0
+6441190982,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.334986,75.85866,2026,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+6441906688,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.341885,83.931379,2026,6,Bihar,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6518670418,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.463178,77.197122,2026,6,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6431032631,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.2307,76.577254,2026,7,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6441519648,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.266029,75.848993,2026,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+6441895017,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.684044,75.653068,2026,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6441966964,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.909616,88.362353,2026,7,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,29798.0
+6469590548,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.536464,76.874544,2026,7,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+6469807782,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.38664,76.657662,2026,7,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31148.0
+6469878394,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.241948,76.856756,2026,7,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6470747624,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.448332,76.585302,2026,7,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6479700889,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.41063,77.342554,2026,7,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6518466128,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.382896,95.510265,2026,7,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6519211849,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.431529,92.997428,2026,7,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6519473821,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.218241,76.88678,2026,7,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6520597921,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.58822,77.213087,2026,7,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6550756267,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.726178,76.443058,2026,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6550818444,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.641487,76.575165,2026,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6551848966,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.782741,76.503988,2026,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6552189564,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.750514,76.55136,2026,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6552668405,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.796447,76.401019,2026,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6479238447,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.263885,76.949754,2026,8,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31148.0
+6479551415,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.662176,88.419295,2026,8,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6498594009,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.475632,76.835881,2026,8,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+6498966874,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.156008,76.791113,2026,8,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31158.0
+6500271447,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.519156,76.486885,2026,8,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6518923238,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.5737,77.06889,2026,8,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6518947734,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.403608,76.89884,2026,8,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+6551618417,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.415103,76.764781,2026,8,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6519331979,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.78104,77.476971,2026,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6519386046,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.239438,95.497462,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6519411451,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.962397,76.250134,2026,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6519527900,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.781679,76.34711,2026,9,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6520250474,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.233075,95.519979,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6520694508,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.250166,95.462423,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6551114426,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.359544,76.888048,2026,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6551272934,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.069648,76.037184,2026,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6551325932,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.431987,76.470608,2026,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6551452480,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.20546,95.531789,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6551560645,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.893737,88.307885,2026,9,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,29798.0
+6551825410,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.06122,77.012176,2026,9,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+6551936864,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.68484,76.567804,2026,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6552166856,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.46997,95.766956,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29727.0
+6552527460,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.089137,76.025482,2026,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6553031570,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,21.423101,82.429696,2026,9,Chhattisgarh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30377.0
+6553076357,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.007189,76.078964,2026,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6566391033,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.559131,95.514289,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29727.0
+6566566811,"Elephas maximus Linnaeus, 1758",Indian Elephant,15.903269,73.992927,2026,9,Maharashtra,HUMAN_OBSERVATION,iNaturalist research-grade observations,30855.0
+6566625817,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.466372,95.413,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29727.0
+6566732133,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.266012,76.977063,2026,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6567002308,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.144762,76.063536,2026,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6567084856,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.425581,95.456728,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29727.0
+6567088386,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.619596,76.672217,2026,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6567124318,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.392719,95.45105,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6578988759,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.279132,95.497306,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6579381825,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.081825,76.152649,2026,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6579562579,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.303675,95.423552,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6579578444,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.241358,76.852017,2026,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6579869410,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.383118,95.59142,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6579974392,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.212094,95.523275,2026,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+6579009460,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,20.417775,81.008075,2026,10,Chhattisgarh,HUMAN_OBSERVATION,iNaturalist research-grade observations,299795.0
+6579647381,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,17.235636,79.60177,2026,10,Telangana,HUMAN_OBSERVATION,iNaturalist research-grade observations,1272596.0
+5007671410,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.552765,78.901765,2025,1,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,55859.0
+5007907869,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.416621,78.821321,2025,1,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,55859.0
+5036885104,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.480552,77.10966,2025,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5036898866,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.198615,76.932434,2025,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+5037034109,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.507528,77.031395,2025,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5037042023,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.559182,76.640396,2025,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5063253636,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.591425,77.068779,2025,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5063315721,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.800869,75.969187,2025,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5063448237,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.53649,78.886199,2025,1,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5063514296,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.304652,76.950622,2025,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5063614719,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,17.25789,77.941355,2025,1,Telangana,HUMAN_OBSERVATION,iNaturalist research-grade observations,1090945.0
+5063746438,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.515785,77.056328,2025,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5087143895,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.897942,76.083514,2025,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5087470784,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.761631,93.398276,2025,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5087472918,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.798432,93.307238,2025,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5167206997,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.581096,76.419096,2025,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5217070622,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.260945,95.479239,2025,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+5761201610,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.079754,76.040748,2025,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5827665858,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.728865,76.662462,2025,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5827782141,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.610264,76.796921,2025,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5908965976,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.481877,78.89741,2025,1,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29746.0
+5932199140,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.095677,76.387198,2025,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5932401690,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.547128,76.949045,2025,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+6168472393,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34157,76.92882,2025,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,22.0
+6168473086,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35725,76.93465,2025,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,6602.0
+6168473660,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34782,76.91937,2025,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168475321,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.30857,76.8717,2025,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6168475336,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.87664,75.67238,2025,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,10.0
+6168475537,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34158,76.9288,2025,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168475743,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.30463,76.87349,2025,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,8.0
+5063626843,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.46434,77.343856,2025,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5063868048,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.634085,75.633389,2025,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+5063968527,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.463094,77.001536,2025,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5064017791,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.799698,76.450012,2025,2,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5064035962,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.703554,76.541784,2025,2,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5064081776,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.420364,78.882774,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5069806922,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.566313,78.875163,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5069821837,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.568264,78.868238,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5069851966,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.512161,78.835338,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5069910847,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.472937,76.467021,2025,2,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5069953385,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.552052,79.136648,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5077044033,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.668508,89.208741,2025,2,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5077151538,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.447354,77.092508,2025,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5077172303,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.684831,76.792355,2025,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5087310878,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.510453,78.94466,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5087460586,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.499546,77.38613,2025,2,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+5087500864,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.561112,76.726884,2025,2,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5087540200,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.545645,76.661033,2025,2,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5087659814,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.45945,77.158723,2025,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5087728266,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.785227,93.227831,2025,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5087977261,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.46361,78.900853,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5104569100,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.473434,78.893825,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5104657957,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.475265,78.825817,2025,2,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5104697142,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.597197,78.953511,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5104705095,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.401788,78.970592,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5134660830,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.466053,78.834872,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5134700025,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.436809,78.902492,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5134803858,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.483525,78.920546,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5176650116,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.594158,78.935278,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5177298310,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.597305,78.936129,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5188386310,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.526824,79.055322,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5760331382,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.41325,78.944944,2025,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6168472496,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34488,76.96988,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473495,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36426,76.97375,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473519,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34514,76.97293,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168474194,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34145,76.96929,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,7.0
+6168475541,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34975,76.93482,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168475608,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35153,76.95161,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,9.0
+6168475655,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36431,76.97214,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,8.0
+6168475747,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35292,76.95693,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,8.0
+6168475915,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.30815,76.84039,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476550,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34141,76.89924,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476600,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3494,76.93472,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476780,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3493,76.93464,2025,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6185357940,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.007865,76.825711,2025,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+6520322698,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.119805,76.662712,2025,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+5087902297,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.581851,76.402415,2025,3,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5104637975,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.459955,76.773751,2025,3,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5104708510,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.640079,93.373797,2025,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5108130154,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.517082,78.846767,2025,3,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5108286433,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.531441,78.810267,2025,3,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5108404525,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.568401,78.962793,2025,3,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5108422789,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.503725,78.874879,2025,3,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5133934418,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.508106,92.996334,2025,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5141086808,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.308974,76.529642,2025,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5153913339,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.34098,77.380391,2025,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5154406055,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.480838,75.836182,2025,3,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31081.0
+5166869861,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.167758,91.651869,2025,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29891.0
+5167993908,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.527155,78.962918,2025,3,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5889359259,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.669764,77.181333,2025,3,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5892657849,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.885897,77.151932,2025,3,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5909049152,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.168475,76.841087,2025,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+6133264953,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.779861,93.391278,2025,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6168472706,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34514,76.97288,2025,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,2.0
+6168472736,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36374,76.97725,2025,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,20.0
+6168472967,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35239,76.96797,2025,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168474065,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34025,76.96672,2025,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168475627,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35556,76.95768,2025,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,2.0
+6168475765,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35901,76.95835,2025,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168475783,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.30265,76.84079,2025,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,7.0
+6168476571,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34033,76.96673,2025,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,7.0
+6168476835,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3095,76.89824,2025,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476870,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.32412,76.97033,2025,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6431348727,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.74866,93.290608,2025,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6452319961,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.776456,93.321075,2025,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5133586787,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.835189,92.959814,2025,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29798.0
+5134525999,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.016271,92.45149,2025,4,Arunachal Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29775.0
+5134526010,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.013834,92.587913,2025,4,Arunachal Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29775.0
+5140160079,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.966817,76.283297,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5140226963,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.837016,76.206463,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5140241863,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.936619,76.231525,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5140310203,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.88413,76.306966,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5140321426,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.823212,76.286612,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5140358048,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.708983,76.460683,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5140362959,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.783405,76.579196,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5140496009,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.678341,76.521917,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5140518031,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.940678,76.319165,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5140523046,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.691076,76.440788,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5140722560,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.814514,76.355824,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5140933579,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.009314,76.744364,2025,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31158.0
+5140958960,"Elephas maximus Linnaeus, 1758",Indian Elephant,23.257804,87.208339,2025,4,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,30196.0
+5141076697,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.007181,91.927314,2025,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29891.0
+5153479349,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.919263,76.034606,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5153549423,"Elephas maximus Linnaeus, 1758",Indian Elephant,26.12061,91.838844,2025,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29891.0
+5153602723,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.932737,76.189546,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5153770966,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.759341,76.104956,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5154010004,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.569074,78.823382,2025,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5154106007,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.750106,76.675044,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5154353907,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.36765,76.896081,2025,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5166981467,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.668598,76.523933,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5167801802,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.276591,76.822535,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31245.0
+5167813916,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.440284,78.976992,2025,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29592.0
+5167855222,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.911895,76.399921,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5168389346,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.97652,91.278824,2025,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29798.0
+5176593060,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.94499,76.090897,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5177293359,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.954621,76.119833,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5187645601,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.521839,77.13206,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5187722390,"Elephas maximus Linnaeus, 1758",Indian Elephant,9.591836,77.038367,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5187939657,"Elephas maximus Linnaeus, 1758",Indian Elephant,9.469062,77.09075,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5187942866,"Elephas maximus Linnaeus, 1758",Indian Elephant,9.57482,77.187426,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5187950744,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.488048,77.107164,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5187983243,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.547132,77.14117,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5188013520,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.453383,77.100881,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5188085136,"Elephas maximus Linnaeus, 1758",Indian Elephant,9.461007,77.132168,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5188085626,"Elephas maximus Linnaeus, 1758",Indian Elephant,9.431363,77.195693,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5188295237,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.92907,76.143055,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5188308655,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.549479,77.060121,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5188334919,"Elephas maximus Linnaeus, 1758",Indian Elephant,9.591783,77.071097,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5198539884,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.800324,76.136038,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5206469915,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.843205,76.054857,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6168472478,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.37491,76.9913,2025,4,,HUMAN_OBSERVATION,GBIF / iNaturalist,11.0
+6168474060,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.30764,76.83445,2025,4,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476560,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35955,76.93643,2025,4,,HUMAN_OBSERVATION,GBIF / iNaturalist,12.0
+6168477143,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36404,76.97663,2025,4,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168477278,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34164,76.96935,2025,4,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6184863342,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.741282,76.621937,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6188186697,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.648751,76.771542,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6188242246,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.873928,76.117966,2025,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6470005688,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.891944,76.277114,2025,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6479158045,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.23882,77.774233,2025,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+6518543802,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.747143,77.312592,2025,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31227.0
+6520599722,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.490007,78.990556,2025,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5153154795,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.518046,92.832309,2025,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5153753914,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,30.279377,78.038222,2025,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29382.0
+5166864193,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.686768,76.640124,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5166876743,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.619166,76.550491,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5166946582,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.58188,92.868615,2025,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5167073414,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.848174,76.294188,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5167269145,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.774395,76.695354,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5167392415,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.115218,76.001845,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5167630588,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.562251,76.335292,2025,5,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+5167989922,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.529105,78.881743,2025,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5168042534,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.798839,76.731722,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5168149758,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.725325,76.634254,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5168154115,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.892826,75.604441,2025,5,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5168309562,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.335671,76.945512,2025,5,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5168456091,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.076482,76.784626,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5187504800,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.922541,76.215675,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5188008022,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.857753,76.238697,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5188066666,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.205582,76.64597,2025,5,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31148.0
+5188344518,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.914758,76.209072,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5199276434,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.703362,76.4995,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5216175164,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.965271,76.011216,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5230338218,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.507522,76.547152,2025,5,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5230513726,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.976068,76.015181,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5231442378,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.934154,76.086972,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5282108750,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.849722,76.181359,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5291830829,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.532767,92.815246,2025,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5760803552,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.266562,78.966533,2025,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29508.0
+5890132278,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.653755,76.521397,2025,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5897245725,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.485707,92.95011,2025,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6168472314,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.37993,76.99691,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,29.0
+6168472542,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35886,76.95637,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6168472786,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35831,76.95936,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,98.0
+6168472891,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35754,76.95304,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,43.0
+6168472896,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3478,76.93407,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,10.0
+6168473499,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.46468,76.96692,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473634,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35711,76.89276,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,6.0
+6168474080,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35944,76.88933,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,6.0
+6168475327,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.37313,76.99317,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,6.0
+6168475558,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35728,76.9611,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168475872,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.46371,76.9668,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6168475913,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35076,76.91734,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,6.0
+6168475992,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36383,76.9774,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,100.0
+6168476255,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.37339,76.99351,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,9.0
+6168476776,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.46383,76.96688,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,6.0
+6168477151,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34407,76.97403,2025,5,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6519249345,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.552832,78.847859,2025,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+5198570162,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.658645,93.754209,2025,6,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5205864785,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.051082,76.116333,2025,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5216787333,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.704277,76.62492,2025,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5217003723,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.838934,75.855357,2025,6,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5230108935,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,18.750548,83.350255,2025,6,Andhra Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30632.0
+5230541265,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.467859,76.393299,2025,6,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5238304824,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.450613,76.304649,2025,6,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5292023721,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.434627,80.791448,2025,6,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+5760430729,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.916089,76.066919,2025,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6168476294,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35878,76.95615,2025,6,,HUMAN_OBSERVATION,GBIF / iNaturalist,9.0
+6168476365,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36845,76.94693,2025,6,,HUMAN_OBSERVATION,GBIF / iNaturalist,17.0
+6168476569,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35917,76.93651,2025,6,,HUMAN_OBSERVATION,GBIF / iNaturalist,18.0
+6168476680,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35747,76.95295,2025,6,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476815,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36379,76.97731,2025,6,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6273771978,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.689689,75.798338,2025,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6320442363,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.738588,75.753142,2025,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+6334672069,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,22.559973,78.423672,2025,6,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30278.0
+5229992284,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.643325,76.594102,2025,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5231010190,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.581476,76.825764,2025,7,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+5231016100,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.89696,75.916498,2025,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5231548446,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,20.771193,85.052547,2025,7,Odisha,HUMAN_OBSERVATION,iNaturalist research-grade observations,30453.0
+5231871215,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.997147,77.069122,2025,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5237651817,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.554885,76.36453,2025,7,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5238011081,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.542994,76.453017,2025,7,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5238051787,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.697125,76.750435,2025,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5238133382,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.13509,76.330099,2025,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5238395755,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.475801,76.450955,2025,7,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5827736565,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.10587,76.001731,2025,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6168475341,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.45244,76.97433,2025,7,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168476308,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36361,76.97721,2025,7,,HUMAN_OBSERVATION,GBIF / iNaturalist,20.0
+6168476668,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.71089,77.11864,2025,7,,HUMAN_OBSERVATION,GBIF / iNaturalist,10.0
+6441678375,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.537818,77.354138,2025,7,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6499092423,"Elephas maximus Linnaeus, 1758",Indian Elephant,26.605531,94.228186,2025,7,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5291882827,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.001402,77.056305,2025,8,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+5292538136,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.217736,78.80482,2025,8,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29508.0
+5292541846,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.042342,76.644058,2025,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5760018100,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,20.954135,84.378447,2025,8,Odisha,HUMAN_OBSERVATION,iNaturalist research-grade observations,30434.0
+5760057640,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.976627,76.392702,2025,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5827859977,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.638634,77.105597,2025,8,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5837661593,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.075748,76.041151,2025,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5837742989,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.122251,76.105407,2025,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5837801648,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.123134,76.188867,2025,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5837861583,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.459214,75.320289,2025,8,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31081.0
+6168473123,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3651,76.97384,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,11.0
+6168473392,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35932,76.95765,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,14.0
+6168473402,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35726,76.95428,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6168473869,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35748,76.95062,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473876,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35953,76.973,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,18.0
+6168474286,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35918,76.9571,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,9.0
+6168475469,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35796,76.97069,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,9.0
+6168476540,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35871,76.93707,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,13.0
+6168476678,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35746,76.95057,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6168476697,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35739,76.96241,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476888,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35727,76.95442,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168477030,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36304,76.97726,2025,8,,HUMAN_OBSERVATION,GBIF / iNaturalist,10.0
+6399671939,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.623188,76.643582,2025,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6422897504,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.632377,77.516762,2025,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31069.0
+5827472972,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.193377,76.053362,2025,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5828101484,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.628043,76.821527,2025,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5828161524,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.251624,76.842309,2025,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5828271076,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.02752,76.048628,2025,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5828415436,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.345653,76.823249,2025,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5828512817,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.33464,76.834326,2025,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5828603466,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.263144,76.902261,2025,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5828816298,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.217101,76.862827,2025,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5830606095,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.743166,77.182053,2025,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5830655685,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.737141,76.460401,2025,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5830696432,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.550323,77.142168,2025,9,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5830814582,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.485757,77.054397,2025,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+5830817041,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.475673,76.990494,2025,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+5837627518,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.226602,76.42825,2025,9,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5837750492,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.621583,79.257307,2025,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31250.0
+5837936520,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.882762,76.362141,2025,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5840199142,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.585436,76.613199,2025,9,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+5840233929,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.423673,93.994097,2025,9,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5903941521,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.600416,76.438966,2025,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5938055478,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.155411,76.045318,2025,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6130386729,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.379864,76.797799,2025,9,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6159145286,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.078158,76.718169,2025,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31158.0
+6168472436,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35721,76.96152,2025,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,27.0
+6168472614,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.2541,76.75849,2025,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,42.0
+6168473030,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.38595,76.99394,2025,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473082,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35798,76.97074,2025,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168474187,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.46111,76.9668,2025,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,59.0
+6168475326,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.338492,76.969665,2025,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,15000.0
+6168475534,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.67782,76.62832,2025,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,23.0
+6168477048,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.25904,76.93475,2025,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168477079,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.57741,76.6044,2025,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,16.0
+6168477396,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35359,76.96507,2025,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,29.0
+6179077238,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,20.270172,85.868393,2025,9,Odisha,HUMAN_OBSERVATION,iNaturalist research-grade observations,30490.0
+5839805536,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.080864,76.050926,2025,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5839932949,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.954275,76.229024,2025,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5840178642,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.041916,76.263967,2025,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5840243725,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.972672,76.258414,2025,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5844204483,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.043914,77.029726,2025,10,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+5844487749,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.018337,77.126954,2025,10,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+5867818911,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.430304,76.525275,2025,10,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5868366255,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.902062,78.38423,2025,10,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29433.0
+5889311561,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.982019,75.989614,2025,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5889655914,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.49599,78.605064,2025,10,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5889916364,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.525705,76.526189,2025,10,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5890037465,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,30.091772,78.133688,2025,10,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29407.0
+5890326431,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.529177,76.785225,2025,10,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5892632652,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.703644,76.737662,2025,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5893033810,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.605653,76.428254,2025,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5897853155,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.535405,80.606841,2025,10,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+5908759810,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.498372,77.036288,2025,10,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5908994645,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.503833,77.189781,2025,10,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5938632498,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.637557,76.598064,2025,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6131102759,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.283303,76.869152,2025,10,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6131653421,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.662264,81.168921,2025,10,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+6168472661,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.32762,77.02621,2025,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6168473881,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.32853,77.02252,2025,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,8.0
+6168473893,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35809,76.97044,2025,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,48.0
+6168475658,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3565,76.94915,2025,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,8.0
+6168476148,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.46709,76.96535,2025,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476371,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34042,76.99185,2025,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,30.0
+6168476423,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34449,76.97722,2025,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476625,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.38058,76.93529,2025,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168477067,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.26055,76.92481,2025,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168477118,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3317,77.01884,2025,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,18.0
+6168477389,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35852,76.95902,2025,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,11.0
+6479851938,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.556532,77.031018,2025,10,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5892896627,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.142772,77.725972,2025,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5897104835,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.509098,76.455972,2025,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5897147773,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.388516,76.870089,2025,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5897218176,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.579991,80.649715,2025,11,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+5897434942,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.60449,76.465501,2025,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5897553081,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.488531,79.062178,2025,11,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5897761799,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.334017,76.937325,2025,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5897797788,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.435646,77.036021,2025,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5897821731,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.805639,78.358294,2025,11,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29433.0
+5897837184,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.36957,92.942836,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,398654.0
+5903817134,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.431683,76.455968,2025,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5903949699,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.558088,76.452952,2025,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5908671940,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.600766,76.546946,2025,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5908729053,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.453388,76.498683,2025,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5908828775,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.554435,93.03917,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5909029839,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.503501,76.589938,2025,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5909069260,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.52657,79.180643,2025,11,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5909160169,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.578045,77.517344,2025,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31081.0
+5909180164,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.656274,76.632767,2025,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5909275721,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.585985,76.781481,2025,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5920171075,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.699612,76.094398,2025,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5935421832,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.531448,77.001283,2025,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6168472405,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35926,76.95783,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,6.0
+6168472629,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3489,76.97291,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168472839,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35799,76.96448,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,11.0
+6168473113,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35755,76.96259,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,25.0
+6168473344,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35337,76.92714,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473450,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34923,76.93458,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473966,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35919,76.95803,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,12.0
+6168473986,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35754,76.95385,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,8.0
+6168475434,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35228,76.95503,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168475516,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35609,76.94776,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,22.0
+6168475893,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35714,76.95172,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,9.0
+6168476117,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3845,76.85586,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,6.0
+6168476192,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.38558,76.99394,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476321,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.93202,75.65534,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,20.0
+6168476327,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35582,76.99897,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476472,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35768,76.95351,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,33.0
+6168476904,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3593,76.95772,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476942,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35752,76.95074,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,17.0
+6168477277,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3586,76.95536,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168477316,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3517,76.93653,2025,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6178895482,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.698977,93.291141,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6179333101,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.449588,92.906926,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6179508249,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.538143,92.973371,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6184902213,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.641793,93.298826,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6185004082,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.282473,92.165333,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29868.0
+6185780332,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.541477,92.871795,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6235840929,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.507866,92.864051,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6273572389,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.440787,92.99521,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6334262690,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.662312,93.603647,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6400866708,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.489209,78.840841,2025,11,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6431928308,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.404346,78.800955,2025,11,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6498418963,"Elephas maximus Linnaeus, 1758",Indian Elephant,26.657007,89.984845,2025,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6551520635,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,21.459812,82.579543,2025,11,Chhattisgarh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30377.0
+5908897599,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.771748,76.583185,2025,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5920116493,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.386457,76.94661,2025,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5920255095,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.562041,80.688906,2025,12,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+5932459979,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.600908,76.561219,2025,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5932508916,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.717249,93.225206,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5932713328,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.465321,78.871919,2025,12,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+5935269718,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.649997,90.956429,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5935309693,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.704169,90.802783,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5935364805,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.430273,77.049979,2025,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5935410368,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.77867,91.11164,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5935410769,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.670417,91.062458,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5935618016,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.737283,91.060108,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5935870601,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.576358,80.780793,2025,12,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+5935942439,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.613203,91.120439,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5936110064,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.366989,91.878292,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29868.0
+5936182859,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.466451,80.651177,2025,12,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+5936207338,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.390286,76.958237,2025,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5936276703,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.707551,90.9547,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5936323575,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.773772,91.009144,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5938176684,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.157619,77.095453,2025,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+5938201715,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,21.523147,86.680518,2025,12,Odisha,HUMAN_OBSERVATION,iNaturalist research-grade observations,30377.0
+5938316915,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.800271,78.207261,2025,12,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29433.0
+5938436107,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.612227,93.29406,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5938613024,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.598266,76.976772,2025,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+5938681826,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.64907,93.595314,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6129846155,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.369258,79.156195,2025,12,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29508.0
+6129935493,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.371802,76.993093,2025,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6130202993,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.947889,76.103317,2025,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6130260551,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.878314,76.190583,2025,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6130794141,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.269823,76.908249,2025,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6130981865,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.346127,76.945712,2025,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6133556510,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.443216,76.451717,2025,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,54102.0
+6159388805,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.643272,76.422736,2025,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6168472442,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34515,76.97287,2025,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473056,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35312,76.94055,2025,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,10.0
+6168473085,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.30836,76.86532,2025,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,6.0
+6168473788,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.39393,76.98081,2025,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473870,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35706,76.95181,2025,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473951,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.29106,76.84731,2025,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,10.0
+6168474017,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.30905,76.83653,2025,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6168475706,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35793,76.92907,2025,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,11.0
+6168476333,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3478,76.91956,2025,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6168476807,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.33936,76.93395,2025,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6171146260,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.750146,82.947167,2025,12,Chhattisgarh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+6171193596,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,8.876107,77.156471,2025,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31262.0
+6178638048,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.719872,91.089538,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6178856103,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.70261,91.07358,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6178919202,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.679413,93.423629,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6185025867,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.756166,88.765978,2025,12,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6423103049,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.303472,76.757014,2025,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6518992654,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.459069,93.262846,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6520152257,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.402121,93.367757,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+6579858511,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.796364,93.322693,2025,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4512329537,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.714468,77.832668,2024,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31069.0
+4512407624,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,30.052754,78.264596,2024,1,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29407.0
+4516411295,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.315501,76.439326,2024,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+4516464960,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.93899,76.07149,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4516557832,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.55578,77.975197,2024,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31081.0
+4516580007,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.550232,79.070594,2024,1,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4516587561,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.070979,76.144519,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4516612677,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.451187,77.341065,2024,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4516702070,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.142147,76.048309,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4516878431,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.241785,76.921591,2024,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+4516915763,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.056404,76.030006,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4519038123,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.125936,76.150967,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4519119527,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.002114,76.160457,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4519164391,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.006269,76.100085,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4519178451,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.040978,76.005918,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4522591466,"Elephas maximus Linnaeus, 1758",Indian Elephant,27.136994,92.489771,2024,1,Arunachal Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29775.0
+4522697137,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.611642,93.366625,2024,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4525183106,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.661872,93.26137,2024,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4525315405,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.600389,93.211911,2024,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4527982829,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.552843,93.190451,2024,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+4528137305,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.267397,76.963304,2024,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31148.0
+4597285593,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.072947,76.103883,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,35680.0
+4606897360,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.589903,76.458751,2024,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4852999405,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.631016,76.444509,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4863861757,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.205782,77.665051,2024,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+4866462544,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.108956,77.129907,2024,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4866462595,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.097841,77.077678,2024,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4866466372,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.669079,76.369517,2024,1,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4872548407,"Elephas maximus Linnaeus, 1758",Indian Elephant,29.205857,79.371312,2024,1,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29508.0
+4951945891,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.345145,76.972864,2024,1,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+5063131115,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.870625,76.370572,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5063143111,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.831036,76.344281,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6185265342,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.159071,76.365926,2024,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6186132342,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.409928,78.804734,2024,1,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6470206701,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.587357,92.938715,2024,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+4522723743,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.710632,88.417508,2024,2,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4524984192,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.507249,77.042786,2024,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4525063319,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.434519,77.068631,2024,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4525179083,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.796459,75.617013,2024,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+4525268178,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.130008,76.14503,2024,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4525320858,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.632675,81.155179,2024,2,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+4528332299,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.497403,93.047595,2024,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+4535697381,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.668554,93.525477,2024,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4596901991,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.610196,95.315935,2024,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29704.0
+4596909941,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.647737,95.252029,2024,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29704.0
+4597345968,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.653027,95.366094,2024,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29704.0
+4599872721,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.53417,77.211365,2024,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4852052330,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.435422,75.237427,2024,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31081.0
+4852122724,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.578282,77.360953,2024,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4852183092,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.60051,93.238071,2024,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4863590558,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.964336,77.578184,2024,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31057.0
+4866462157,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.85608,76.116381,2024,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4866465376,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.817957,76.099864,2024,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4866467512,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.801364,76.004373,2024,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4866467971,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.736288,76.029037,2024,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4866470604,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.814156,76.085872,2024,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4866471244,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.801364,76.004373,2024,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4866473045,"Elephas maximus Linnaeus, 1758",Indian Elephant,26.588501,93.748587,2024,2,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4951945306,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.377138,76.949253,2024,2,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4951945700,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.336513,76.92717,2024,2,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4951945860,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.345121,76.972899,2024,2,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+4976650735,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.520356,79.187838,2024,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4980491888,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,15.713585,73.966267,2024,2,Maharashtra,HUMAN_OBSERVATION,iNaturalist research-grade observations,30870.0
+4994159172,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.427475,92.971384,2024,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5292293338,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.290977,76.456775,2024,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6178580429,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.597732,77.064517,2024,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6234549330,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.706082,77.047279,2024,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31227.0
+6273593876,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.676694,93.583811,2024,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6399577134,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.448493,78.842689,2024,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6399591773,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.564011,78.901711,2024,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+6520298779,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.478108,78.938059,2024,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+4535951298,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.572859,78.956292,2024,3,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4535993708,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.324252,95.584923,2024,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+4596882101,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.164449,76.687662,2024,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+4597001109,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.000578,76.019431,2024,3,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4597158817,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.151125,76.864448,2024,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+4597449845,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.425393,78.971825,2024,3,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4597468120,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.192019,76.122652,2024,3,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4597549806,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.307377,75.4425,2024,3,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+4599752881,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.143946,76.863704,2024,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+4599962358,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.564896,76.627663,2024,3,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4600011240,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.497007,77.008989,2024,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4600201052,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.57826,76.444993,2024,3,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4606957249,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.737766,93.258946,2024,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4607112354,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.134256,76.735107,2024,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+4607223493,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.513073,93.290454,2024,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+4607259880,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.62716,93.214998,2024,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4607506404,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.635795,93.344691,2024,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4851805570,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.033206,92.525203,2024,3,Arunachal Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29775.0
+4863813594,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.668142,77.840694,2024,3,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31069.0
+4866462006,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.031054,76.824067,2024,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4866466233,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.650774,76.069381,2024,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4866471016,"Elephas maximus Linnaeus, 1758",Indian Elephant,18.896252,83.466088,2024,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4866474162,"Elephas maximus Linnaeus, 1758",Indian Elephant,21.427675,85.202357,2024,3,,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4891692784,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.606968,91.083122,2024,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4891971098,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.738602,91.142061,2024,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4908712159,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.930634,78.02869,2024,3,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29433.0
+4945740517,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.529429,92.88449,2024,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+4945777788,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.420525,92.885612,2024,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+4946284085,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.400911,92.917059,2024,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+4951945439,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.302667,76.838032,2024,3,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4951945464,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34045,76.96706,2024,3,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4951945481,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.356853,76.938454,2024,3,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4951945485,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.29402,76.90339,2024,3,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4951945493,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.285702,76.900218,2024,3,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4951945538,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34655,77.00278,2024,3,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4951945767,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.345057,76.970064,2024,3,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4982208102,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.47956,78.993385,2024,3,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4987504393,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.626688,76.59441,2024,3,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6353270512,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.70639,93.351689,2024,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4606794102,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.623598,93.329749,2024,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4607058934,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.545964,78.875429,2024,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4846858925,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.683974,77.157293,2024,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31227.0
+4846936218,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.882806,76.068979,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4846960443,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.48215,93.107165,2024,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+4846991617,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.738703,76.7293,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4847153710,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.676676,77.142631,2024,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31227.0
+4847192793,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.607814,93.232381,2024,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4851985274,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.655972,77.459326,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31069.0
+4852144820,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.303294,77.955606,2024,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+4852334661,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.483587,79.132362,2024,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4852412675,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.463905,76.405502,2024,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4852518768,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,30.042008,78.351342,2024,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29407.0
+4852695338,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.425659,76.547595,2024,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4852812936,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.551468,79.119228,2024,4,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4852999599,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.693176,89.370756,2024,4,West Bengal,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4855480996,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.840095,76.372377,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4863870120,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.702736,93.294865,2024,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4867705988,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.54409,76.723567,2024,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+4867851660,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.550737,77.255993,2024,4,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4867959534,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.65895,93.271266,2024,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4902129334,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.183316,76.689444,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4921744450,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.071011,76.283724,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4924007825,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.102567,76.783309,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4924132779,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.042801,76.252065,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4951945794,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.344608,76.971374,2024,4,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4951945864,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.363745,76.977639,2024,4,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,8.0
+4951945908,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.340512,76.967131,2024,4,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4980286808,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.025817,76.945854,2024,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31158.0
+5036914563,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.523507,76.738286,2024,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5188258258,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.479554,92.900705,2024,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5188423325,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.50894,92.848745,2024,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5216299352,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.548818,80.72261,2024,4,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+5838106893,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.517135,76.47105,2024,4,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6252472633,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.737716,76.586168,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6498205549,"Elephas maximus Linnaeus, 1758",Indian Elephant,26.976202,91.272867,2024,4,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29798.0
+6518463828,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.975333,76.294659,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6518859743,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.786109,76.642553,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,43687.0
+6518962810,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.805915,76.219976,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6519006864,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.94469,76.339287,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6519089548,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.883965,76.227158,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+6519317074,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.960507,76.28789,2024,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4855221685,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.196245,76.196374,2024,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4855564379,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.153632,76.041067,2024,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4867741474,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.539425,80.783097,2024,5,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+4867819425,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.456213,80.654548,2024,5,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+4868108360,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.268795,95.779773,2024,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+4872052060,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.965006,76.256413,2024,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4872152560,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.026485,76.116638,2024,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,35678.0
+4872301016,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.298557,76.041368,2024,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+4872646986,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.843559,76.262457,2024,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4892181302,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.158273,79.547974,2024,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29533.0
+4901061814,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.199412,92.82124,2024,5,Arunachal Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29775.0
+4904226703,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.150671,78.041251,2024,5,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30217.0
+4976667694,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,28.503639,80.774164,2024,5,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29607.0
+4980367867,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.666538,91.128648,2024,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4980397072,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.612829,91.025715,2024,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4980443324,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.651863,91.008994,2024,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4980477976,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.764992,90.802013,2024,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4980499556,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.694272,90.992885,2024,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4980562230,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.609766,91.199359,2024,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4980601675,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.662695,91.109963,2024,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4980658758,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.645002,90.988195,2024,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5133366993,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.712665,76.740454,2024,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5133457959,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.693384,76.485462,2024,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5140026927,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.123219,77.007284,2024,5,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+5154939837,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.839066,91.362162,2024,5,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29798.0
+5217511074,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.559831,78.804265,2024,5,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+6469794202,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.181865,76.02304,2024,5,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4900990687,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.582806,76.314582,2024,6,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+4901141936,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.843527,76.304792,2024,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4901343127,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.722496,77.108987,2024,6,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4901909567,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.539215,75.821582,2024,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31081.0
+4903787071,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.269369,76.486042,2024,6,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+4904095030,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.351401,76.077719,2024,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+4908275451,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.110433,76.049823,2024,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,35680.0
+4908643089,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.633712,76.427475,2024,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,32335.0
+4908837518,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.39011,76.895441,2024,6,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31245.0
+4908903105,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.713674,81.010181,2024,6,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+4909267996,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.788454,76.495312,2024,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4909273655,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.626741,81.077058,2024,6,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+4951945668,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.464016,76.967209,2024,6,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+4951945843,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.358132,76.969922,2024,6,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+5070138569,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.004619,77.122823,2024,6,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+5133580725,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.479182,76.272655,2024,6,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+5909362048,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.308613,75.939545,2024,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+6159147843,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.167206,76.320791,2024,6,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+6195307484,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.504937,78.814146,2024,6,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4908416317,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.077011,76.083347,2024,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4908994895,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.625728,76.791779,2024,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4908997237,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.932264,76.296056,2024,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4909329435,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.892774,76.369019,2024,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4919335122,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.352932,76.453106,2024,7,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+4919428963,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,15.361973,75.667935,2024,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,465784.0
+4924030827,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,20.335873,85.750391,2024,7,Odisha,HUMAN_OBSERVATION,iNaturalist research-grade observations,30490.0
+4926363323,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.094712,76.266467,2024,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4936735497,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.582379,77.295065,2024,7,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31081.0
+4951945785,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.357481,76.950584,2024,7,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+5206780454,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.447516,76.652056,2024,7,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5230246080,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.570394,76.432476,2024,7,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6133319789,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.489397,77.30772,2024,7,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+6171369585,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.032884,77.066887,2024,7,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+4936007517,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.356737,77.273462,2024,8,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+4945556866,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.657325,77.486889,2024,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31069.0
+4946134162,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.295065,75.714783,2024,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+4946176722,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.70878,77.437541,2024,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31069.0
+4946396913,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.976708,76.172087,2024,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4949907560,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.471724,75.381046,2024,8,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31081.0
+4950144063,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.256475,75.667616,2024,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+4951945726,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.29593,76.673064,2024,8,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,9.0
+5133453985,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.201118,76.227614,2024,8,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31148.0
+5198991199,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.528322,76.634154,2024,8,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5216075664,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.555584,76.650725,2024,8,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5216851501,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.773118,77.559177,2024,8,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31069.0
+4936175101,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.095758,76.03499,2024,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,35678.0
+4936205075,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.598018,76.786642,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4936338874,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.377736,75.743942,2024,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+4945654447,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.545416,76.498373,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4945812538,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.526134,76.709478,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4946320049,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.508945,76.5334,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4946322408,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.419248,76.71312,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4946368078,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.568924,76.5306,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4946430514,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.566329,76.546773,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4946482451,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.400464,76.529477,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4946504693,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.563781,76.682472,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4946713569,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.528959,76.744873,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4950154822,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.145754,76.904541,2024,9,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+4950259169,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.852663,76.315901,2024,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4952198593,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.855462,75.713823,2024,9,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4952275028,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.64141,76.452269,2024,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4952282914,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.657008,76.6636,2024,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4952771849,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.667572,76.465315,2024,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4982188258,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.713941,76.47446,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5133631359,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.884802,75.626019,2024,9,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5140565754,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.666998,76.792323,2024,9,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5168381950,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.550318,76.438079,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5840098154,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.444524,76.738754,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6168472757,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.28551,76.90872,2024,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,10.0
+6168472792,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.28552,76.90885,2024,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168473968,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.69724,77.12353,2024,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,14.0
+6168475855,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.39058,76.97944,2024,9,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6353164843,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.712616,76.493861,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6353260890,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.69841,76.515203,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6353359713,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.635216,76.565079,2024,9,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4951945622,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.366827,76.988201,2024,10,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+4973800838,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.538311,78.911649,2024,10,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4974244783,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.537035,78.806443,2024,10,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4976232726,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.712643,93.389302,2024,10,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4976283413,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.623588,93.364862,2024,10,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4976322784,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.69178,93.263007,2024,10,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4976416423,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.710063,93.228362,2024,10,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4976566554,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.569662,93.389121,2024,10,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+4976575351,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.658096,93.250239,2024,10,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4978509500,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.729194,76.481653,2024,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4980441227,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.503064,77.03634,2024,10,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4980707525,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.430144,77.219731,2024,10,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5006938398,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.154444,77.186971,2024,10,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+5007510447,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.406029,76.489325,2024,10,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5007983771,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.392531,76.919557,2024,10,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5008051103,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.202593,76.937967,2024,10,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5062901460,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.762379,76.493451,2024,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5153731922,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.28717,76.656969,2024,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+5188348354,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.143118,77.082142,2024,10,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+5281975611,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.466736,77.31023,2024,10,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6168472644,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35749,76.95082,2024,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473863,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34516,76.97289,2024,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6168474143,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35892,76.96974,2024,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168477080,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35744,76.96271,2024,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,62.0
+6168477215,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.36457,76.97772,2024,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168477386,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.34562,76.97292,2024,10,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6170893442,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.692576,76.654956,2024,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6179145645,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.656616,76.614674,2024,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6185384740,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.672611,76.683988,2024,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6518565905,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.796127,76.795225,2024,10,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4978468503,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,30.143404,79.107333,2024,11,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,247854.0
+4980496766,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.728596,77.017106,2024,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4981928032,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.034372,76.771991,2024,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+4981989441,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.619133,77.353948,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31069.0
+4982119494,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.684901,77.34258,2024,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31227.0
+4982185972,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.121165,76.716828,2024,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+4982388769,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.409136,78.944026,2024,11,Uttar Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4987386072,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.637774,93.527799,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4987407533,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.052934,76.054618,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4987421706,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.111095,76.010984,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4987426564,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.136945,76.028438,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4987441569,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.073971,76.051971,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4987484952,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.086179,76.19056,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4987488086,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.008562,76.114472,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4987566346,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.086947,76.120477,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4987637102,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.574378,76.60993,2024,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4987646413,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.163427,76.189477,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4987752883,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.126431,76.015755,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4987848255,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,30.054346,78.336622,2024,11,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29407.0
+4993725617,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.874584,76.393975,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4993751693,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.613958,76.777228,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4993843966,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.599671,76.979733,2024,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+4993872899,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.495335,76.933931,2024,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+4993894551,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.949891,76.089616,2024,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4993951179,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.138422,76.046177,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4994105815,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.215257,76.871291,2024,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+4994123146,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.046748,77.020456,2024,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+4994249586,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.463004,76.797838,2024,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+4994259249,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.065323,76.035917,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4994311034,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.716791,76.732942,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4994313306,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.700061,91.079001,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4994521875,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.103334,76.170878,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4994585103,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.107857,76.074246,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+4994624356,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.7632,76.684796,2024,11,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5006979521,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.779847,93.314611,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5007287203,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.664181,93.218572,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5007409105,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.708092,93.484075,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5007477211,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.616702,93.548982,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5007642390,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.718266,93.331338,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5007991832,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.871788,76.03443,2024,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5008133137,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.604542,93.389927,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5008228979,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.933362,76.111336,2024,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5140560964,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.459727,76.407465,2024,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5281905963,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.789388,93.299291,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5908693167,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.551657,93.331599,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5908920286,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.672359,93.292709,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5908961999,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.718774,93.378865,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6168472636,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.30995,76.83559,2024,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168472658,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.29353,76.96134,2024,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,6.0
+6168472990,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.29672,76.9608,2024,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473300,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35801,76.96728,2024,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168473954,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.30897,76.87056,2024,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168475550,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35923,76.95749,2024,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476326,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.31252,76.83502,2024,11,,HUMAN_OBSERVATION,GBIF / iNaturalist,3.0
+6399458864,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.313253,76.852259,2024,11,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+6480599016,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.823268,75.920345,2024,11,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31169.0
+6566559619,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.695499,93.007911,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6567405470,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.551534,93.024523,2024,11,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+4994312113,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.632979,76.784876,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4994588361,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.591161,77.390423,2024,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5006717609,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,13.77769,75.738194,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31007.0
+5006743713,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.154378,76.029289,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5006747661,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.433421,92.867855,2024,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5006778553,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.326168,76.82896,2024,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5006807247,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.060644,76.165037,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5006826727,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.171853,77.12069,2024,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+5007002711,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.522665,77.199724,2024,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5007020790,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.772751,93.549624,2024,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5007078200,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.996213,76.080926,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5007083644,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.897366,78.106827,2024,12,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29433.0
+5007121137,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.551899,76.690793,2024,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+5007126993,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.343803,76.935435,2024,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5007170037,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.00577,76.180304,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5007199263,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.156268,76.171908,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5007254603,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.486567,77.164553,2024,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5007310173,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.889688,76.39123,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5007356912,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.927842,76.314456,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5007614516,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.781332,76.754321,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5007678624,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.224688,76.863365,2024,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5007825104,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.684098,93.223423,2024,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5008140693,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.756588,77.037391,2024,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31227.0
+5008143692,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.3544,76.944097,2024,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5008186313,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.442182,93.23656,2024,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+5008259529,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.280572,76.848138,2024,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5008286891,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.898424,76.245117,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5008307685,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,14.557039,74.946159,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,30954.0
+5008314661,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.088467,76.042388,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5008314669,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.091297,76.1001,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31104.0
+5008388484,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.959861,78.051995,2024,12,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29433.0
+5037024952,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.446192,77.108034,2024,12,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5037243485,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.61149,93.32533,2024,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+5063233241,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.295136,95.466723,2024,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29751.0
+5063888984,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.322724,76.971716,2024,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5217399159,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.81073,91.303082,2024,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29798.0
+5827648143,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.344178,76.973361,2024,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31199.0
+5828030446,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.932671,76.396199,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+5938045828,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.643824,93.333107,2024,12,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+6147485659,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,22.531544,85.892208,2024,12,Jharkhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,30278.0
+6159670262,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.428681,76.768515,2024,12,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+6168473080,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.63959,76.59751,2024,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168474276,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.35838,76.94649,2024,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168475792,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.45259,76.97626,2024,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,10.0
+6168476582,"Elephas maximus Linnaeus, 1758",Indian Elephant,11.6505,76.61554,2024,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,5.0
+6168476789,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.3905,76.98682,2024,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,4.0
+6168476980,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.9326,75.65357,2024,12,,HUMAN_OBSERVATION,GBIF / iNaturalist,38.0
+6185852927,"Elephas maximus Linnaeus, 1758",Indian Elephant,12.256312,77.459722,2024,12,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31092.0
+4015283396,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.003691,76.142057,2023,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,34773.0
+4018587043,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.685382,93.514827,2023,1,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4022216898,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.172855,76.095074,2023,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,34773.0
+4028889409,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.633532,76.643206,2023,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4028890138,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.405035,77.005012,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4029065015,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.400312,77.101547,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4029087500,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.507189,77.233609,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4029108076,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.522208,77.337206,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4029223597,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.667918,76.677813,2023,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4029224099,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.568758,77.282175,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4054866539,"Elephas maximus Linnaeus, 1758",Indian Elephant,9.575716,77.273819,2023,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4062875570,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.5762,77.232968,2023,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4067193693,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,8.743177,77.273575,2023,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31271.0
+4067354710,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.402135,77.370457,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4067368702,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.404426,77.265532,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4076320690,"Elephas maximus Linnaeus, 1758",Indian Elephant,9.411357,77.113713,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4091366481,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.477598,77.380714,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4091395505,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.502121,77.379777,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4091462502,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.49915,77.375018,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4091674508,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.429146,77.322734,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4091687512,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.555684,77.208307,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4091704510,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.551057,77.2022,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4091742482,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.425015,77.222245,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4091764492,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.425828,77.273886,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4091775465,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.444255,77.218619,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4091888504,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.594117,77.364929,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4091902484,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.458881,77.344977,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4416634923,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,27.559397,96.431779,2023,1,Arunachal Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,29727.0
+4442363619,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.420392,77.342154,2023,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+4879746329,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.352163,76.948581,2023,1,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,
+4879746589,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.45941,76.969617,2023,1,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,5.3
+4879746928,"Elephas maximus Linnaeus, 1758",Indian Elephant,10.345162,76.972933,2023,1,Tamil Nadu,HUMAN_OBSERVATION,GBIF / iNaturalist,7.7
+4980740712,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.417665,77.391827,2023,1,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5231477992,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.672936,76.597008,2023,1,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+5281844709,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.473598,78.832235,2023,1,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29651.0
+5908791021,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.659265,76.409665,2023,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+6398671190,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.913987,76.359999,2023,1,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4034757570,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.132488,76.879828,2023,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31208.0
+4039400979,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.742438,76.491667,2023,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,32280.0
+4039561565,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,12.6565,77.549114,2023,2,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31069.0
+4054778736,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.589138,76.439688,2023,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+4075716894,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.497276,76.02638,2023,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4102965419,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.428488,78.970718,2023,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4112090824,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,29.400512,78.97272,2023,2,Uttarakhand,HUMAN_OBSERVATION,iNaturalist research-grade observations,29483.0
+4138667488,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.779316,76.399997,2023,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4400347800,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.677129,81.024492,2023,2,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+4892147017,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.428249,77.19537,2023,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+5909393335,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,9.406786,77.07019,2023,2,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31236.0
+6252640870,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.613017,81.085858,2023,2,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+6451582349,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,23.747402,81.076706,2023,2,Madhya Pradesh,HUMAN_OBSERVATION,iNaturalist research-grade observations,30154.0
+6470372816,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.520337,92.88418,2023,2,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29845.0
+4067190212,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.736555,76.314998,2023,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4075567910,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.714984,76.386015,2023,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31126.0
+4465524488,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.777484,93.55652,2023,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4465694524,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,26.681211,93.27781,2023,3,Assam,HUMAN_OBSERVATION,iNaturalist research-grade observations,29822.0
+4891706712,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,10.536049,76.752365,2023,3,Kerala,HUMAN_OBSERVATION,iNaturalist research-grade observations,31189.0
+4891934816,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.96245,76.356158,2023,3,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4892060343,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.498087,76.411024,2023,3,Tamil Nadu,HUMAN_OBSERVATION,iNaturalist research-grade observations,31137.0
+4980357735,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.959925,77.305418,2023,3,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0
+4080448064,"Elephas maximus indicus Cuvier, 1798",Indian Elephant,11.888292,76.348103,2023,4,Karnataka,HUMAN_OBSERVATION,iNaturalist research-grade observations,31115.0

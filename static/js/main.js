@@ -601,122 +601,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // Species Distribution Modeling (SDM) Module
+    // Indian Elephant SDM Module (Elephas maximus indicus)
+    // All-India continental habitat suitability via GEE
+    // 3 interchangeable data sources + ensemble default
     // ==========================================
-    const speciesSelect = document.getElementById('species-select');
-    const runSdmBtn = document.getElementById('run-sdm-btn');
-    const sdmResults = document.getElementById('sdm-results');
+    const runSdmBtn    = document.getElementById('run-sdm-btn');
+    const sdmResults   = document.getElementById('sdm-results');
     const sdmSuitabilityVal = document.getElementById('sdm-suitability-val');
-    const sdmIucnVal = document.getElementById('sdm-iucn-val');
-    const sdmLegend = document.getElementById('sdm-legend');
+    const sdmIucnVal   = document.getElementById('sdm-iucn-val');
+    const sdmLegend    = document.getElementById('sdm-legend');
     const sdmLegendTitle = document.getElementById('sdm-legend-title');
+    const sdmScopeBadge  = document.getElementById('sdm-scope-badge');
 
-    const flagshipBadge = document.getElementById('flagship-badge');
+    // Active data source (default: ensemble)
+    let activeDataSource = 'ensemble';
+    const SOURCE_EMOJI = {
+        ensemble:       '🔀',
+        bioclim:        '🌡️',
+        remote_sensing: '🛰️',
+        land_cover:     '🌿',
+    };
 
-    // Load species catalog filtered by state with visual highlighting
-    function loadSpeciesForState(stateName) {
-        const url = stateName ? `/api/species?state=${encodeURIComponent(stateName)}` : '/api/species';
-        fetch(url)
-            .then(res => res.json())
-            .then(speciesList => {
-                speciesSelect.innerHTML = '<option value="" disabled selected>Choose a species...</option>';
-
-                const flagships = speciesList.filter(s => s.is_flagship);
-                const others = speciesList.filter(s => !s.is_flagship);
-
-                if (flagships.length > 0 && stateName) {
-                    const groupFlagship = document.createElement('optgroup');
-                    groupFlagship.label = 'Native Flagship Species';
-                    flagships.forEach(sp => {
-                        const opt = document.createElement('option');
-                        opt.value = sp.id;
-                        opt.textContent = `${sp.name} (${sp.scientific_name})`;
-                        opt.dataset.name = sp.name;
-                        opt.dataset.iucn = sp.iucn;
-                        opt.dataset.flagship = 'true';
-                        opt.style.color = '#34d399';
-                        opt.style.fontWeight = '600';
-                        opt.style.backgroundColor = '#13241c';
-                        groupFlagship.appendChild(opt);
-                    });
-                    speciesSelect.appendChild(groupFlagship);
-
-                    if (others.length > 0) {
-                        const groupOthers = document.createElement('optgroup');
-                        groupOthers.label = 'Other Regional Species';
-                        others.forEach(sp => {
-                            const opt = document.createElement('option');
-                            opt.value = sp.id;
-                            opt.textContent = `${sp.name} (${sp.scientific_name})`;
-                            opt.dataset.name = sp.name;
-                            opt.dataset.iucn = sp.iucn;
-                            opt.dataset.flagship = 'false';
-                            opt.style.color = '#9ca3af';
-                            groupOthers.appendChild(opt);
-                        });
-                        speciesSelect.appendChild(groupOthers);
-                    }
-                } else {
-                    speciesList.forEach(sp => {
-                        const opt = document.createElement('option');
-                        opt.value = sp.id;
-                        opt.textContent = `${sp.name} (${sp.scientific_name})`;
-                        opt.dataset.name = sp.name;
-                        opt.dataset.iucn = sp.iucn;
-                        opt.dataset.flagship = 'false';
-                        speciesSelect.appendChild(opt);
-                    });
-                }
-
-                flagshipBadge.classList.add('hidden');
-                speciesSelect.style.borderColor = 'var(--border-color)';
-                speciesSelect.style.boxShadow = 'none';
-                updateSdmBtnState();
-            })
-            .catch(err => console.error("Error loading species:", err));
-    }
-
-    // Initial load
-    loadSpeciesForState('');
-
-    // Reload species when state changes
-    stateSelect.addEventListener('change', () => {
-        loadSpeciesForState(stateSelect.value);
+    // Wire up the 4 source toggle buttons
+    document.querySelectorAll('.sdm-src-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.sdm-src-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeDataSource = btn.dataset.source;
+        });
     });
 
-    // Toggle Flagship badge on species selection
-    speciesSelect.addEventListener('change', () => {
-        const selectedOpt = speciesSelect.options[speciesSelect.selectedIndex];
-        if (selectedOpt && selectedOpt.dataset.flagship === 'true') {
-            flagshipBadge.classList.remove('hidden');
-            speciesSelect.style.borderColor = '#10b981';
-            speciesSelect.style.boxShadow = '0 0 0 1px rgba(16, 185, 129, 0.4)';
-        } else {
-            flagshipBadge.classList.add('hidden');
-            speciesSelect.style.borderColor = 'var(--border-color)';
-            speciesSelect.style.boxShadow = 'none';
-        }
-        updateSdmBtnState();
-    });
-
-    // Enable SDM button when park and species are selected
-    function updateSdmBtnState() {
-        runSdmBtn.disabled = !(parkSelect.value && speciesSelect.value);
-    }
-
-    parkSelect.addEventListener('change', updateSdmBtnState);
+    // Button is always enabled — all-India SDM needs no park selection
+    runSdmBtn.disabled = false;
 
     runSdmBtn.addEventListener('click', () => {
-        const parkId = parkSelect.value;
-        const speciesId = speciesSelect.value;
-        const startDate = document.getElementById('start-date').value;
-        const endDate = document.getElementById('end-date').value;
-
-        if (!parkId || !speciesId) return;
+        const speciesId  = 'elephas_maximus';
+        const startDate  = document.getElementById('start-date').value;
+        const endDate    = document.getElementById('end-date').value;
 
         const origText = runSdmBtn.querySelector('span').textContent;
         runSdmBtn.disabled = true;
-        runSdmBtn.querySelector('span').textContent = 'Training GEE Random Forest...';
+        const srcEmoji = SOURCE_EMOJI[activeDataSource] || '🔄';
+        runSdmBtn.querySelector('span').textContent = `${srcEmoji} Training All-India GEE Model...`;
 
         welcomeMessage.classList.add('hidden');
         viewportImageContainer.classList.remove('hidden');
@@ -725,10 +651,10 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                park_id: parkId,
-                species_id: speciesId,
-                start_date: startDate,
-                end_date: endDate
+                species_id:  speciesId,
+                data_source: activeDataSource,
+                start_date:  startDate,
+                end_date:    endDate
             })
         })
         .then(async res => {
@@ -764,32 +690,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 presenceMarkersLayer = null;
             }
 
-            // Create new SDM Probability tile layer
-            sdmLayer = L.tileLayer(data.tile_url, { zIndex: 100 });
+            // Create new SDM Probability layer — always a live GEE XYZ tile layer
+            if (data.tile_url) {
+                sdmLayer = L.tileLayer(data.tile_url, { zIndex: 100, maxZoom: 18, opacity: 0.85 });
+            }
 
-            // Create sample presence markers
+            // Create empirical occurrence markers (GBIF / iNaturalist)
             if (data.presence_points && data.presence_points.length > 0) {
                 presenceMarkersLayer = L.layerGroup();
                 data.presence_points.forEach(coord => {
                     const marker = L.circleMarker([coord[1], coord[0]], {
                         radius: 5,
-                        fillColor: '#ffffff',
-                        color: '#000000',
+                        fillColor: '#10b981',
+                        color: '#ffffff',
                         weight: 1.5,
                         opacity: 1,
-                        fillOpacity: 0.9
-                    }).bindPopup(`<strong>${data.species.name}</strong><br>Optimal Habitat Coordinate`);
+                        fillOpacity: 0.95
+                    }).bindPopup(`<strong>${data.species.name}</strong><br>🐘 Field Observation (GBIF / iNaturalist)<br>Lat: ${coord[1].toFixed(4)}, Lon: ${coord[0].toFixed(4)}`);
                     presenceMarkersLayer.addLayer(marker);
                 });
             }
 
-            // Pan and zoom to centroid
-            map.setView([data.center[1], data.center[0]], 11);
+            // Pan to India centroid at country-level zoom
+            if (data.center) {
+                const zoom = data.zoom || (data.scope === 'india' ? 5 : 11);
+                map.setView([data.center[1], data.center[0]], zoom);
+            }
+
+            // Update scope badge with actual source used
+            if (sdmScopeBadge) {
+                const srcLabel = data.data_source_label || 'Multi-Source Ensemble';
+                const srcEmoji = SOURCE_EMOJI[data.data_source] || '🔀';
+                sdmScopeBadge.innerHTML = `🗺️ <strong style="color:#fca5a5;">All India</strong> · ${srcEmoji} ${srcLabel}`;
+            }
 
             // Display SDM metrics
             sdmSuitabilityVal.textContent = `${data.mean_suitability}%`;
             sdmIucnVal.textContent = data.species.iucn;
             sdmResults.classList.remove('hidden');
+
+            // Update dynamic covariates list
+            const covListEl = document.getElementById('sdm-covariates-list');
+            if (covListEl && data.predictors) {
+                covListEl.innerHTML = `<strong>Covariates:</strong> ${data.predictors.join(' · ')}`;
+            }
 
             // Show SDM legend
             sdmLegendTitle.textContent = `${data.species.name} Habitat Suitability`;

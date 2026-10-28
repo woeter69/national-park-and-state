@@ -1,0 +1,28 @@
+{
+  "species": "Elephas maximus (Indian Elephant)",
+  "model_type": "Random Forest Correlative SDM",
+  "records_total": 1199,
+  "records_spatially_debiased": 240,
+  "test_auc": 1.0,
+  "test_accuracy": 1.0,
+  "feature_importance_percent": {
+    "Surface_Water_Occurrence_pct": 24.77,
+    "Vegetation_NDVI": 24.29,
+    "Elevation_m": 19.39,
+    "Annual_Precipitation_BIO12": 19.12,
+    "Annual_Mean_Temp_BIO1": 8.68,
+    "Terrain_Slope_deg": 2.95,
+    "Precipitation_Seasonality_BIO15": 0.8
+  },
+  "study_area_bounds": {
+    "min_longitude": 72.0,
+    "max_longitude": 96.0,
+    "min_latitude": 8.0,
+    "max_latitude": 32.0
+  },
+  "output_files": [
+    "sdm_output/Indian_Elephant_Habitat_Suitability_Map.png",
+    "sdm_output/Gridded_Environmental_Surfaces.png",
+    "sdm_output/Variable_Importance_Analysis.png"
+  ]
+}

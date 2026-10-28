@@ -7,10 +7,10 @@ import os
 
 # Initialize the Earth Engine module.
 try:
-    ee.Initialize(project='meet-attendance-500308')
+    ee.Initialize(project='gen-lang-client-0070085043')
 except Exception as e:
     ee.Authenticate()
-    ee.Initialize(project='meet-attendance-500308')
+    ee.Initialize(project='gen-lang-client-0070085043')
 
 def download_shapefile(fc, folder_name):
     print(f"Downloading shapefile for {folder_name}...")

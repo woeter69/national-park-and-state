@@ -1,5 +1,8 @@
 # NDVI Analyzer: Protected Area Vegetation Intelligence & Species Distribution Modeling
 
+> 📂 **Documentation:** [`docs/Indian_Elephant_SDM_Explainer.md`](./docs/Indian_Elephant_SDM_Explainer.md) — plain-language guide to the SDM data sources, methods, and accuracy (for teachers / non-technical readers).
+> [`docs/Indian_Elephant_SDM_Documentation.md`](./docs/Indian_Elephant_SDM_Documentation.md) — full technical EVS documentation.
+
 A full-stack geospatial intelligence platform for interactive satellite-based vegetation monitoring, multi-temporal NDVI time-series analysis, and cloud-based Species Distribution Modeling (SDM) across Indian National Parks and Wildlife Sanctuaries.
 
 Powered by Google Earth Engine (GEE), Sentinel-2 MSI, SRTM Elevation, JRC Global Surface Water, and WDPA protected area boundaries.
