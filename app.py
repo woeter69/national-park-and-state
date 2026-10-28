@@ -494,9 +494,9 @@ def run_sdm():
             elif data_source == 'land_cover':
                 # Source 3 — ESA WorldCover 2021 + Hansen Forest Cover 2023 + SRTM
                 # Land-cover / structural habitat classification
-                worldcover = (ee.Image('ESA/WorldCover/v200')
+                worldcover = (ee.ImageCollection('ESA/WorldCover/v200').first()
                                 .select('Map').rename('landcover'))
-                hansen     = (ee.Image('UMD/hansen/global_forest_change_2023_v1_11')
+                hansen     = (ee.Image('UMD/hansen/global_forest_change_2025_v1_13')
                                 .select('treecover2000').unmask(0).rename('forest_cover'))
                 predictors  = (worldcover.addBands(hansen)
                                 .addBands(elevation).addBands(slope).addBands(water)
@@ -504,7 +504,7 @@ def run_sdm():
                 input_props = ['landcover','forest_cover','elevation','slope','water']
                 pred_labels = [
                     'ESA WorldCover v200 2021 (10m — Land Cover Classes)',
-                    'Hansen Global Forest Cover 2023 (30m — % canopy)',
+                    'Hansen Global Forest Cover 2025 (30m — % canopy)',
                     'SRTM Elevation (30m)',
                     'Terrain Slope',
                     'JRC Global Surface Water Occurrence',
@@ -524,9 +524,9 @@ def run_sdm():
                            .multiply(0.0001).rename('ndvi'))
                 wc = (ee.Image('WORLDCLIM/V1/BIO')
                         .select(['bio01','bio12']).rename(['bio01','bio12']))
-                worldcover = (ee.Image('ESA/WorldCover/v200')
+                worldcover = (ee.ImageCollection('ESA/WorldCover/v200').first()
                                 .select('Map').rename('landcover'))
-                hansen     = (ee.Image('UMD/hansen/global_forest_change_2023_v1_11')
+                hansen     = (ee.Image('UMD/hansen/global_forest_change_2025_v1_13')
                                 .select('treecover2000').unmask(0).rename('forest_cover'))
                 predictors  = (modis.addBands(wc).addBands(worldcover).addBands(hansen)
                                 .addBands(elevation).addBands(slope).addBands(water)
